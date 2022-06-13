@@ -1,0 +1,3952 @@
+{
+ "matches": [
+  {
+   "vulnerability": {
+    "id": "CVE-2013-4235",
+    "dataSource": "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2013-4235",
+    "namespace": "ubuntu:18.10",
+    "severity": "Low",
+    "urls": [
+     "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2013-4235"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [],
+     "state": "not-fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2013-4235",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2013-4235",
+     "namespace": "nvd",
+     "severity": "Medium",
+     "urls": [
+      "https://security-tracker.debian.org/tracker/CVE-2013-4235",
+      "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2013-4235",
+      "https://access.redhat.com/security/cve/cve-2013-4235",
+      "https://lists.apache.org/thread.html/rf9fa47ab66495c78bb4120b0754dd9531ca2ff0430f6685ac9b07772@%3Cdev.mina.apache.org%3E"
+     ],
+     "description": "shadow: TOCTOU (time-of-check time-of-use) race condition when copying and removing directory trees",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:L/AC:M/Au:N/C:N/I:P/A:P",
+       "metrics": {
+        "baseScore": 3.3,
+        "exploitabilityScore": 3.4,
+        "impactScore": 4.9
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:H/A:N",
+       "metrics": {
+        "baseScore": 4.7,
+        "exploitabilityScore": 1,
+        "impactScore": 3.6
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-indirect-match",
+     "matcher": "dpkg-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "ubuntu",
+       "version": "18.10"
+      },
+      "namespace": "ubuntu:18.10",
+      "package": {
+       "name": "shadow",
+       "version": "1:4.5-1ubuntu1"
+      }
+     },
+     "found": {
+      "versionConstraint": "none (deb)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "login",
+    "version": "1:4.5-1ubuntu1",
+    "type": "deb",
+    "locations": [
+     {
+      "path": "/usr/share/doc/login/copyright",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/info/login.conffiles",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/info/login.md5sums",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/status",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "GPL-2"
+    ],
+    "cpes": [
+     "cpe:2.3:a:login:login:1:4.5-1ubuntu1:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:deb/ubuntu/login@1:4.5-1ubuntu1?arch=amd64&upstream=shadow&distro=ubuntu-18.10",
+    "upstreams": [
+     {
+      "name": "shadow"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2013-4235",
+    "dataSource": "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2013-4235",
+    "namespace": "ubuntu:18.10",
+    "severity": "Low",
+    "urls": [
+     "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2013-4235"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [],
+     "state": "not-fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2013-4235",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2013-4235",
+     "namespace": "nvd",
+     "severity": "Medium",
+     "urls": [
+      "https://security-tracker.debian.org/tracker/CVE-2013-4235",
+      "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2013-4235",
+      "https://access.redhat.com/security/cve/cve-2013-4235",
+      "https://lists.apache.org/thread.html/rf9fa47ab66495c78bb4120b0754dd9531ca2ff0430f6685ac9b07772@%3Cdev.mina.apache.org%3E"
+     ],
+     "description": "shadow: TOCTOU (time-of-check time-of-use) race condition when copying and removing directory trees",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:L/AC:M/Au:N/C:N/I:P/A:P",
+       "metrics": {
+        "baseScore": 3.3,
+        "exploitabilityScore": 3.4,
+        "impactScore": 4.9
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:H/A:N",
+       "metrics": {
+        "baseScore": 4.7,
+        "exploitabilityScore": 1,
+        "impactScore": 3.6
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-indirect-match",
+     "matcher": "dpkg-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "ubuntu",
+       "version": "18.10"
+      },
+      "namespace": "ubuntu:18.10",
+      "package": {
+       "name": "shadow",
+       "version": "1:4.5-1ubuntu1"
+      }
+     },
+     "found": {
+      "versionConstraint": "none (deb)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "passwd",
+    "version": "1:4.5-1ubuntu1",
+    "type": "deb",
+    "locations": [
+     {
+      "path": "/usr/share/doc/passwd/copyright",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/info/passwd.conffiles",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/info/passwd.md5sums",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/status",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "GPL-2"
+    ],
+    "cpes": [
+     "cpe:2.3:a:passwd:passwd:1:4.5-1ubuntu1:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:deb/ubuntu/passwd@1:4.5-1ubuntu1?arch=amd64&upstream=shadow&distro=ubuntu-18.10",
+    "upstreams": [
+     {
+      "name": "shadow"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2016-10228",
+    "dataSource": "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2016-10228",
+    "namespace": "ubuntu:18.10",
+    "severity": "Negligible",
+    "urls": [
+     "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2016-10228"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [],
+     "state": "not-fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2016-10228",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2016-10228",
+     "namespace": "nvd",
+     "severity": "Medium",
+     "urls": [
+      "https://sourceware.org/bugzilla/show_bug.cgi?id=19519",
+      "http://openwall.com/lists/oss-security/2017/03/01/10",
+      "http://www.securityfocus.com/bid/96525",
+      "https://sourceware.org/bugzilla/show_bug.cgi?id=19519#c21",
+      "https://sourceware.org/bugzilla/show_bug.cgi?id=26224",
+      "https://security.gentoo.org/glsa/202101-20",
+      "https://lists.apache.org/thread.html/rf9fa47ab66495c78bb4120b0754dd9531ca2ff0430f6685ac9b07772@%3Cdev.mina.apache.org%3E",
+      "https://www.oracle.com/security-alerts/cpuapr2022.html"
+     ],
+     "description": "The iconv program in the GNU C Library (aka glibc or libc6) 2.31 and earlier, when invoked with multiple suffixes in the destination encoding (TRANSLATE or IGNORE) along with the -c option, enters an infinite loop when processing invalid multi-byte input sequences, leading to a denial of service.",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P",
+       "metrics": {
+        "baseScore": 4.3,
+        "exploitabilityScore": 8.6,
+        "impactScore": 2.9
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.0",
+       "vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+       "metrics": {
+        "baseScore": 5.9,
+        "exploitabilityScore": 2.2,
+        "impactScore": 3.6
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-indirect-match",
+     "matcher": "dpkg-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "ubuntu",
+       "version": "18.10"
+      },
+      "namespace": "ubuntu:18.10",
+      "package": {
+       "name": "glibc",
+       "version": "2.28-0ubuntu1"
+      }
+     },
+     "found": {
+      "versionConstraint": "none (deb)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "libc-bin",
+    "version": "2.28-0ubuntu1",
+    "type": "deb",
+    "locations": [
+     {
+      "path": "/usr/share/doc/libc-bin/copyright",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/info/libc-bin.conffiles",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/info/libc-bin.md5sums",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/status",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "GPL-2",
+     "LGPL-2.1"
+    ],
+    "cpes": [
+     "cpe:2.3:a:libc-bin:libc-bin:2.28-0ubuntu1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:libc-bin:libc_bin:2.28-0ubuntu1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:libc_bin:libc-bin:2.28-0ubuntu1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:libc_bin:libc_bin:2.28-0ubuntu1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:libc:libc-bin:2.28-0ubuntu1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:libc:libc_bin:2.28-0ubuntu1:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:deb/ubuntu/libc-bin@2.28-0ubuntu1?arch=amd64&upstream=glibc&distro=ubuntu-18.10",
+    "upstreams": [
+     {
+      "name": "glibc"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2016-10228",
+    "dataSource": "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2016-10228",
+    "namespace": "ubuntu:18.10",
+    "severity": "Negligible",
+    "urls": [
+     "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2016-10228"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [],
+     "state": "not-fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2016-10228",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2016-10228",
+     "namespace": "nvd",
+     "severity": "Medium",
+     "urls": [
+      "https://sourceware.org/bugzilla/show_bug.cgi?id=19519",
+      "http://openwall.com/lists/oss-security/2017/03/01/10",
+      "http://www.securityfocus.com/bid/96525",
+      "https://sourceware.org/bugzilla/show_bug.cgi?id=19519#c21",
+      "https://sourceware.org/bugzilla/show_bug.cgi?id=26224",
+      "https://security.gentoo.org/glsa/202101-20",
+      "https://lists.apache.org/thread.html/rf9fa47ab66495c78bb4120b0754dd9531ca2ff0430f6685ac9b07772@%3Cdev.mina.apache.org%3E",
+      "https://www.oracle.com/security-alerts/cpuapr2022.html"
+     ],
+     "description": "The iconv program in the GNU C Library (aka glibc or libc6) 2.31 and earlier, when invoked with multiple suffixes in the destination encoding (TRANSLATE or IGNORE) along with the -c option, enters an infinite loop when processing invalid multi-byte input sequences, leading to a denial of service.",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P",
+       "metrics": {
+        "baseScore": 4.3,
+        "exploitabilityScore": 8.6,
+        "impactScore": 2.9
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.0",
+       "vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+       "metrics": {
+        "baseScore": 5.9,
+        "exploitabilityScore": 2.2,
+        "impactScore": 3.6
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-indirect-match",
+     "matcher": "dpkg-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "ubuntu",
+       "version": "18.10"
+      },
+      "namespace": "ubuntu:18.10",
+      "package": {
+       "name": "glibc",
+       "version": "2.28-0ubuntu1"
+      }
+     },
+     "found": {
+      "versionConstraint": "none (deb)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "libc6",
+    "version": "2.28-0ubuntu1",
+    "type": "deb",
+    "locations": [
+     {
+      "path": "/usr/share/doc/libc6/copyright",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/info/libc6:amd64.conffiles",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/info/libc6:amd64.md5sums",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/status",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "GPL-2",
+     "LGPL-2.1"
+    ],
+    "cpes": [
+     "cpe:2.3:a:libc6:libc6:2.28-0ubuntu1:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:deb/ubuntu/libc6@2.28-0ubuntu1?arch=amd64&upstream=glibc&distro=ubuntu-18.10",
+    "upstreams": [
+     {
+      "name": "glibc"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2016-10739",
+    "dataSource": "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2016-10739",
+    "namespace": "ubuntu:18.10",
+    "severity": "Low",
+    "urls": [
+     "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2016-10739"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [],
+     "state": "not-fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2016-10739",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2016-10739",
+     "namespace": "nvd",
+     "severity": "Medium",
+     "urls": [
+      "https://sourceware.org/bugzilla/show_bug.cgi?id=20018",
+      "https://bugzilla.redhat.com/show_bug.cgi?id=1347549",
+      "http://www.securityfocus.com/bid/106672",
+      "http://lists.opensuse.org/opensuse-security-announce/2019-04/msg00082.html",
+      "https://access.redhat.com/errata/RHSA-2019:2118",
+      "https://access.redhat.com/errata/RHSA-2019:3513"
+     ],
+     "description": "In the GNU C Library (aka glibc or libc6) through 2.28, the getaddrinfo function would successfully parse a string that contained an IPv4 address followed by whitespace and arbitrary characters, which could lead applications to incorrectly assume that it had parsed a valid string, without the possibility of embedded HTTP headers or other potentially dangerous substrings.",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:L/AC:L/Au:N/C:P/I:P/A:P",
+       "metrics": {
+        "baseScore": 4.6,
+        "exploitabilityScore": 3.9,
+        "impactScore": 6.4
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.0",
+       "vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
+       "metrics": {
+        "baseScore": 5.3,
+        "exploitabilityScore": 1.8,
+        "impactScore": 3.4
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-indirect-match",
+     "matcher": "dpkg-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "ubuntu",
+       "version": "18.10"
+      },
+      "namespace": "ubuntu:18.10",
+      "package": {
+       "name": "glibc",
+       "version": "2.28-0ubuntu1"
+      }
+     },
+     "found": {
+      "versionConstraint": "none (deb)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "libc-bin",
+    "version": "2.28-0ubuntu1",
+    "type": "deb",
+    "locations": [
+     {
+      "path": "/usr/share/doc/libc-bin/copyright",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/info/libc-bin.conffiles",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/info/libc-bin.md5sums",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/status",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "GPL-2",
+     "LGPL-2.1"
+    ],
+    "cpes": [
+     "cpe:2.3:a:libc-bin:libc-bin:2.28-0ubuntu1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:libc-bin:libc_bin:2.28-0ubuntu1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:libc_bin:libc-bin:2.28-0ubuntu1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:libc_bin:libc_bin:2.28-0ubuntu1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:libc:libc-bin:2.28-0ubuntu1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:libc:libc_bin:2.28-0ubuntu1:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:deb/ubuntu/libc-bin@2.28-0ubuntu1?arch=amd64&upstream=glibc&distro=ubuntu-18.10",
+    "upstreams": [
+     {
+      "name": "glibc"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2016-10739",
+    "dataSource": "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2016-10739",
+    "namespace": "ubuntu:18.10",
+    "severity": "Low",
+    "urls": [
+     "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2016-10739"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [],
+     "state": "not-fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2016-10739",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2016-10739",
+     "namespace": "nvd",
+     "severity": "Medium",
+     "urls": [
+      "https://sourceware.org/bugzilla/show_bug.cgi?id=20018",
+      "https://bugzilla.redhat.com/show_bug.cgi?id=1347549",
+      "http://www.securityfocus.com/bid/106672",
+      "http://lists.opensuse.org/opensuse-security-announce/2019-04/msg00082.html",
+      "https://access.redhat.com/errata/RHSA-2019:2118",
+      "https://access.redhat.com/errata/RHSA-2019:3513"
+     ],
+     "description": "In the GNU C Library (aka glibc or libc6) through 2.28, the getaddrinfo function would successfully parse a string that contained an IPv4 address followed by whitespace and arbitrary characters, which could lead applications to incorrectly assume that it had parsed a valid string, without the possibility of embedded HTTP headers or other potentially dangerous substrings.",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:L/AC:L/Au:N/C:P/I:P/A:P",
+       "metrics": {
+        "baseScore": 4.6,
+        "exploitabilityScore": 3.9,
+        "impactScore": 6.4
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.0",
+       "vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
+       "metrics": {
+        "baseScore": 5.3,
+        "exploitabilityScore": 1.8,
+        "impactScore": 3.4
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-indirect-match",
+     "matcher": "dpkg-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "ubuntu",
+       "version": "18.10"
+      },
+      "namespace": "ubuntu:18.10",
+      "package": {
+       "name": "glibc",
+       "version": "2.28-0ubuntu1"
+      }
+     },
+     "found": {
+      "versionConstraint": "none (deb)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "libc6",
+    "version": "2.28-0ubuntu1",
+    "type": "deb",
+    "locations": [
+     {
+      "path": "/usr/share/doc/libc6/copyright",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/info/libc6:amd64.conffiles",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/info/libc6:amd64.md5sums",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/status",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "GPL-2",
+     "LGPL-2.1"
+    ],
+    "cpes": [
+     "cpe:2.3:a:libc6:libc6:2.28-0ubuntu1:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:deb/ubuntu/libc6@2.28-0ubuntu1?arch=amd64&upstream=glibc&distro=ubuntu-18.10",
+    "upstreams": [
+     {
+      "name": "glibc"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2016-2781",
+    "dataSource": "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2016-2781",
+    "namespace": "ubuntu:18.10",
+    "severity": "Low",
+    "urls": [
+     "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2016-2781"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [],
+     "state": "not-fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2016-2781",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2016-2781",
+     "namespace": "nvd",
+     "severity": "Medium",
+     "urls": [
+      "http://www.openwall.com/lists/oss-security/2016/02/28/3",
+      "http://www.openwall.com/lists/oss-security/2016/02/28/2",
+      "https://lists.apache.org/thread.html/rf9fa47ab66495c78bb4120b0754dd9531ca2ff0430f6685ac9b07772@%3Cdev.mina.apache.org%3E"
+     ],
+     "description": "chroot in GNU coreutils, when used with --userspec, allows local users to escape to the parent session via a crafted TIOCSTI ioctl call, which pushes characters to the terminal's input buffer.",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:L/AC:L/Au:N/C:N/I:P/A:N",
+       "metrics": {
+        "baseScore": 2.1,
+        "exploitabilityScore": 3.9,
+        "impactScore": 2.9
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.0",
+       "vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:H/A:N",
+       "metrics": {
+        "baseScore": 6.5,
+        "exploitabilityScore": 2,
+        "impactScore": 4
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "dpkg-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "ubuntu",
+       "version": "18.10"
+      },
+      "namespace": "ubuntu:18.10",
+      "package": {
+       "name": "coreutils",
+       "version": "8.28-1ubuntu2"
+      }
+     },
+     "found": {
+      "versionConstraint": "none (deb)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "coreutils",
+    "version": "8.28-1ubuntu2",
+    "type": "deb",
+    "locations": [
+     {
+      "path": "/usr/share/doc/coreutils/copyright",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/info/coreutils.md5sums",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/status",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "GPL-3"
+    ],
+    "cpes": [
+     "cpe:2.3:a:coreutils:coreutils:8.28-1ubuntu2:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:deb/ubuntu/coreutils@8.28-1ubuntu2?arch=amd64&distro=ubuntu-18.10",
+    "upstreams": []
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2017-11164",
+    "dataSource": "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2017-11164",
+    "namespace": "ubuntu:18.10",
+    "severity": "Negligible",
+    "urls": [
+     "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2017-11164"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [],
+     "state": "not-fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2017-11164",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2017-11164",
+     "namespace": "nvd",
+     "severity": "High",
+     "urls": [
+      "http://openwall.com/lists/oss-security/2017/07/11/3",
+      "http://www.securityfocus.com/bid/99575",
+      "https://lists.apache.org/thread.html/rf9fa47ab66495c78bb4120b0754dd9531ca2ff0430f6685ac9b07772@%3Cdev.mina.apache.org%3E"
+     ],
+     "description": "In PCRE 8.41, the OP_KETRMAX feature in the match function in pcre_exec.c allows stack exhaustion (uncontrolled recursion) when processing a crafted regular expression.",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:C",
+       "metrics": {
+        "baseScore": 7.8,
+        "exploitabilityScore": 10,
+        "impactScore": 6.9
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.0",
+       "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+       "metrics": {
+        "baseScore": 7.5,
+        "exploitabilityScore": 3.9,
+        "impactScore": 3.6
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-indirect-match",
+     "matcher": "dpkg-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "ubuntu",
+       "version": "18.10"
+      },
+      "namespace": "ubuntu:18.10",
+      "package": {
+       "name": "pcre3",
+       "version": "2:8.39-12~18.10"
+      }
+     },
+     "found": {
+      "versionConstraint": "none (deb)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "libpcre3",
+    "version": "2:8.39-12~18.10",
+    "type": "deb",
+    "locations": [
+     {
+      "path": "/usr/share/doc/libpcre3/copyright",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/info/libpcre3:amd64.md5sums",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/status",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     }
+    ],
+    "language": "",
+    "licenses": [],
+    "cpes": [
+     "cpe:2.3:a:libpcre3:libpcre3:2:8.39-12~18.10:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:deb/ubuntu/libpcre3@2:8.39-12~18.10?arch=amd64&upstream=pcre3&distro=ubuntu-18.10",
+    "upstreams": [
+     {
+      "name": "pcre3"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2017-7245",
+    "dataSource": "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2017-7245",
+    "namespace": "ubuntu:18.10",
+    "severity": "Negligible",
+    "urls": [
+     "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2017-7245"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [],
+     "state": "not-fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2017-7245",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2017-7245",
+     "namespace": "nvd",
+     "severity": "High",
+     "urls": [
+      "https://blogs.gentoo.org/ago/2017/03/20/libpcre-two-stack-based-buffer-overflow-write-in-pcre32_copy_substring-pcre_get-c/",
+      "http://www.securityfocus.com/bid/97067",
+      "https://security.gentoo.org/glsa/201710-25",
+      "https://access.redhat.com/errata/RHSA-2018:2486"
+     ],
+     "description": "Stack-based buffer overflow in the pcre32_copy_substring function in pcre_get.c in libpcre1 in PCRE 8.40 allows remote attackers to cause a denial of service (WRITE of size 4) or possibly have unspecified other impact via a crafted file.",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P",
+       "metrics": {
+        "baseScore": 6.8,
+        "exploitabilityScore": 8.6,
+        "impactScore": 6.4
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.0",
+       "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+       "metrics": {
+        "baseScore": 7.8,
+        "exploitabilityScore": 1.8,
+        "impactScore": 5.9
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-indirect-match",
+     "matcher": "dpkg-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "ubuntu",
+       "version": "18.10"
+      },
+      "namespace": "ubuntu:18.10",
+      "package": {
+       "name": "pcre3",
+       "version": "2:8.39-12~18.10"
+      }
+     },
+     "found": {
+      "versionConstraint": "none (deb)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "libpcre3",
+    "version": "2:8.39-12~18.10",
+    "type": "deb",
+    "locations": [
+     {
+      "path": "/usr/share/doc/libpcre3/copyright",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/info/libpcre3:amd64.md5sums",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/status",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     }
+    ],
+    "language": "",
+    "licenses": [],
+    "cpes": [
+     "cpe:2.3:a:libpcre3:libpcre3:2:8.39-12~18.10:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:deb/ubuntu/libpcre3@2:8.39-12~18.10?arch=amd64&upstream=pcre3&distro=ubuntu-18.10",
+    "upstreams": [
+     {
+      "name": "pcre3"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2017-7246",
+    "dataSource": "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2017-7246",
+    "namespace": "ubuntu:18.10",
+    "severity": "Negligible",
+    "urls": [
+     "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2017-7246"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [],
+     "state": "not-fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2017-7246",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2017-7246",
+     "namespace": "nvd",
+     "severity": "High",
+     "urls": [
+      "https://blogs.gentoo.org/ago/2017/03/20/libpcre-two-stack-based-buffer-overflow-write-in-pcre32_copy_substring-pcre_get-c/",
+      "http://www.securityfocus.com/bid/97067",
+      "https://security.gentoo.org/glsa/201710-25",
+      "https://access.redhat.com/errata/RHSA-2018:2486"
+     ],
+     "description": "Stack-based buffer overflow in the pcre32_copy_substring function in pcre_get.c in libpcre1 in PCRE 8.40 allows remote attackers to cause a denial of service (WRITE of size 268) or possibly have unspecified other impact via a crafted file.",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P",
+       "metrics": {
+        "baseScore": 6.8,
+        "exploitabilityScore": 8.6,
+        "impactScore": 6.4
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.0",
+       "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+       "metrics": {
+        "baseScore": 7.8,
+        "exploitabilityScore": 1.8,
+        "impactScore": 5.9
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-indirect-match",
+     "matcher": "dpkg-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "ubuntu",
+       "version": "18.10"
+      },
+      "namespace": "ubuntu:18.10",
+      "package": {
+       "name": "pcre3",
+       "version": "2:8.39-12~18.10"
+      }
+     },
+     "found": {
+      "versionConstraint": "none (deb)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "libpcre3",
+    "version": "2:8.39-12~18.10",
+    "type": "deb",
+    "locations": [
+     {
+      "path": "/usr/share/doc/libpcre3/copyright",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/info/libpcre3:amd64.md5sums",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/status",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     }
+    ],
+    "language": "",
+    "licenses": [],
+    "cpes": [
+     "cpe:2.3:a:libpcre3:libpcre3:2:8.39-12~18.10:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:deb/ubuntu/libpcre3@2:8.39-12~18.10?arch=amd64&upstream=pcre3&distro=ubuntu-18.10",
+    "upstreams": [
+     {
+      "name": "pcre3"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2017-8283",
+    "dataSource": "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2017-8283",
+    "namespace": "ubuntu:18.10",
+    "severity": "Negligible",
+    "urls": [
+     "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2017-8283"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [],
+     "state": "not-fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2017-8283",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2017-8283",
+     "namespace": "nvd",
+     "severity": "Critical",
+     "urls": [
+      "http://www.openwall.com/lists/oss-security/2017/04/20/2",
+      "http://www.securityfocus.com/bid/98064"
+     ],
+     "description": "dpkg-source in dpkg 1.3.0 through 1.18.23 is able to use a non-GNU patch program and does not offer a protection mechanism for blank-indented diff hunks, which allows remote attackers to conduct directory traversal attacks via a crafted Debian source package, as demonstrated by use of dpkg-source on NetBSD.",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+       "metrics": {
+        "baseScore": 7.5,
+        "exploitabilityScore": 10,
+        "impactScore": 6.4
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.0",
+       "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+       "metrics": {
+        "baseScore": 9.8,
+        "exploitabilityScore": 3.9,
+        "impactScore": 5.9
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "dpkg-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "ubuntu",
+       "version": "18.10"
+      },
+      "namespace": "ubuntu:18.10",
+      "package": {
+       "name": "dpkg",
+       "version": "1.19.0.5ubuntu5"
+      }
+     },
+     "found": {
+      "versionConstraint": "none (deb)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "dpkg",
+    "version": "1.19.0.5ubuntu5",
+    "type": "deb",
+    "locations": [
+     {
+      "path": "/usr/share/doc/dpkg/copyright",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/info/dpkg.conffiles",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/info/dpkg.md5sums",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/status",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "BSD-2-clause",
+     "GPL-2",
+     "GPL-2+",
+     "public-domain-md5",
+     "public-domain-s-s-d"
+    ],
+    "cpes": [
+     "cpe:2.3:a:dpkg:dpkg:1.19.0.5ubuntu5:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:deb/ubuntu/dpkg@1.19.0.5ubuntu5?arch=amd64&distro=ubuntu-18.10",
+    "upstreams": []
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2018-1000654",
+    "dataSource": "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2018-1000654",
+    "namespace": "ubuntu:18.10",
+    "severity": "Negligible",
+    "urls": [
+     "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2018-1000654"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [],
+     "state": "not-fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2018-1000654",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2018-1000654",
+     "namespace": "nvd",
+     "severity": "Medium",
+     "urls": [
+      "https://gitlab.com/gnutls/libtasn1/issues/4",
+      "http://www.securityfocus.com/bid/105151",
+      "http://lists.opensuse.org/opensuse-security-announce/2019-06/msg00009.html",
+      "http://lists.opensuse.org/opensuse-security-announce/2019-06/msg00018.html",
+      "https://lists.apache.org/thread.html/rf9fa47ab66495c78bb4120b0754dd9531ca2ff0430f6685ac9b07772@%3Cdev.mina.apache.org%3E"
+     ],
+     "description": "GNU Libtasn1-4.13 libtasn1-4.13 version libtasn1-4.13, libtasn1-4.12 contains a DoS, specifically CPU usage will reach 100% when running asn1Paser against the POC due to an issue in _asn1_expand_object_id(p_tree), after a long time, the program will be killed. This attack appears to be exploitable via parsing a crafted file.",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:N/AC:M/Au:N/C:N/I:N/A:C",
+       "metrics": {
+        "baseScore": 7.1,
+        "exploitabilityScore": 8.6,
+        "impactScore": 6.9
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.0",
+       "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+       "metrics": {
+        "baseScore": 5.5,
+        "exploitabilityScore": 1.8,
+        "impactScore": 3.6
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "dpkg-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "ubuntu",
+       "version": "18.10"
+      },
+      "namespace": "ubuntu:18.10",
+      "package": {
+       "name": "libtasn1-6",
+       "version": "4.13-3"
+      }
+     },
+     "found": {
+      "versionConstraint": "none (deb)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "libtasn1-6",
+    "version": "4.13-3",
+    "type": "deb",
+    "locations": [
+     {
+      "path": "/usr/share/doc/libtasn1-6/copyright",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/info/libtasn1-6:amd64.md5sums",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/status",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "GFDL-1.3",
+     "GPL-3",
+     "LGPL",
+     "LGPL-2.1"
+    ],
+    "cpes": [
+     "cpe:2.3:a:libtasn1-6:libtasn1-6:4.13-3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:libtasn1-6:libtasn1_6:4.13-3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:libtasn1_6:libtasn1-6:4.13-3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:libtasn1_6:libtasn1_6:4.13-3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:libtasn1:libtasn1-6:4.13-3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:libtasn1:libtasn1_6:4.13-3:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:deb/ubuntu/libtasn1-6@4.13-3?arch=amd64&distro=ubuntu-18.10",
+    "upstreams": []
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2018-16868",
+    "dataSource": "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2018-16868",
+    "namespace": "ubuntu:18.10",
+    "severity": "Low",
+    "urls": [
+     "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2018-16868"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [],
+     "state": "not-fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2018-16868",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2018-16868",
+     "namespace": "nvd",
+     "severity": "Medium",
+     "urls": [
+      "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2018-16868",
+      "http://cat.eyalro.net/",
+      "http://www.securityfocus.com/bid/106080",
+      "http://lists.opensuse.org/opensuse-security-announce/2019-05/msg00017.html",
+      "http://lists.opensuse.org/opensuse-security-announce/2019-05/msg00068.html"
+     ],
+     "description": "A Bleichenbacher type side-channel based padding oracle attack was found in the way gnutls handles verification of RSA decrypted PKCS#1 v1.5 data. An attacker who is able to run process on the same physical core as the victim process, could use this to extract plaintext or in some cases downgrade any TLS connections to a vulnerable server.",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:L/AC:M/Au:N/C:P/I:P/A:N",
+       "metrics": {
+        "baseScore": 3.3,
+        "exploitabilityScore": 3.4,
+        "impactScore": 4.9
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:P/AC:H/PR:L/UI:N/S:C/C:H/I:L/A:N",
+       "metrics": {
+        "baseScore": 5.6,
+        "exploitabilityScore": 0.4,
+        "impactScore": 4.7
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-indirect-match",
+     "matcher": "dpkg-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "ubuntu",
+       "version": "18.10"
+      },
+      "namespace": "ubuntu:18.10",
+      "package": {
+       "name": "gnutls28",
+       "version": "3.6.4-2ubuntu1.2"
+      }
+     },
+     "found": {
+      "versionConstraint": "none (deb)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "libgnutls30",
+    "version": "3.6.4-2ubuntu1.2",
+    "type": "deb",
+    "locations": [
+     {
+      "path": "/usr/share/doc/libgnutls30/copyright",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/info/libgnutls30:amd64.md5sums",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/status",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "Apache-2.0",
+     "CC0",
+     "GFDL-1.3",
+     "GPL",
+     "GPL-3",
+     "GPLv3+",
+     "LGPL",
+     "LGPL-3",
+     "LGPL2.1",
+     "LGPLv3+_or_GPLv2+",
+     "The"
+    ],
+    "cpes": [
+     "cpe:2.3:a:libgnutls30:libgnutls30:3.6.4-2ubuntu1.2:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:deb/ubuntu/libgnutls30@3.6.4-2ubuntu1.2?arch=amd64&upstream=gnutls28&distro=ubuntu-18.10",
+    "upstreams": [
+     {
+      "name": "gnutls28"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2018-16869",
+    "dataSource": "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2018-16869",
+    "namespace": "ubuntu:18.10",
+    "severity": "Low",
+    "urls": [
+     "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2018-16869"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [],
+     "state": "not-fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2018-16869",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2018-16869",
+     "namespace": "nvd",
+     "severity": "Medium",
+     "urls": [
+      "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2018-16869",
+      "http://cat.eyalro.net/",
+      "http://www.securityfocus.com/bid/106092"
+     ],
+     "description": "A Bleichenbacher type side-channel based padding oracle attack was found in the way nettle handles endian conversion of RSA decrypted PKCS#1 v1.5 data. An attacker who is able to run a process on the same physical core as the victim process, could use this flaw extract plaintext or in some cases downgrade any TLS connections to a vulnerable server.",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:L/AC:M/Au:N/C:P/I:P/A:N",
+       "metrics": {
+        "baseScore": 3.3,
+        "exploitabilityScore": 3.4,
+        "impactScore": 4.9
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:P/AC:H/PR:N/UI:N/S:C/C:H/I:L/A:N",
+       "metrics": {
+        "baseScore": 5.7,
+        "exploitabilityScore": 0.5,
+        "impactScore": 4.7
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-indirect-match",
+     "matcher": "dpkg-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "ubuntu",
+       "version": "18.10"
+      },
+      "namespace": "ubuntu:18.10",
+      "package": {
+       "name": "nettle",
+       "version": "3.4-1"
+      }
+     },
+     "found": {
+      "versionConstraint": "none (deb)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "libhogweed4",
+    "version": "3.4-1",
+    "type": "deb",
+    "locations": [
+     {
+      "path": "/usr/share/doc/libnettle6/copyright",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/info/libhogweed4:amd64.md5sums",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/status",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "GAP",
+     "GPL",
+     "GPL-2",
+     "GPL-2+",
+     "LGPL",
+     "LGPL-2",
+     "LGPL-2+",
+     "LGPL-2.1+",
+     "other",
+     "public-domain"
+    ],
+    "cpes": [
+     "cpe:2.3:a:libhogweed4:libhogweed4:3.4-1:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:deb/ubuntu/libhogweed4@3.4-1?arch=amd64&upstream=nettle&distro=ubuntu-18.10",
+    "upstreams": [
+     {
+      "name": "nettle"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2018-16869",
+    "dataSource": "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2018-16869",
+    "namespace": "ubuntu:18.10",
+    "severity": "Low",
+    "urls": [
+     "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2018-16869"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [],
+     "state": "not-fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2018-16869",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2018-16869",
+     "namespace": "nvd",
+     "severity": "Medium",
+     "urls": [
+      "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2018-16869",
+      "http://cat.eyalro.net/",
+      "http://www.securityfocus.com/bid/106092"
+     ],
+     "description": "A Bleichenbacher type side-channel based padding oracle attack was found in the way nettle handles endian conversion of RSA decrypted PKCS#1 v1.5 data. An attacker who is able to run a process on the same physical core as the victim process, could use this flaw extract plaintext or in some cases downgrade any TLS connections to a vulnerable server.",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:L/AC:M/Au:N/C:P/I:P/A:N",
+       "metrics": {
+        "baseScore": 3.3,
+        "exploitabilityScore": 3.4,
+        "impactScore": 4.9
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:P/AC:H/PR:N/UI:N/S:C/C:H/I:L/A:N",
+       "metrics": {
+        "baseScore": 5.7,
+        "exploitabilityScore": 0.5,
+        "impactScore": 4.7
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-indirect-match",
+     "matcher": "dpkg-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "ubuntu",
+       "version": "18.10"
+      },
+      "namespace": "ubuntu:18.10",
+      "package": {
+       "name": "nettle",
+       "version": "3.4-1"
+      }
+     },
+     "found": {
+      "versionConstraint": "none (deb)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "libnettle6",
+    "version": "3.4-1",
+    "type": "deb",
+    "locations": [
+     {
+      "path": "/usr/share/doc/libnettle6/copyright",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/info/libnettle6:amd64.md5sums",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/status",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "GAP",
+     "GPL",
+     "GPL-2",
+     "GPL-2+",
+     "LGPL",
+     "LGPL-2",
+     "LGPL-2+",
+     "LGPL-2.1+",
+     "other",
+     "public-domain"
+    ],
+    "cpes": [
+     "cpe:2.3:a:libnettle6:libnettle6:3.4-1:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:deb/ubuntu/libnettle6@3.4-1?arch=amd64&upstream=nettle&distro=ubuntu-18.10",
+    "upstreams": [
+     {
+      "name": "nettle"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2018-19591",
+    "dataSource": "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2018-19591",
+    "namespace": "ubuntu:18.10",
+    "severity": "Medium",
+    "urls": [
+     "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2018-19591"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [],
+     "state": "not-fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2018-19591",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2018-19591",
+     "namespace": "nvd",
+     "severity": "High",
+     "urls": [
+      "https://sourceware.org/git/gitweb.cgi?p=glibc.git;a=commitdiff;h=d527c860f5a3f0ed687bd03f0cb464612dc23408",
+      "https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=NEWS;hb=HEAD",
+      "https://sourceware.org/bugzilla/show_bug.cgi?id=23927",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/M52KE4YR3GNMHQUOS3DKAGZD5TQ5D5UH/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/BO7WHN52GFMC5F2I2232GFIPSSXWFV7G/",
+      "http://www.securitytracker.com/id/1042174",
+      "http://www.securityfocus.com/bid/106037",
+      "https://security.gentoo.org/glsa/201903-09",
+      "https://security.netapp.com/advisory/ntap-20190321-0003/",
+      "https://security.gentoo.org/glsa/201908-06",
+      "https://usn.ubuntu.com/4416-1/"
+     ],
+     "description": "In the GNU C Library (aka glibc or libc6) through 2.28, attempting to resolve a crafted hostname via getaddrinfo() leads to the allocation of a socket descriptor that is not closed. This is related to the if_nametoindex() function.",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+       "metrics": {
+        "baseScore": 5,
+        "exploitabilityScore": 10,
+        "impactScore": 2.9
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.0",
+       "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+       "metrics": {
+        "baseScore": 7.5,
+        "exploitabilityScore": 3.9,
+        "impactScore": 3.6
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-indirect-match",
+     "matcher": "dpkg-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "ubuntu",
+       "version": "18.10"
+      },
+      "namespace": "ubuntu:18.10",
+      "package": {
+       "name": "glibc",
+       "version": "2.28-0ubuntu1"
+      }
+     },
+     "found": {
+      "versionConstraint": "none (deb)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "libc-bin",
+    "version": "2.28-0ubuntu1",
+    "type": "deb",
+    "locations": [
+     {
+      "path": "/usr/share/doc/libc-bin/copyright",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/info/libc-bin.conffiles",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/info/libc-bin.md5sums",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/status",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "GPL-2",
+     "LGPL-2.1"
+    ],
+    "cpes": [
+     "cpe:2.3:a:libc-bin:libc-bin:2.28-0ubuntu1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:libc-bin:libc_bin:2.28-0ubuntu1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:libc_bin:libc-bin:2.28-0ubuntu1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:libc_bin:libc_bin:2.28-0ubuntu1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:libc:libc-bin:2.28-0ubuntu1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:libc:libc_bin:2.28-0ubuntu1:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:deb/ubuntu/libc-bin@2.28-0ubuntu1?arch=amd64&upstream=glibc&distro=ubuntu-18.10",
+    "upstreams": [
+     {
+      "name": "glibc"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2018-19591",
+    "dataSource": "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2018-19591",
+    "namespace": "ubuntu:18.10",
+    "severity": "Medium",
+    "urls": [
+     "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2018-19591"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [],
+     "state": "not-fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2018-19591",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2018-19591",
+     "namespace": "nvd",
+     "severity": "High",
+     "urls": [
+      "https://sourceware.org/git/gitweb.cgi?p=glibc.git;a=commitdiff;h=d527c860f5a3f0ed687bd03f0cb464612dc23408",
+      "https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=NEWS;hb=HEAD",
+      "https://sourceware.org/bugzilla/show_bug.cgi?id=23927",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/M52KE4YR3GNMHQUOS3DKAGZD5TQ5D5UH/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/BO7WHN52GFMC5F2I2232GFIPSSXWFV7G/",
+      "http://www.securitytracker.com/id/1042174",
+      "http://www.securityfocus.com/bid/106037",
+      "https://security.gentoo.org/glsa/201903-09",
+      "https://security.netapp.com/advisory/ntap-20190321-0003/",
+      "https://security.gentoo.org/glsa/201908-06",
+      "https://usn.ubuntu.com/4416-1/"
+     ],
+     "description": "In the GNU C Library (aka glibc or libc6) through 2.28, attempting to resolve a crafted hostname via getaddrinfo() leads to the allocation of a socket descriptor that is not closed. This is related to the if_nametoindex() function.",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+       "metrics": {
+        "baseScore": 5,
+        "exploitabilityScore": 10,
+        "impactScore": 2.9
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.0",
+       "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+       "metrics": {
+        "baseScore": 7.5,
+        "exploitabilityScore": 3.9,
+        "impactScore": 3.6
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-indirect-match",
+     "matcher": "dpkg-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "ubuntu",
+       "version": "18.10"
+      },
+      "namespace": "ubuntu:18.10",
+      "package": {
+       "name": "glibc",
+       "version": "2.28-0ubuntu1"
+      }
+     },
+     "found": {
+      "versionConstraint": "none (deb)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "libc6",
+    "version": "2.28-0ubuntu1",
+    "type": "deb",
+    "locations": [
+     {
+      "path": "/usr/share/doc/libc6/copyright",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/info/libc6:amd64.conffiles",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/info/libc6:amd64.md5sums",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/status",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "GPL-2",
+     "LGPL-2.1"
+    ],
+    "cpes": [
+     "cpe:2.3:a:libc6:libc6:2.28-0ubuntu1:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:deb/ubuntu/libc6@2.28-0ubuntu1?arch=amd64&upstream=glibc&distro=ubuntu-18.10",
+    "upstreams": [
+     {
+      "name": "glibc"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2018-20482",
+    "dataSource": "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2018-20482",
+    "namespace": "ubuntu:18.10",
+    "severity": "Low",
+    "urls": [
+     "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2018-20482"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [],
+     "state": "not-fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2018-20482",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2018-20482",
+     "namespace": "nvd",
+     "severity": "Medium",
+     "urls": [
+      "https://utcc.utoronto.ca/~cks/space/blog/sysadmin/TarFindingTruncateBug",
+      "https://twitter.com/thatcks/status/1076166645708668928",
+      "https://news.ycombinator.com/item?id=18745431",
+      "http://lists.gnu.org/archive/html/bug-tar/2018-12/msg00023.html",
+      "https://lists.debian.org/debian-lts-announce/2018/12/msg00023.html",
+      "http://www.securityfocus.com/bid/106354",
+      "http://git.savannah.gnu.org/cgit/tar.git/commit/?id=c15c42ccd1e2377945fd0414eca1a49294bff454",
+      "https://security.gentoo.org/glsa/201903-05",
+      "http://lists.opensuse.org/opensuse-security-announce/2019-04/msg00077.html",
+      "https://lists.debian.org/debian-lts-announce/2021/11/msg00025.html"
+     ],
+     "description": "GNU Tar through 1.30, when --sparse is used, mishandles file shrinkage during read access, which allows local users to cause a denial of service (infinite read loop in sparse_dump_region in sparse.c) by modifying a file that is supposed to be archived by a different user's process (e.g., a system backup running as root).",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:L/AC:M/Au:N/C:N/I:N/A:P",
+       "metrics": {
+        "baseScore": 1.9,
+        "exploitabilityScore": 3.4,
+        "impactScore": 2.9
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:H",
+       "metrics": {
+        "baseScore": 4.7,
+        "exploitabilityScore": 1,
+        "impactScore": 3.6
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "dpkg-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "ubuntu",
+       "version": "18.10"
+      },
+      "namespace": "ubuntu:18.10",
+      "package": {
+       "name": "tar",
+       "version": "1.30+dfsg-2"
+      }
+     },
+     "found": {
+      "versionConstraint": "none (deb)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "tar",
+    "version": "1.30+dfsg-2",
+    "type": "deb",
+    "locations": [
+     {
+      "path": "/usr/share/doc/tar/copyright",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/info/tar.conffiles",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/info/tar.md5sums",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/status",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "GPL-2",
+     "GPL-3"
+    ],
+    "cpes": [
+     "cpe:2.3:a:tar:tar:1.30+dfsg-2:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:deb/ubuntu/tar@1.30+dfsg-2?arch=amd64&distro=ubuntu-18.10",
+    "upstreams": []
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2018-20796",
+    "dataSource": "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2018-20796",
+    "namespace": "ubuntu:18.10",
+    "severity": "Negligible",
+    "urls": [
+     "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2018-20796"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [],
+     "state": "not-fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2018-20796",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2018-20796",
+     "namespace": "nvd",
+     "severity": "High",
+     "urls": [
+      "https://lists.gnu.org/archive/html/bug-gnulib/2019-01/msg00108.html",
+      "https://debbugs.gnu.org/cgi/bugreport.cgi?bug=34141",
+      "http://www.securityfocus.com/bid/107160",
+      "https://security.netapp.com/advisory/ntap-20190315-0002/",
+      "https://support.f5.com/csp/article/K26346590?utm_source=f5support&amp;utm_medium=RSS"
+     ],
+     "description": "In the GNU C Library (aka glibc or libc6) through 2.29, check_dst_limits_calc_pos_1 in posix/regexec.c has Uncontrolled Recursion, as demonstrated by '(\\227|)(\\\\1\\\\1|t1|\\\\\\2537)+' in grep.",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+       "metrics": {
+        "baseScore": 5,
+        "exploitabilityScore": 10,
+        "impactScore": 2.9
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.0",
+       "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+       "metrics": {
+        "baseScore": 7.5,
+        "exploitabilityScore": 3.9,
+        "impactScore": 3.6
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-indirect-match",
+     "matcher": "dpkg-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "ubuntu",
+       "version": "18.10"
+      },
+      "namespace": "ubuntu:18.10",
+      "package": {
+       "name": "glibc",
+       "version": "2.28-0ubuntu1"
+      }
+     },
+     "found": {
+      "versionConstraint": "none (deb)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "libc-bin",
+    "version": "2.28-0ubuntu1",
+    "type": "deb",
+    "locations": [
+     {
+      "path": "/usr/share/doc/libc-bin/copyright",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/info/libc-bin.conffiles",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/info/libc-bin.md5sums",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/status",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "GPL-2",
+     "LGPL-2.1"
+    ],
+    "cpes": [
+     "cpe:2.3:a:libc-bin:libc-bin:2.28-0ubuntu1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:libc-bin:libc_bin:2.28-0ubuntu1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:libc_bin:libc-bin:2.28-0ubuntu1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:libc_bin:libc_bin:2.28-0ubuntu1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:libc:libc-bin:2.28-0ubuntu1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:libc:libc_bin:2.28-0ubuntu1:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:deb/ubuntu/libc-bin@2.28-0ubuntu1?arch=amd64&upstream=glibc&distro=ubuntu-18.10",
+    "upstreams": [
+     {
+      "name": "glibc"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2018-20796",
+    "dataSource": "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2018-20796",
+    "namespace": "ubuntu:18.10",
+    "severity": "Negligible",
+    "urls": [
+     "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2018-20796"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [],
+     "state": "not-fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2018-20796",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2018-20796",
+     "namespace": "nvd",
+     "severity": "High",
+     "urls": [
+      "https://lists.gnu.org/archive/html/bug-gnulib/2019-01/msg00108.html",
+      "https://debbugs.gnu.org/cgi/bugreport.cgi?bug=34141",
+      "http://www.securityfocus.com/bid/107160",
+      "https://security.netapp.com/advisory/ntap-20190315-0002/",
+      "https://support.f5.com/csp/article/K26346590?utm_source=f5support&amp;utm_medium=RSS"
+     ],
+     "description": "In the GNU C Library (aka glibc or libc6) through 2.29, check_dst_limits_calc_pos_1 in posix/regexec.c has Uncontrolled Recursion, as demonstrated by '(\\227|)(\\\\1\\\\1|t1|\\\\\\2537)+' in grep.",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+       "metrics": {
+        "baseScore": 5,
+        "exploitabilityScore": 10,
+        "impactScore": 2.9
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.0",
+       "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+       "metrics": {
+        "baseScore": 7.5,
+        "exploitabilityScore": 3.9,
+        "impactScore": 3.6
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-indirect-match",
+     "matcher": "dpkg-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "ubuntu",
+       "version": "18.10"
+      },
+      "namespace": "ubuntu:18.10",
+      "package": {
+       "name": "glibc",
+       "version": "2.28-0ubuntu1"
+      }
+     },
+     "found": {
+      "versionConstraint": "none (deb)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "libc6",
+    "version": "2.28-0ubuntu1",
+    "type": "deb",
+    "locations": [
+     {
+      "path": "/usr/share/doc/libc6/copyright",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/info/libc6:amd64.conffiles",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/info/libc6:amd64.md5sums",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/status",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "GPL-2",
+     "LGPL-2.1"
+    ],
+    "cpes": [
+     "cpe:2.3:a:libc6:libc6:2.28-0ubuntu1:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:deb/ubuntu/libc6@2.28-0ubuntu1?arch=amd64&upstream=glibc&distro=ubuntu-18.10",
+    "upstreams": [
+     {
+      "name": "glibc"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2018-20839",
+    "dataSource": "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2018-20839",
+    "namespace": "ubuntu:18.10",
+    "severity": "Medium",
+    "urls": [
+     "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2018-20839"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [],
+     "state": "not-fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2018-20839",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2018-20839",
+     "namespace": "nvd",
+     "severity": "Critical",
+     "urls": [
+      "https://github.com/systemd/systemd/pull/12378",
+      "https://github.com/systemd/systemd/commit/9725f1a10f80f5e0ae7d9b60547458622aeb322f",
+      "https://bugs.launchpad.net/ubuntu/+source/systemd/+bug/1803993",
+      "http://www.securityfocus.com/bid/108389",
+      "https://security.netapp.com/advisory/ntap-20190530-0002/",
+      "https://lists.apache.org/thread.html/rf9fa47ab66495c78bb4120b0754dd9531ca2ff0430f6685ac9b07772@%3Cdev.mina.apache.org%3E"
+     ],
+     "description": "systemd 242 changes the VT1 mode upon a logout, which allows attackers to read cleartext passwords in certain circumstances, such as watching a shutdown, or using Ctrl-Alt-F1 and Ctrl-Alt-F2. This occurs because the KDGKBMODE (aka current keyboard mode) check is mishandled.",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:N/AC:M/Au:N/C:P/I:N/A:N",
+       "metrics": {
+        "baseScore": 4.3,
+        "exploitabilityScore": 8.6,
+        "impactScore": 2.9
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+       "metrics": {
+        "baseScore": 9.8,
+        "exploitabilityScore": 3.9,
+        "impactScore": 5.9
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-indirect-match",
+     "matcher": "dpkg-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "ubuntu",
+       "version": "18.10"
+      },
+      "namespace": "ubuntu:18.10",
+      "package": {
+       "name": "systemd",
+       "version": "239-7ubuntu10.14"
+      }
+     },
+     "found": {
+      "versionConstraint": "none (deb)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "libsystemd0",
+    "version": "239-7ubuntu10.14",
+    "type": "deb",
+    "locations": [
+     {
+      "path": "/usr/share/doc/libsystemd0/copyright",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/info/libsystemd0:amd64.md5sums",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/status",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "CC0-1.0",
+     "Expat",
+     "GPL-2",
+     "GPL-2+",
+     "LGPL-2.1",
+     "LGPL-2.1+",
+     "public-domain"
+    ],
+    "cpes": [
+     "cpe:2.3:a:libsystemd0:libsystemd0:239-7ubuntu10.14:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:deb/ubuntu/libsystemd0@239-7ubuntu10.14?arch=amd64&upstream=systemd&distro=ubuntu-18.10",
+    "upstreams": [
+     {
+      "name": "systemd"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2018-20839",
+    "dataSource": "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2018-20839",
+    "namespace": "ubuntu:18.10",
+    "severity": "Medium",
+    "urls": [
+     "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2018-20839"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [],
+     "state": "not-fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2018-20839",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2018-20839",
+     "namespace": "nvd",
+     "severity": "Critical",
+     "urls": [
+      "https://github.com/systemd/systemd/pull/12378",
+      "https://github.com/systemd/systemd/commit/9725f1a10f80f5e0ae7d9b60547458622aeb322f",
+      "https://bugs.launchpad.net/ubuntu/+source/systemd/+bug/1803993",
+      "http://www.securityfocus.com/bid/108389",
+      "https://security.netapp.com/advisory/ntap-20190530-0002/",
+      "https://lists.apache.org/thread.html/rf9fa47ab66495c78bb4120b0754dd9531ca2ff0430f6685ac9b07772@%3Cdev.mina.apache.org%3E"
+     ],
+     "description": "systemd 242 changes the VT1 mode upon a logout, which allows attackers to read cleartext passwords in certain circumstances, such as watching a shutdown, or using Ctrl-Alt-F1 and Ctrl-Alt-F2. This occurs because the KDGKBMODE (aka current keyboard mode) check is mishandled.",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:N/AC:M/Au:N/C:P/I:N/A:N",
+       "metrics": {
+        "baseScore": 4.3,
+        "exploitabilityScore": 8.6,
+        "impactScore": 2.9
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+       "metrics": {
+        "baseScore": 9.8,
+        "exploitabilityScore": 3.9,
+        "impactScore": 5.9
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-indirect-match",
+     "matcher": "dpkg-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "ubuntu",
+       "version": "18.10"
+      },
+      "namespace": "ubuntu:18.10",
+      "package": {
+       "name": "systemd",
+       "version": "239-7ubuntu10.14"
+      }
+     },
+     "found": {
+      "versionConstraint": "none (deb)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "libudev1",
+    "version": "239-7ubuntu10.14",
+    "type": "deb",
+    "locations": [
+     {
+      "path": "/usr/share/doc/libudev1/copyright",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/info/libudev1:amd64.md5sums",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/status",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "CC0-1.0",
+     "Expat",
+     "GPL-2",
+     "GPL-2+",
+     "LGPL-2.1",
+     "LGPL-2.1+",
+     "public-domain"
+    ],
+    "cpes": [
+     "cpe:2.3:a:libudev1:libudev1:239-7ubuntu10.14:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:deb/ubuntu/libudev1@239-7ubuntu10.14?arch=amd64&upstream=systemd&distro=ubuntu-18.10",
+    "upstreams": [
+     {
+      "name": "systemd"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2018-7169",
+    "dataSource": "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2018-7169",
+    "namespace": "ubuntu:18.10",
+    "severity": "Low",
+    "urls": [
+     "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2018-7169"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [],
+     "state": "not-fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2018-7169",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2018-7169",
+     "namespace": "nvd",
+     "severity": "Medium",
+     "urls": [
+      "https://bugs.launchpad.net/ubuntu/+source/shadow/+bug/1729357",
+      "https://security.gentoo.org/glsa/201805-09"
+     ],
+     "description": "An issue was discovered in shadow 4.5. newgidmap (in shadow-utils) is setuid and allows an unprivileged user to be placed in a user namespace where setgroups(2) is permitted. This allows an attacker to remove themselves from a supplementary group, which may allow access to certain filesystem paths if the administrator has used \"group blacklisting\" (e.g., chmod g-rwx) to restrict access to paths. This flaw effectively reverts a security feature in the kernel (in particular, the /proc/self/setgroups knob) to prevent this sort of privilege escalation.",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N",
+       "metrics": {
+        "baseScore": 5,
+        "exploitabilityScore": 10,
+        "impactScore": 2.9
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.0",
+       "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+       "metrics": {
+        "baseScore": 5.3,
+        "exploitabilityScore": 3.9,
+        "impactScore": 1.4
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-indirect-match",
+     "matcher": "dpkg-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "ubuntu",
+       "version": "18.10"
+      },
+      "namespace": "ubuntu:18.10",
+      "package": {
+       "name": "shadow",
+       "version": "1:4.5-1ubuntu1"
+      }
+     },
+     "found": {
+      "versionConstraint": "none (deb)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "login",
+    "version": "1:4.5-1ubuntu1",
+    "type": "deb",
+    "locations": [
+     {
+      "path": "/usr/share/doc/login/copyright",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/info/login.conffiles",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/info/login.md5sums",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/status",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "GPL-2"
+    ],
+    "cpes": [
+     "cpe:2.3:a:login:login:1:4.5-1ubuntu1:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:deb/ubuntu/login@1:4.5-1ubuntu1?arch=amd64&upstream=shadow&distro=ubuntu-18.10",
+    "upstreams": [
+     {
+      "name": "shadow"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2018-7169",
+    "dataSource": "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2018-7169",
+    "namespace": "ubuntu:18.10",
+    "severity": "Low",
+    "urls": [
+     "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2018-7169"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [],
+     "state": "not-fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2018-7169",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2018-7169",
+     "namespace": "nvd",
+     "severity": "Medium",
+     "urls": [
+      "https://bugs.launchpad.net/ubuntu/+source/shadow/+bug/1729357",
+      "https://security.gentoo.org/glsa/201805-09"
+     ],
+     "description": "An issue was discovered in shadow 4.5. newgidmap (in shadow-utils) is setuid and allows an unprivileged user to be placed in a user namespace where setgroups(2) is permitted. This allows an attacker to remove themselves from a supplementary group, which may allow access to certain filesystem paths if the administrator has used \"group blacklisting\" (e.g., chmod g-rwx) to restrict access to paths. This flaw effectively reverts a security feature in the kernel (in particular, the /proc/self/setgroups knob) to prevent this sort of privilege escalation.",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N",
+       "metrics": {
+        "baseScore": 5,
+        "exploitabilityScore": 10,
+        "impactScore": 2.9
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.0",
+       "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+       "metrics": {
+        "baseScore": 5.3,
+        "exploitabilityScore": 3.9,
+        "impactScore": 1.4
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-indirect-match",
+     "matcher": "dpkg-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "ubuntu",
+       "version": "18.10"
+      },
+      "namespace": "ubuntu:18.10",
+      "package": {
+       "name": "shadow",
+       "version": "1:4.5-1ubuntu1"
+      }
+     },
+     "found": {
+      "versionConstraint": "none (deb)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "passwd",
+    "version": "1:4.5-1ubuntu1",
+    "type": "deb",
+    "locations": [
+     {
+      "path": "/usr/share/doc/passwd/copyright",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/info/passwd.conffiles",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/info/passwd.md5sums",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/status",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "GPL-2"
+    ],
+    "cpes": [
+     "cpe:2.3:a:passwd:passwd:1:4.5-1ubuntu1:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:deb/ubuntu/passwd@1:4.5-1ubuntu1?arch=amd64&upstream=shadow&distro=ubuntu-18.10",
+    "upstreams": [
+     {
+      "name": "shadow"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2019-3843",
+    "dataSource": "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2019-3843",
+    "namespace": "ubuntu:18.10",
+    "severity": "Low",
+    "urls": [
+     "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2019-3843"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [],
+     "state": "not-fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2019-3843",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2019-3843",
+     "namespace": "nvd",
+     "severity": "High",
+     "urls": [
+      "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3843",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/5JXQAKSTMABZ46EVCRMW62DHWYHTTFES/",
+      "http://www.securityfocus.com/bid/108116",
+      "https://security.netapp.com/advisory/ntap-20190619-0002/",
+      "https://usn.ubuntu.com/4269-1/",
+      "https://lists.apache.org/thread.html/rf4c02775860db415b4955778a131c2795223f61cb8c6a450893651e4@%3Cissues.bookkeeper.apache.org%3E",
+      "https://lists.apache.org/thread.html/r58af02e294bd07f487e2c64ffc0a29b837db5600e33b6e698b9d696b@%3Cissues.bookkeeper.apache.org%3E"
+     ],
+     "description": "It was discovered that a systemd service that uses DynamicUser property can create a SUID/SGID binary that would be allowed to run as the transient service UID/GID even after the service is terminated. A local attacker may use this flaw to access resources that will be owned by a potentially different service in the future, when the UID/GID will be recycled.",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:L/AC:L/Au:N/C:P/I:P/A:P",
+       "metrics": {
+        "baseScore": 4.6,
+        "exploitabilityScore": 3.9,
+        "impactScore": 6.4
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+       "metrics": {
+        "baseScore": 7.8,
+        "exploitabilityScore": 1.8,
+        "impactScore": 5.9
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-indirect-match",
+     "matcher": "dpkg-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "ubuntu",
+       "version": "18.10"
+      },
+      "namespace": "ubuntu:18.10",
+      "package": {
+       "name": "systemd",
+       "version": "239-7ubuntu10.14"
+      }
+     },
+     "found": {
+      "versionConstraint": "none (deb)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "libsystemd0",
+    "version": "239-7ubuntu10.14",
+    "type": "deb",
+    "locations": [
+     {
+      "path": "/usr/share/doc/libsystemd0/copyright",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/info/libsystemd0:amd64.md5sums",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/status",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "CC0-1.0",
+     "Expat",
+     "GPL-2",
+     "GPL-2+",
+     "LGPL-2.1",
+     "LGPL-2.1+",
+     "public-domain"
+    ],
+    "cpes": [
+     "cpe:2.3:a:libsystemd0:libsystemd0:239-7ubuntu10.14:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:deb/ubuntu/libsystemd0@239-7ubuntu10.14?arch=amd64&upstream=systemd&distro=ubuntu-18.10",
+    "upstreams": [
+     {
+      "name": "systemd"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2019-3843",
+    "dataSource": "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2019-3843",
+    "namespace": "ubuntu:18.10",
+    "severity": "Low",
+    "urls": [
+     "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2019-3843"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [],
+     "state": "not-fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2019-3843",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2019-3843",
+     "namespace": "nvd",
+     "severity": "High",
+     "urls": [
+      "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3843",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/5JXQAKSTMABZ46EVCRMW62DHWYHTTFES/",
+      "http://www.securityfocus.com/bid/108116",
+      "https://security.netapp.com/advisory/ntap-20190619-0002/",
+      "https://usn.ubuntu.com/4269-1/",
+      "https://lists.apache.org/thread.html/rf4c02775860db415b4955778a131c2795223f61cb8c6a450893651e4@%3Cissues.bookkeeper.apache.org%3E",
+      "https://lists.apache.org/thread.html/r58af02e294bd07f487e2c64ffc0a29b837db5600e33b6e698b9d696b@%3Cissues.bookkeeper.apache.org%3E"
+     ],
+     "description": "It was discovered that a systemd service that uses DynamicUser property can create a SUID/SGID binary that would be allowed to run as the transient service UID/GID even after the service is terminated. A local attacker may use this flaw to access resources that will be owned by a potentially different service in the future, when the UID/GID will be recycled.",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:L/AC:L/Au:N/C:P/I:P/A:P",
+       "metrics": {
+        "baseScore": 4.6,
+        "exploitabilityScore": 3.9,
+        "impactScore": 6.4
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+       "metrics": {
+        "baseScore": 7.8,
+        "exploitabilityScore": 1.8,
+        "impactScore": 5.9
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-indirect-match",
+     "matcher": "dpkg-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "ubuntu",
+       "version": "18.10"
+      },
+      "namespace": "ubuntu:18.10",
+      "package": {
+       "name": "systemd",
+       "version": "239-7ubuntu10.14"
+      }
+     },
+     "found": {
+      "versionConstraint": "none (deb)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "libudev1",
+    "version": "239-7ubuntu10.14",
+    "type": "deb",
+    "locations": [
+     {
+      "path": "/usr/share/doc/libudev1/copyright",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/info/libudev1:amd64.md5sums",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/status",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "CC0-1.0",
+     "Expat",
+     "GPL-2",
+     "GPL-2+",
+     "LGPL-2.1",
+     "LGPL-2.1+",
+     "public-domain"
+    ],
+    "cpes": [
+     "cpe:2.3:a:libudev1:libudev1:239-7ubuntu10.14:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:deb/ubuntu/libudev1@239-7ubuntu10.14?arch=amd64&upstream=systemd&distro=ubuntu-18.10",
+    "upstreams": [
+     {
+      "name": "systemd"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2019-3844",
+    "dataSource": "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2019-3844",
+    "namespace": "ubuntu:18.10",
+    "severity": "Low",
+    "urls": [
+     "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2019-3844"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [],
+     "state": "not-fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2019-3844",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2019-3844",
+     "namespace": "nvd",
+     "severity": "High",
+     "urls": [
+      "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3844",
+      "http://www.securityfocus.com/bid/108096",
+      "https://security.netapp.com/advisory/ntap-20190619-0002/",
+      "https://usn.ubuntu.com/4269-1/",
+      "https://lists.apache.org/thread.html/rf4c02775860db415b4955778a131c2795223f61cb8c6a450893651e4@%3Cissues.bookkeeper.apache.org%3E",
+      "https://lists.apache.org/thread.html/r58af02e294bd07f487e2c64ffc0a29b837db5600e33b6e698b9d696b@%3Cissues.bookkeeper.apache.org%3E"
+     ],
+     "description": "It was discovered that a systemd service that uses DynamicUser property can get new privileges through the execution of SUID binaries, which would allow to create binaries owned by the service transient group with the setgid bit set. A local attacker may use this flaw to access resources that will be owned by a potentially different service in the future, when the GID will be recycled.",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:L/AC:L/Au:N/C:P/I:P/A:P",
+       "metrics": {
+        "baseScore": 4.6,
+        "exploitabilityScore": 3.9,
+        "impactScore": 6.4
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+       "metrics": {
+        "baseScore": 7.8,
+        "exploitabilityScore": 1.8,
+        "impactScore": 5.9
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-indirect-match",
+     "matcher": "dpkg-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "ubuntu",
+       "version": "18.10"
+      },
+      "namespace": "ubuntu:18.10",
+      "package": {
+       "name": "systemd",
+       "version": "239-7ubuntu10.14"
+      }
+     },
+     "found": {
+      "versionConstraint": "none (deb)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "libsystemd0",
+    "version": "239-7ubuntu10.14",
+    "type": "deb",
+    "locations": [
+     {
+      "path": "/usr/share/doc/libsystemd0/copyright",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/info/libsystemd0:amd64.md5sums",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/status",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "CC0-1.0",
+     "Expat",
+     "GPL-2",
+     "GPL-2+",
+     "LGPL-2.1",
+     "LGPL-2.1+",
+     "public-domain"
+    ],
+    "cpes": [
+     "cpe:2.3:a:libsystemd0:libsystemd0:239-7ubuntu10.14:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:deb/ubuntu/libsystemd0@239-7ubuntu10.14?arch=amd64&upstream=systemd&distro=ubuntu-18.10",
+    "upstreams": [
+     {
+      "name": "systemd"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2019-3844",
+    "dataSource": "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2019-3844",
+    "namespace": "ubuntu:18.10",
+    "severity": "Low",
+    "urls": [
+     "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2019-3844"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [],
+     "state": "not-fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2019-3844",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2019-3844",
+     "namespace": "nvd",
+     "severity": "High",
+     "urls": [
+      "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3844",
+      "http://www.securityfocus.com/bid/108096",
+      "https://security.netapp.com/advisory/ntap-20190619-0002/",
+      "https://usn.ubuntu.com/4269-1/",
+      "https://lists.apache.org/thread.html/rf4c02775860db415b4955778a131c2795223f61cb8c6a450893651e4@%3Cissues.bookkeeper.apache.org%3E",
+      "https://lists.apache.org/thread.html/r58af02e294bd07f487e2c64ffc0a29b837db5600e33b6e698b9d696b@%3Cissues.bookkeeper.apache.org%3E"
+     ],
+     "description": "It was discovered that a systemd service that uses DynamicUser property can get new privileges through the execution of SUID binaries, which would allow to create binaries owned by the service transient group with the setgid bit set. A local attacker may use this flaw to access resources that will be owned by a potentially different service in the future, when the GID will be recycled.",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:L/AC:L/Au:N/C:P/I:P/A:P",
+       "metrics": {
+        "baseScore": 4.6,
+        "exploitabilityScore": 3.9,
+        "impactScore": 6.4
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+       "metrics": {
+        "baseScore": 7.8,
+        "exploitabilityScore": 1.8,
+        "impactScore": 5.9
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-indirect-match",
+     "matcher": "dpkg-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "ubuntu",
+       "version": "18.10"
+      },
+      "namespace": "ubuntu:18.10",
+      "package": {
+       "name": "systemd",
+       "version": "239-7ubuntu10.14"
+      }
+     },
+     "found": {
+      "versionConstraint": "none (deb)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "libudev1",
+    "version": "239-7ubuntu10.14",
+    "type": "deb",
+    "locations": [
+     {
+      "path": "/usr/share/doc/libudev1/copyright",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/info/libudev1:amd64.md5sums",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/status",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "CC0-1.0",
+     "Expat",
+     "GPL-2",
+     "GPL-2+",
+     "LGPL-2.1",
+     "LGPL-2.1+",
+     "public-domain"
+    ],
+    "cpes": [
+     "cpe:2.3:a:libudev1:libudev1:239-7ubuntu10.14:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:deb/ubuntu/libudev1@239-7ubuntu10.14?arch=amd64&upstream=systemd&distro=ubuntu-18.10",
+    "upstreams": [
+     {
+      "name": "systemd"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2019-7309",
+    "dataSource": "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2019-7309",
+    "namespace": "ubuntu:18.10",
+    "severity": "Negligible",
+    "urls": [
+     "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2019-7309"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [],
+     "state": "not-fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2019-7309",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2019-7309",
+     "namespace": "nvd",
+     "severity": "Medium",
+     "urls": [
+      "https://sourceware.org/ml/libc-alpha/2019-02/msg00041.html",
+      "https://sourceware.org/bugzilla/show_bug.cgi?id=24155",
+      "http://www.securityfocus.com/bid/106835",
+      "https://security.gentoo.org/glsa/202006-04"
+     ],
+     "description": "In the GNU C Library (aka glibc or libc6) through 2.29, the memcmp function for the x32 architecture can incorrectly return zero (indicating that the inputs are equal) because the RDX most significant bit is mishandled.",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:L/AC:L/Au:N/C:N/I:N/A:P",
+       "metrics": {
+        "baseScore": 2.1,
+        "exploitabilityScore": 3.9,
+        "impactScore": 2.9
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.0",
+       "vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+       "metrics": {
+        "baseScore": 5.5,
+        "exploitabilityScore": 1.8,
+        "impactScore": 3.6
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-indirect-match",
+     "matcher": "dpkg-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "ubuntu",
+       "version": "18.10"
+      },
+      "namespace": "ubuntu:18.10",
+      "package": {
+       "name": "glibc",
+       "version": "2.28-0ubuntu1"
+      }
+     },
+     "found": {
+      "versionConstraint": "none (deb)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "libc-bin",
+    "version": "2.28-0ubuntu1",
+    "type": "deb",
+    "locations": [
+     {
+      "path": "/usr/share/doc/libc-bin/copyright",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/info/libc-bin.conffiles",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/info/libc-bin.md5sums",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/status",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "GPL-2",
+     "LGPL-2.1"
+    ],
+    "cpes": [
+     "cpe:2.3:a:libc-bin:libc-bin:2.28-0ubuntu1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:libc-bin:libc_bin:2.28-0ubuntu1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:libc_bin:libc-bin:2.28-0ubuntu1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:libc_bin:libc_bin:2.28-0ubuntu1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:libc:libc-bin:2.28-0ubuntu1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:libc:libc_bin:2.28-0ubuntu1:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:deb/ubuntu/libc-bin@2.28-0ubuntu1?arch=amd64&upstream=glibc&distro=ubuntu-18.10",
+    "upstreams": [
+     {
+      "name": "glibc"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2019-7309",
+    "dataSource": "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2019-7309",
+    "namespace": "ubuntu:18.10",
+    "severity": "Negligible",
+    "urls": [
+     "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2019-7309"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [],
+     "state": "not-fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2019-7309",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2019-7309",
+     "namespace": "nvd",
+     "severity": "Medium",
+     "urls": [
+      "https://sourceware.org/ml/libc-alpha/2019-02/msg00041.html",
+      "https://sourceware.org/bugzilla/show_bug.cgi?id=24155",
+      "http://www.securityfocus.com/bid/106835",
+      "https://security.gentoo.org/glsa/202006-04"
+     ],
+     "description": "In the GNU C Library (aka glibc or libc6) through 2.29, the memcmp function for the x32 architecture can incorrectly return zero (indicating that the inputs are equal) because the RDX most significant bit is mishandled.",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:L/AC:L/Au:N/C:N/I:N/A:P",
+       "metrics": {
+        "baseScore": 2.1,
+        "exploitabilityScore": 3.9,
+        "impactScore": 2.9
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.0",
+       "vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+       "metrics": {
+        "baseScore": 5.5,
+        "exploitabilityScore": 1.8,
+        "impactScore": 3.6
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-indirect-match",
+     "matcher": "dpkg-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "ubuntu",
+       "version": "18.10"
+      },
+      "namespace": "ubuntu:18.10",
+      "package": {
+       "name": "glibc",
+       "version": "2.28-0ubuntu1"
+      }
+     },
+     "found": {
+      "versionConstraint": "none (deb)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "libc6",
+    "version": "2.28-0ubuntu1",
+    "type": "deb",
+    "locations": [
+     {
+      "path": "/usr/share/doc/libc6/copyright",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/info/libc6:amd64.conffiles",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/info/libc6:amd64.md5sums",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/status",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "GPL-2",
+     "LGPL-2.1"
+    ],
+    "cpes": [
+     "cpe:2.3:a:libc6:libc6:2.28-0ubuntu1:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:deb/ubuntu/libc6@2.28-0ubuntu1?arch=amd64&upstream=glibc&distro=ubuntu-18.10",
+    "upstreams": [
+     {
+      "name": "glibc"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2019-9169",
+    "dataSource": "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2019-9169",
+    "namespace": "ubuntu:18.10",
+    "severity": "Low",
+    "urls": [
+     "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2019-9169"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [],
+     "state": "not-fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2019-9169",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2019-9169",
+     "namespace": "nvd",
+     "severity": "Critical",
+     "urls": [
+      "https://sourceware.org/git/gitweb.cgi?p=glibc.git;a=commit;h=583dd860d5b833037175247230a328f0050dbfe9",
+      "https://sourceware.org/bugzilla/show_bug.cgi?id=24114",
+      "https://debbugs.gnu.org/cgi/bugreport.cgi?bug=34142",
+      "https://debbugs.gnu.org/cgi/bugreport.cgi?bug=34140",
+      "http://www.securityfocus.com/bid/107160",
+      "https://security.netapp.com/advisory/ntap-20190315-0002/",
+      "https://kc.mcafee.com/corporate/index?page=content&id=SB10278",
+      "https://support.f5.com/csp/article/K54823184",
+      "https://security.gentoo.org/glsa/202006-04",
+      "https://usn.ubuntu.com/4416-1/",
+      "https://www.oracle.com/security-alerts/cpuapr2022.html"
+     ],
+     "description": "In the GNU C Library (aka glibc or libc6) through 2.29, proceed_next_node in posix/regexec.c has a heap-based buffer over-read via an attempted case-insensitive regular-expression match.",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+       "metrics": {
+        "baseScore": 7.5,
+        "exploitabilityScore": 10,
+        "impactScore": 6.4
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.0",
+       "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+       "metrics": {
+        "baseScore": 9.8,
+        "exploitabilityScore": 3.9,
+        "impactScore": 5.9
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-indirect-match",
+     "matcher": "dpkg-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "ubuntu",
+       "version": "18.10"
+      },
+      "namespace": "ubuntu:18.10",
+      "package": {
+       "name": "glibc",
+       "version": "2.28-0ubuntu1"
+      }
+     },
+     "found": {
+      "versionConstraint": "none (deb)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "libc-bin",
+    "version": "2.28-0ubuntu1",
+    "type": "deb",
+    "locations": [
+     {
+      "path": "/usr/share/doc/libc-bin/copyright",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/info/libc-bin.conffiles",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/info/libc-bin.md5sums",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/status",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "GPL-2",
+     "LGPL-2.1"
+    ],
+    "cpes": [
+     "cpe:2.3:a:libc-bin:libc-bin:2.28-0ubuntu1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:libc-bin:libc_bin:2.28-0ubuntu1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:libc_bin:libc-bin:2.28-0ubuntu1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:libc_bin:libc_bin:2.28-0ubuntu1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:libc:libc-bin:2.28-0ubuntu1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:libc:libc_bin:2.28-0ubuntu1:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:deb/ubuntu/libc-bin@2.28-0ubuntu1?arch=amd64&upstream=glibc&distro=ubuntu-18.10",
+    "upstreams": [
+     {
+      "name": "glibc"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2019-9169",
+    "dataSource": "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2019-9169",
+    "namespace": "ubuntu:18.10",
+    "severity": "Low",
+    "urls": [
+     "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2019-9169"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [],
+     "state": "not-fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2019-9169",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2019-9169",
+     "namespace": "nvd",
+     "severity": "Critical",
+     "urls": [
+      "https://sourceware.org/git/gitweb.cgi?p=glibc.git;a=commit;h=583dd860d5b833037175247230a328f0050dbfe9",
+      "https://sourceware.org/bugzilla/show_bug.cgi?id=24114",
+      "https://debbugs.gnu.org/cgi/bugreport.cgi?bug=34142",
+      "https://debbugs.gnu.org/cgi/bugreport.cgi?bug=34140",
+      "http://www.securityfocus.com/bid/107160",
+      "https://security.netapp.com/advisory/ntap-20190315-0002/",
+      "https://kc.mcafee.com/corporate/index?page=content&id=SB10278",
+      "https://support.f5.com/csp/article/K54823184",
+      "https://security.gentoo.org/glsa/202006-04",
+      "https://usn.ubuntu.com/4416-1/",
+      "https://www.oracle.com/security-alerts/cpuapr2022.html"
+     ],
+     "description": "In the GNU C Library (aka glibc or libc6) through 2.29, proceed_next_node in posix/regexec.c has a heap-based buffer over-read via an attempted case-insensitive regular-expression match.",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+       "metrics": {
+        "baseScore": 7.5,
+        "exploitabilityScore": 10,
+        "impactScore": 6.4
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.0",
+       "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+       "metrics": {
+        "baseScore": 9.8,
+        "exploitabilityScore": 3.9,
+        "impactScore": 5.9
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-indirect-match",
+     "matcher": "dpkg-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "ubuntu",
+       "version": "18.10"
+      },
+      "namespace": "ubuntu:18.10",
+      "package": {
+       "name": "glibc",
+       "version": "2.28-0ubuntu1"
+      }
+     },
+     "found": {
+      "versionConstraint": "none (deb)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "libc6",
+    "version": "2.28-0ubuntu1",
+    "type": "deb",
+    "locations": [
+     {
+      "path": "/usr/share/doc/libc6/copyright",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/info/libc6:amd64.conffiles",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/info/libc6:amd64.md5sums",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/status",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "GPL-2",
+     "LGPL-2.1"
+    ],
+    "cpes": [
+     "cpe:2.3:a:libc6:libc6:2.28-0ubuntu1:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:deb/ubuntu/libc6@2.28-0ubuntu1?arch=amd64&upstream=glibc&distro=ubuntu-18.10",
+    "upstreams": [
+     {
+      "name": "glibc"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2019-9192",
+    "dataSource": "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2019-9192",
+    "namespace": "ubuntu:18.10",
+    "severity": "Negligible",
+    "urls": [
+     "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2019-9192"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [],
+     "state": "not-fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2019-9192",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2019-9192",
+     "namespace": "nvd",
+     "severity": "High",
+     "urls": [
+      "https://sourceware.org/bugzilla/show_bug.cgi?id=24269",
+      "https://support.f5.com/csp/article/K26346590?utm_source=f5support&amp;utm_medium=RSS"
+     ],
+     "description": "** DISPUTED ** In the GNU C Library (aka glibc or libc6) through 2.29, check_dst_limits_calc_pos_1 in posix/regexec.c has Uncontrolled Recursion, as demonstrated by '(|)(\\\\1\\\\1)*' in grep, a different issue than CVE-2018-20796. NOTE: the software maintainer disputes that this is a vulnerability because the behavior occurs only with a crafted pattern.",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+       "metrics": {
+        "baseScore": 5,
+        "exploitabilityScore": 10,
+        "impactScore": 2.9
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.0",
+       "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+       "metrics": {
+        "baseScore": 7.5,
+        "exploitabilityScore": 3.9,
+        "impactScore": 3.6
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-indirect-match",
+     "matcher": "dpkg-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "ubuntu",
+       "version": "18.10"
+      },
+      "namespace": "ubuntu:18.10",
+      "package": {
+       "name": "glibc",
+       "version": "2.28-0ubuntu1"
+      }
+     },
+     "found": {
+      "versionConstraint": "none (deb)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "libc-bin",
+    "version": "2.28-0ubuntu1",
+    "type": "deb",
+    "locations": [
+     {
+      "path": "/usr/share/doc/libc-bin/copyright",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/info/libc-bin.conffiles",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/info/libc-bin.md5sums",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/status",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "GPL-2",
+     "LGPL-2.1"
+    ],
+    "cpes": [
+     "cpe:2.3:a:libc-bin:libc-bin:2.28-0ubuntu1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:libc-bin:libc_bin:2.28-0ubuntu1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:libc_bin:libc-bin:2.28-0ubuntu1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:libc_bin:libc_bin:2.28-0ubuntu1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:libc:libc-bin:2.28-0ubuntu1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:libc:libc_bin:2.28-0ubuntu1:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:deb/ubuntu/libc-bin@2.28-0ubuntu1?arch=amd64&upstream=glibc&distro=ubuntu-18.10",
+    "upstreams": [
+     {
+      "name": "glibc"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2019-9192",
+    "dataSource": "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2019-9192",
+    "namespace": "ubuntu:18.10",
+    "severity": "Negligible",
+    "urls": [
+     "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2019-9192"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [],
+     "state": "not-fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2019-9192",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2019-9192",
+     "namespace": "nvd",
+     "severity": "High",
+     "urls": [
+      "https://sourceware.org/bugzilla/show_bug.cgi?id=24269",
+      "https://support.f5.com/csp/article/K26346590?utm_source=f5support&amp;utm_medium=RSS"
+     ],
+     "description": "** DISPUTED ** In the GNU C Library (aka glibc or libc6) through 2.29, check_dst_limits_calc_pos_1 in posix/regexec.c has Uncontrolled Recursion, as demonstrated by '(|)(\\\\1\\\\1)*' in grep, a different issue than CVE-2018-20796. NOTE: the software maintainer disputes that this is a vulnerability because the behavior occurs only with a crafted pattern.",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+       "metrics": {
+        "baseScore": 5,
+        "exploitabilityScore": 10,
+        "impactScore": 2.9
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.0",
+       "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+       "metrics": {
+        "baseScore": 7.5,
+        "exploitabilityScore": 3.9,
+        "impactScore": 3.6
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-indirect-match",
+     "matcher": "dpkg-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "ubuntu",
+       "version": "18.10"
+      },
+      "namespace": "ubuntu:18.10",
+      "package": {
+       "name": "glibc",
+       "version": "2.28-0ubuntu1"
+      }
+     },
+     "found": {
+      "versionConstraint": "none (deb)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "libc6",
+    "version": "2.28-0ubuntu1",
+    "type": "deb",
+    "locations": [
+     {
+      "path": "/usr/share/doc/libc6/copyright",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/info/libc6:amd64.conffiles",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/info/libc6:amd64.md5sums",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     },
+     {
+      "path": "/var/lib/dpkg/status",
+      "layerID": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "GPL-2",
+     "LGPL-2.1"
+    ],
+    "cpes": [
+     "cpe:2.3:a:libc6:libc6:2.28-0ubuntu1:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:deb/ubuntu/libc6@2.28-0ubuntu1?arch=amd64&upstream=glibc&distro=ubuntu-18.10",
+    "upstreams": [
+     {
+      "name": "glibc"
+     }
+    ]
+   }
+  }
+ ],
+ "source": {
+  "type": "image",
+  "target": {
+   "userInput": "ubuntu:cosmic",
+   "imageID": "sha256:9dc19675e3276d9c028f64ba9a3fbb41e72c779faf8a35603f597310077ffd08",
+   "manifestDigest": "sha256:c95b7b93ccd48c3bfd97f8cac6d5ca8053ced584c9e8e6431861ca30b0d73114",
+   "mediaType": "application/vnd.docker.distribution.manifest.v2+json",
+   "tags": [],
+   "imageSize": 67298324,
+   "layers": [
+    {
+     "mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+     "digest": "sha256:d33f208862dd35ea0d843ea338eedf2b5504220e0bc9aa2275a86f97241b2d9b",
+     "size": 66310203
+    },
+    {
+     "mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+     "digest": "sha256:7027b2a028fc02466d63aefcca83a1f7e457dcd7c8be434c1d9933c17633e3bc",
+     "size": 987303
+    },
+    {
+     "mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+     "digest": "sha256:2181ca10496e8fcdb10a2ff5fe0af0e6f4616beecce178f6fd6b499a14083e1a",
+     "size": 811
+    },
+    {
+     "mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+     "digest": "sha256:e338c474bd3b9f2dd78c2970dfe0a3b5f7df11886fccb02579911bfa5c0e8823",
+     "size": 7
+    }
+   ],
+   "manifest": "ewogICAic2NoZW1hVmVyc2lvbiI6IDIsCiAgICJtZWRpYVR5cGUiOiAiYXBwbGljYXRpb24vdm5kLmRvY2tlci5kaXN0cmlidXRpb24ubWFuaWZlc3QudjIranNvbiIsCiAgICJjb25maWciOiB7CiAgICAgICJtZWRpYVR5cGUiOiAiYXBwbGljYXRpb24vdm5kLmRvY2tlci5jb250YWluZXIuaW1hZ2UudjEranNvbiIsCiAgICAgICJzaXplIjogMzQxMSwKICAgICAgImRpZ2VzdCI6ICJzaGEyNTY6OWRjMTk2NzVlMzI3NmQ5YzAyOGY2NGJhOWEzZmJiNDFlNzJjNzc5ZmFmOGEzNTYwM2Y1OTczMTAwNzdmZmQwOCIKICAgfSwKICAgImxheWVycyI6IFsKICAgICAgewogICAgICAgICAibWVkaWFUeXBlIjogImFwcGxpY2F0aW9uL3ZuZC5kb2NrZXIuaW1hZ2Uucm9vdGZzLmRpZmYudGFyLmd6aXAiLAogICAgICAgICAic2l6ZSI6IDI3MDc5MTA1LAogICAgICAgICAiZGlnZXN0IjogInNoYTI1Njo4YTUzMjQ2OTc5OWUwOWVmOGUxYjU2ZWJlMzliODdjOGI5NjMwYzUzZTg2MzgwYzEzZmJmNDZhMDllNTExNzBlIgogICAgICB9LAogICAgICB7CiAgICAgICAgICJtZWRpYVR5cGUiOiAiYXBwbGljYXRpb24vdm5kLmRvY2tlci5pbWFnZS5yb290ZnMuZGlmZi50YXIuZ3ppcCIsCiAgICAgICAgICJzaXplIjogMzUxNDEsCiAgICAgICAgICJkaWdlc3QiOiAic2hhMjU2OjMyZjRkY2VjMzUzMTM5NWNhNTA0NjljYmI2Y2JhMGQyZDRmZWQxYjhiMjE2NmM4M2IyNWIyZjUxNzFjN2RiNjIiCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAgIm1lZGlhVHlwZSI6ICJhcHBsaWNhdGlvbi92bmQuZG9ja2VyLmltYWdlLnJvb3Rmcy5kaWZmLnRhci5nemlwIiwKICAgICAgICAgInNpemUiOiA4NjgsCiAgICAgICAgICJkaWdlc3QiOiAic2hhMjU2OjIzMGYwNzAxNTg1ZWI3MTUzYzZiYTFhOWIwOGY0Y2ZiZjZhMjVkMDI2ZDdlM2I3OGE0N2MwOTY1ZTRjNmQ2MGEiCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAgIm1lZGlhVHlwZSI6ICJhcHBsaWNhdGlvbi92bmQuZG9ja2VyLmltYWdlLnJvb3Rmcy5kaWZmLnRhci5nemlwIiwKICAgICAgICAgInNpemUiOiAxNjQsCiAgICAgICAgICJkaWdlc3QiOiAic2hhMjU2OmUwMWY3MDYyMjk2N2MwY2NhNjhkNmE3NzFhZTdmZjE0MWM1OWFiOTc5YWM5OGI1MTg0ZGI2NjVhNGFjZTY0MTUiCiAgICAgIH0KICAgXQp9",
+   "config": "eyJhcmNoaXRlY3R1cmUiOiJhbWQ2NCIsImNvbmZpZyI6eyJIb3N0bmFtZSI6IiIsIkRvbWFpbm5hbWUiOiIiLCJVc2VyIjoiIiwiQXR0YWNoU3RkaW4iOmZhbHNlLCJBdHRhY2hTdGRvdXQiOmZhbHNlLCJBdHRhY2hTdGRlcnIiOmZhbHNlLCJUdHkiOmZhbHNlLCJPcGVuU3RkaW4iOmZhbHNlLCJTdGRpbk9uY2UiOmZhbHNlLCJFbnYiOlsiUEFUSD0vdXNyL2xvY2FsL3NiaW46L3Vzci9sb2NhbC9iaW46L3Vzci9zYmluOi91c3IvYmluOi9zYmluOi9iaW4iXSwiQ21kIjpbIi9iaW4vYmFzaCJdLCJBcmdzRXNjYXBlZCI6dHJ1ZSwiSW1hZ2UiOiJzaGEyNTY6ZjM3ODBmMzAzMDAzYTM4NzUzNWIyN2Q0MmRjNDcyNjc2ZTY1NzJjZDJjZmIwYTcxZDNiMzUxYWM4YThlNmVmZiIsIlZvbHVtZXMiOm51bGwsIldvcmtpbmdEaXIiOiIiLCJFbnRyeXBvaW50IjpudWxsLCJPbkJ1aWxkIjpudWxsLCJMYWJlbHMiOm51bGx9LCJjb250YWluZXIiOiI1YzZjMjkyZmIwODZjMjhlZGJjZmZhMDQ4MzFkZTc0MTc5OWEyMDUyYTRkN2EyMGFhNmJjZWUwNTcwZTYxMjY3IiwiY29udGFpbmVyX2NvbmZpZyI6eyJIb3N0bmFtZSI6IjVjNmMyOTJmYjA4NiIsIkRvbWFpbm5hbWUiOiIiLCJVc2VyIjoiIiwiQXR0YWNoU3RkaW4iOmZhbHNlLCJBdHRhY2hTdGRvdXQiOmZhbHNlLCJBdHRhY2hTdGRlcnIiOmZhbHNlLCJUdHkiOmZhbHNlLCJPcGVuU3RkaW4iOmZhbHNlLCJTdGRpbk9uY2UiOmZhbHNlLCJFbnYiOlsiUEFUSD0vdXNyL2xvY2FsL3NiaW46L3Vzci9sb2NhbC9iaW46L3Vzci9zYmluOi91c3IvYmluOi9zYmluOi9iaW4iXSwiQ21kIjpbIi9iaW4vc2giLCItYyIsIiMobm9wKSAiLCJDTUQgW1wiL2Jpbi9iYXNoXCJdIl0sIkFyZ3NFc2NhcGVkIjp0cnVlLCJJbWFnZSI6InNoYTI1NjpmMzc4MGYzMDMwMDNhMzg3NTM1YjI3ZDQyZGM0NzI2NzZlNjU3MmNkMmNmYjBhNzFkM2IzNTFhYzhhOGU2ZWZmIiwiVm9sdW1lcyI6bnVsbCwiV29ya2luZ0RpciI6IiIsIkVudHJ5cG9pbnQiOm51bGwsIk9uQnVpbGQiOm51bGwsIkxhYmVscyI6e319LCJjcmVhdGVkIjoiMjAxOS0wNy0yM1QxNToyMTozMy4yOTU2MjYzNzVaIiwiZG9ja2VyX3ZlcnNpb24iOiIxOC4wNi4xLWNlIiwiaGlzdG9yeSI6W3siY3JlYXRlZCI6IjIwMTktMDctMjNUMTU6MjE6MzAuOTM0MDA4MDQ5WiIsImNyZWF0ZWRfYnkiOiIvYmluL3NoIC1jICMobm9wKSBBREQgZmlsZToxMzgwNGM3MzI1ZWJhYWQzMTMzNDc2YzMyYWI0ZmE5Njc2YWJjMDU1MGViYzZmYjU1NTI4M2RkZWUyYmZlMjRhIGluIC8gIn0seyJjcmVhdGVkIjoiMjAxOS0wNy0yM1QxNToyMTozMS43MjI3OTEyOTZaIiwiY3JlYXRlZF9ieSI6Ii9iaW4vc2ggLWMgWyAteiBcIiQoYXB0LWdldCBpbmRleHRhcmdldHMpXCIgXSJ9LHsiY3JlYXRlZCI6IjIwMTktMDctMjNUMTU6MjE6MzIuNDAwMTY2NjY5WiIsImNyZWF0ZWRfYnkiOiIvYmluL3NoIC1jIHNldCAteGUgXHRcdFx1MDAyNlx1MDAyNiBlY2hvICcjIS9iaW4vc2gnIFx1MDAzZSAvdXNyL3NiaW4vcG9saWN5LXJjLmQgXHRcdTAwMjZcdTAwMjYgZWNobyAnZXhpdCAxMDEnIFx1MDAzZVx1MDAzZSAvdXNyL3NiaW4vcG9saWN5LXJjLmQgXHRcdTAwMjZcdTAwMjYgY2htb2QgK3ggL3Vzci9zYmluL3BvbGljeS1yYy5kIFx0XHRcdTAwMjZcdTAwMjYgZHBrZy1kaXZlcnQgLS1sb2NhbCAtLXJlbmFtZSAtLWFkZCAvc2Jpbi9pbml0Y3RsIFx0XHUwMDI2XHUwMDI2IGNwIC1hIC91c3Ivc2Jpbi9wb2xpY3ktcmMuZCAvc2Jpbi9pbml0Y3RsIFx0XHUwMDI2XHUwMDI2IHNlZCAtaSAncy9eZXhpdC4qL2V4aXQgMC8nIC9zYmluL2luaXRjdGwgXHRcdFx1MDAyNlx1MDAyNiBlY2hvICdmb3JjZS11bnNhZmUtaW8nIFx1MDAzZSAvZXRjL2Rwa2cvZHBrZy5jZmcuZC9kb2NrZXItYXB0LXNwZWVkdXAgXHRcdFx1MDAyNlx1MDAyNiBlY2hvICdEUGtnOjpQb3N0LUludm9rZSB7IFwicm0gLWYgL3Zhci9jYWNoZS9hcHQvYXJjaGl2ZXMvKi5kZWIgL3Zhci9jYWNoZS9hcHQvYXJjaGl2ZXMvcGFydGlhbC8qLmRlYiAvdmFyL2NhY2hlL2FwdC8qLmJpbiB8fCB0cnVlXCI7IH07JyBcdTAwM2UgL2V0Yy9hcHQvYXB0LmNvbmYuZC9kb2NrZXItY2xlYW4gXHRcdTAwMjZcdTAwMjYgZWNobyAnQVBUOjpVcGRhdGU6OlBvc3QtSW52b2tlIHsgXCJybSAtZiAvdmFyL2NhY2hlL2FwdC9hcmNoaXZlcy8qLmRlYiAvdmFyL2NhY2hlL2FwdC9hcmNoaXZlcy9wYXJ0aWFsLyouZGViIC92YXIvY2FjaGUvYXB0LyouYmluIHx8IHRydWVcIjsgfTsnIFx1MDAzZVx1MDAzZSAvZXRjL2FwdC9hcHQuY29uZi5kL2RvY2tlci1jbGVhbiBcdFx1MDAyNlx1MDAyNiBlY2hvICdEaXI6OkNhY2hlOjpwa2djYWNoZSBcIlwiOyBEaXI6OkNhY2hlOjpzcmNwa2djYWNoZSBcIlwiOycgXHUwMDNlXHUwMDNlIC9ldGMvYXB0L2FwdC5jb25mLmQvZG9ja2VyLWNsZWFuIFx0XHRcdTAwMjZcdTAwMjYgZWNobyAnQWNxdWlyZTo6TGFuZ3VhZ2VzIFwibm9uZVwiOycgXHUwMDNlIC9ldGMvYXB0L2FwdC5jb25mLmQvZG9ja2VyLW5vLWxhbmd1YWdlcyBcdFx0XHUwMDI2XHUwMDI2IGVjaG8gJ0FjcXVpcmU6Okd6aXBJbmRleGVzIFwidHJ1ZVwiOyBBY3F1aXJlOjpDb21wcmVzc2lvblR5cGVzOjpPcmRlcjo6IFwiZ3pcIjsnIFx1MDAzZSAvZXRjL2FwdC9hcHQuY29uZi5kL2RvY2tlci1nemlwLWluZGV4ZXMgXHRcdFx1MDAyNlx1MDAyNiBlY2hvICdBcHQ6OkF1dG9SZW1vdmU6OlN1Z2dlc3RzSW1wb3J0YW50IFwiZmFsc2VcIjsnIFx1MDAzZSAvZXRjL2FwdC9hcHQuY29uZi5kL2RvY2tlci1hdXRvcmVtb3ZlLXN1Z2dlc3RzIn0seyJjcmVhdGVkIjoiMjAxOS0wNy0yM1QxNToyMTozMy4xMTg2NDAzNTJaIiwiY3JlYXRlZF9ieSI6Ii9iaW4vc2ggLWMgbWtkaXIgLXAgL3J1bi9zeXN0ZW1kIFx1MDAyNlx1MDAyNiBlY2hvICdkb2NrZXInIFx1MDAzZSAvcnVuL3N5c3RlbWQvY29udGFpbmVyIn0seyJjcmVhdGVkIjoiMjAxOS0wNy0yM1QxNToyMTozMy4yOTU2MjYzNzVaIiwiY3JlYXRlZF9ieSI6Ii9iaW4vc2ggLWMgIyhub3ApICBDTUQgW1wiL2Jpbi9iYXNoXCJdIiwiZW1wdHlfbGF5ZXIiOnRydWV9XSwib3MiOiJsaW51eCIsInJvb3RmcyI6eyJ0eXBlIjoibGF5ZXJzIiwiZGlmZl9pZHMiOlsic2hhMjU2OmQzM2YyMDg4NjJkZDM1ZWEwZDg0M2VhMzM4ZWVkZjJiNTUwNDIyMGUwYmM5YWEyMjc1YTg2Zjk3MjQxYjJkOWIiLCJzaGEyNTY6NzAyN2IyYTAyOGZjMDI0NjZkNjNhZWZjY2E4M2ExZjdlNDU3ZGNkN2M4YmU0MzRjMWQ5OTMzYzE3NjMzZTNiYyIsInNoYTI1NjoyMTgxY2ExMDQ5NmU4ZmNkYjEwYTJmZjVmZTBhZjBlNmY0NjE2YmVlY2NlMTc4ZjZmZDZiNDk5YTE0MDgzZTFhIiwic2hhMjU2OmUzMzhjNDc0YmQzYjlmMmRkNzhjMjk3MGRmZTBhM2I1ZjdkZjExODg2ZmNjYjAyNTc5OTExYmZhNWMwZTg4MjMiXX19",
+   "repoDigests": [
+    "index.docker.io/library/ubuntu@sha256:7d657275047118bb77b052c4c0ae43e8a289ca2879ebfa78a703c93aa8fd686c"
+   ],
+   "architecture": "",
+   "os": ""
+  }
+ },
+ "distro": {
+  "name": "ubuntu",
+  "version": "18.10",
+  "idLike": [
+   "debian"
+  ]
+ },
+ "descriptor": {
+  "name": "grype",
+  "version": "0.36.0",
+  "configuration": {
+   "configPath": "",
+   "output": "json",
+   "file": "grype_ubuntu_cosmic.json",
+   "distro": "",
+   "add-cpes-if-none": false,
+   "output-template-file": "",
+   "quiet": false,
+   "check-for-app-update": true,
+   "only-fixed": false,
+   "platform": "",
+   "search": {
+    "scope": "Squashed",
+    "unindexed-archives": false,
+    "indexed-archives": true
+   },
+   "ignore": null,
+   "exclude": [],
+   "db": {
+    "cache-dir": "/home/brian/.cache/grype/db",
+    "update-url": "https://toolbox-data.anchore.io/grype/databases/listing.json",
+    "ca-cert": "",
+    "auto-update": true,
+    "validate-by-hash-on-start": false
+   },
+   "externalSources": {
+    "enable": false,
+    "maven": {
+     "searchUpstreamBySha1": true,
+     "baseUrl": "https://search.maven.org/solrsearch/select"
+    }
+   },
+   "dev": {
+    "profile-cpu": false,
+    "profile-mem": false
+   },
+   "fail-on-severity": "",
+   "registry": {
+    "insecure-skip-tls-verify": false,
+    "insecure-use-http": false,
+    "auth": []
+   },
+   "log": {
+    "structured": false,
+    "level": "",
+    "file": ""
+   },
+   "attestation": {
+    "public-key": "",
+    "skip-verification": false
+   }
+  },
+  "db": {
+   "built": "2022-06-13T14:28:14Z",
+   "schemaVersion": 3,
+   "location": "/home/brian/.cache/grype/db/3",
+   "checksum": "sha256:745ff3c9a53ea2ab2bafe98b5c36da4bb6659427485d4a053d9adf7978b204f0",
+   "error": null
+  }
+ }
+}

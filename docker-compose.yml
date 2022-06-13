@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:latest
+    hostname: db
+    volumes:
+      - appsec_pg_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=appsec
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+
+  appsec_app:
+    image: applied_cybersec:latest
+    hostname: appsec_app
+    restart: unless-stopped
+    command: python /src/applied_cybersec/manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./src:/src
+    ports:
+      - "8000:8000"
+
+  adminer:
+    image: adminer:latest
+    hostname: adminer
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+  
+volumes:
+  appsec_pg_data:
