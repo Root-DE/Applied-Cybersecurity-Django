@@ -1,0 +1,4 @@
+nginx/certs/chain.pem
+nginx/certs/cert.pem
+nginx/certs/fullchain.pem
+nginx/certs/privkey.pem

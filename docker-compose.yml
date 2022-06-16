@@ -13,6 +13,8 @@ services:
       - POSTGRES_DB=appsec
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
+    networks:
+      - db
 
   appsec_app:
     image: applied_cybersec:latest
@@ -23,7 +25,23 @@ services:
       - ./src:/src
     ports:
       - "8000:8000"
+    networks:
+      - frontend
+      - db
 
+  nginx:
+    image: nginx:latest
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/conf.d/:/etc/nginx/conf.d/:ro
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/certs:/etc/nginx/certs:ro
+    networks:
+      - frontend
+  
   adminer:
     image: adminer:latest
     hostname: adminer
@@ -32,6 +50,12 @@ services:
       - "8080:8080"
     depends_on:
       - db
+    networks:
+      - db
   
 volumes:
   appsec_pg_data:
+
+networks:
+  frontend:
+  db:
