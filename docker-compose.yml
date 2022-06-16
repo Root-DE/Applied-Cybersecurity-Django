@@ -14,7 +14,7 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
     networks:
-      - backend
+      - db
 
   appsec_app:
     image: applied_cybersec:latest
@@ -27,7 +27,7 @@ services:
       - "8000:8000"
     networks:
       - frontend
-      - backend
+      - db
 
   nginx:
     image: nginx:latest
@@ -35,6 +35,10 @@ services:
     ports:
       - "80:80"
       - "443:443"
+    volumes:
+      - ./nginx/conf.d/:/etc/nginx/conf.d/:ro
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/certs:/etc/nginx/certs:ro
     networks:
       - frontend
   
@@ -47,12 +51,11 @@ services:
     depends_on:
       - db
     networks:
-      - frontend
-      - backend
+      - db
   
 volumes:
   appsec_pg_data:
 
 networks:
   frontend:
-  backend:
+  db:
