@@ -4,6 +4,7 @@ services:
   db:
     image: postgres:latest
     hostname: db
+    restart: unless-stopped
     volumes:
       - appsec_pg_data:/var/lib/postgresql/data
     ports:

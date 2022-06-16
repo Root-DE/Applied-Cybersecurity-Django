@@ -1,3 +1,5 @@
+from enum import unique
+import json
 from django.db import models
 import uuid
 
@@ -5,36 +7,51 @@ import uuid
 class Repositories(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=100)
-    url = models.URLField()
+    url = models.URLField(unique=True)
     # TODO: more info about the repository?
 
-class ArtifactData(models.Model):
+class ScanData(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     created_at = models.DateTimeField(auto_now_add=True)
     repository = models.ForeignKey(Repositories, on_delete=models.CASCADE)
     
     grype_scan = models.JSONField()
+    syft_scan = models.JSONField()
 
-    # TODO: more artifact data to save? (sbom, etc.)
+class Statistics(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    scan = models.ForeignKey(ScanData, on_delete=models.CASCADE)
+    
+    number_dependencies = models.IntegerField()
+    number_vulnerabilities = models.IntegerField()
+    number_vuln_critical = models.IntegerField()
+    number_vuln_high = models.IntegerField()
+    number_vuln_medium = models.IntegerField()
+    number_vuln_low = models.IntegerField()
+    number_vuln_negligible = models.IntegerField()
+    number_vuln_unknown = models.IntegerField()
+    # TODO: more statistics?
 
+class Artifacts(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    scan = models.ManyToManyField(ScanData)
 
-'''
-SQL Querys:
-WITH vulns AS (
-  select jsonb_array_elements(grype_scan->'matches') as vuln from vuln_backend_artifactdata -- get the single vulnerability objects!
-), cvss_data AS (
-  select 
-  CASE 
-    WHEN vuln->'vulnerability' @> '{"namespace":"nvd"}'::jsonb THEN vuln->'vulnerability' -- nvd at first level
-    ELSE (                                                                                -- nvd at another level
-      select rvuln
-      from jsonb_array_elements(vuln->'relatedVulnerabilities') as rvuln
-      where rvuln->>'namespace' = 'nvd'
-      limit 1
-    )
-  END as cvss_data 
-from vulns
-)
+    name = models.CharField(max_length=100)
+    version = models.CharField(max_length=100)
+    purl = models.CharField(max_length=250, unique=True)
+    type = models.CharField(max_length=100)
+    cpes = models.JSONField()
+    licenses = models.JSONField()
 
-select cvss_data->>'id' as id, cvss_data->>'severity' as severity, cvss_data->'cvss' as cvss from cvss_data
-'''
+    class Meta:
+        unique_together = ('name', 'version')
+
+class Vulnerabilities(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    vuln_id = models.CharField(max_length=100, unique=True)
+    scan = models.ManyToManyField(ScanData)
+
+    severity = models.CharField(max_length=100)
+    cvss = models.JSONField()
+    fix = models.JSONField()
+    artifact = models.ManyToManyField(Artifacts)
