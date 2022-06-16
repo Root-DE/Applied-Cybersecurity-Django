@@ -15,8 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.contrib.auth import views as auth_views
+from vuln_frontend import views as frontend_views
 
 urlpatterns = [
+    # redirect to login page if not logged in
+    path('', frontend_views.auth_login, name='login'),
+    path('login/', frontend_views.auth_login, name='login'),
     path('admin/', admin.site.urls),
     path('api/', include('vuln_api.urls')),
+    path('frontend/', include('vuln_frontend.urls')),
+    path('dashboard/', frontend_views.dashboard, name='dashboard'),
+    path('logout/', auth_views.LogoutView.as_view(next_page="login"), name='logout'),
 ]
