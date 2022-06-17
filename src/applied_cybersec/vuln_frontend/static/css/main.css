@@ -283,7 +283,7 @@ iframe {
     font-family: Poppins-Bold;
     font-size: 30px;
     color: #333333;
-    width: 25%;
+    width: 45%;
     height: 100%;
     margin: 0 auto;
     padding: 0;
@@ -312,8 +312,6 @@ iframe {
     display: -moz-box;
     display: -ms-flexbox;
     display: inline-block;
-    justify-content: center;
-    padding-top: 13px;
     vertical-align: top;
 }
 
