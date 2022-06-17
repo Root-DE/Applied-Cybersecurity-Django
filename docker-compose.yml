@@ -10,9 +10,9 @@ services:
     ports:
       - "5432:5432"
     environment:
-      - POSTGRES_DB=appsec
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+      POSTGRES_DB: $DB_NAME
+      POSTGRES_USER: $DB_USER
+      POSTGRES_PASSWORD: $DB_PASSWORD
     networks:
       - db
 
@@ -23,6 +23,7 @@ services:
     # command: python /src/applied_cybersec/manage.py runserver 0.0.0.0:8000
     volumes:
       - ./src:/src
+      - statics:/static
     ports:
       - "8000:8000"
     networks:
@@ -32,6 +33,13 @@ services:
       WAIT_HOSTS: db:5432
       WAIT_TIMEOUT: 60
       DJANGO_AUTO_RELOAD: true
+      DJANGO_SUPERUSER_USERNAME: $DJANGO_SUPERUSER_USERNAME
+      DJANGO_SUPERUSER_PASSWORD: $DJANGO_SUPERUSER_PASSWORD
+      DJANGO_SUPERUSER_EMAIL: $DJANGO_SUPERUSER_EMAIL
+      DB_NAME: $DB_NAME
+      DB_USER: $DB_USER
+      DB_PASSWORD: $DB_PASSWORD
+
 
 
   nginx:
@@ -44,8 +52,9 @@ services:
       - ./nginx/conf.d/:/etc/nginx/conf.d/:ro
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
       - ./nginx/certs:/etc/nginx/certs:ro
+      - statics:/static:ro
     networks:
-      - frontend
+      - frontend      
   
   adminer:
     image: adminer:latest
@@ -60,7 +69,9 @@ services:
   
 volumes:
   appsec_pg_data:
+  statics:
 
 networks:
   frontend:
   db:
+

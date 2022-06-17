@@ -15,7 +15,7 @@ RUN pip install -r requirements.txt
 FROM python:slim
 
 RUN apt update && \
-    apt install -y libpq-dev && \
+    apt install -y libpq-dev curl && \
     rm -rf /var/lib/apt/lists/*
 
 # Get the virtual environment from builder stage

@@ -10,8 +10,8 @@ else
     echo "--------------------------------------------------------"
     python /src/applied_cybersec/manage.py collectstatic --noinput
     echo "--------------------------------------------------------"
-    django-admin compilemessages
-    echo "--------------------------------------------------------"
+    #django-admin compilemessages
+    #echo "--------------------------------------------------------"
     python /src/applied_cybersec/manage.py createsuperuser --noinput
     # if superuser exists, data is assumed to be already imported
     # if last command succeeds, no superuser exists, so import data
