@@ -25,6 +25,19 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
     PATH="/opt/venv/bin:$PATH"
 
+COPY setup.sh /setup/setup.sh
+RUN chmod +x /setup/setup.sh
+COPY healthcheck.sh /healthcheck.sh
+HEALTHCHECK CMD ["bash", "/healthcheck.sh"] # runs every 30 seconds by default
+#HEALTHCHECK CMD ["django-admin", "check"] # runs every 30 seconds by default
+
+## wait for DB to open TCP Port, configured via Environment Variable according to the docs of docker-compose-wait
+ADD https://github.com/ufoscout/docker-compose-wait/releases/download/2.9.0/wait /wait
+RUN chmod +x /wait
+
+CMD /wait && /setup/setup.sh
+
 WORKDIR /
 
 COPY ./src /
+
