@@ -1,12 +1,23 @@
+from requests import delete
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
 import json
+from datetime import datetime
 
 from vuln_backend.models import *
 
 # Create your views here.
 class Receive_Scan_Data(APIView):
+    def delete(self, request):
+        # delete all database entries
+        Vulnerabilities.objects.all().delete()
+        Artifacts.objects.all().delete()
+        ScanData.objects.all().delete()
+        Repositories.objects.all().delete()
+        Statistics.objects.all().delete()
+        return Response({"status": "ok"})
+
     def get(self, request):
 
         return Response({"message": "Hello, World!"})
@@ -34,7 +45,7 @@ class Receive_Scan_Data(APIView):
 
         # add scan data to the database
         # --> get the timestamp of the scan
-        created_at = metadata_json['created_at']
+        created_at = datetime.strptime(metadata_json['created_at'], '%Y-%m-%d %H:%M:%S.%f') if 'created_at' in metadata_json else datetime.now()
         scan_entry = ScanData.objects.create(
             created_at=created_at,
             repository=repository,

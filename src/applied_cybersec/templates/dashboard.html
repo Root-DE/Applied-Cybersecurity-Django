@@ -1,81 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-
+{% extends 'base.html' %}
 {% load static %}
 
-<head>
-    {% block title %}
-    <title>Login</title> {% endblock%}
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--===============================================================================================-->
-    <link rel="icon" type="image/png" href="{% static 'images/icons/favicon.ico' %}" />
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{% static 'fonts/iconic/css/material-design-iconic-font.min.css' %}">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css' %}">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{% static 'vendor/animsition/css/animsition.min.css' %}">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{% static 'vendor/select2/select2.min.css' %}">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{% static 'vendor/daterangepicker/daterangepicker.css' %}">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
-    <!--===============================================================================================-->
-</head>
+{% block title %}Dashboard{% endblock title %}
+
 {% block content %}
-
-<body>
-
-    <div class="limiter">
-        <div class="container-navbar100">
-            <div class="wrap-navbar100">
-                <div class="navbar-title p-b-26">
-                    Container Image Scanner
-                </div>
-                <div class="logout-btn">
-                    <div class="container-logout-btn">
-                        <div class="wrap-login100-form-btn">
-                            <div class="login100-form-bgbtn"></div>
-                            <button class="login100-form-btn" onclick="location.href='{% url 'logout' %}'" type="button" /> Logout
-                            </button>
-                        </div>
-                    </div>
+    <div class="card-deck">
+        {% for scan in scan_data %}
+            <div class="card col-xs-12 col-md-4 col-lg-3 mb-3" style="width: 18rem;">
+                <div class="card-block">
+                    <h5 class="card-title">{{ scan.repo_name }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ scan.scan_date }}</h6>
+                    <p class="card-text">
+                        Detected artifacts: {{ scan.statistics.number_dependencies }}<br>
+                        Detected vulnerabilities: {{ scan.statistics.number_vulnerabilities }}<br>
+                        Critical: {{ scan.statistics.number_vuln_critical }}<br>
+                        High: {{ scan.statistics.number_vuln_high }}<br>
+                        Medium: {{ scan.statistics.number_vuln_medium }}<br>
+                        Low: {{ scan.statistics.number_vuln_low }}<br>
+                        Negligible: {{ scan.statistics.number_vuln_negligible }}<br>
+                    </p>
                 </div>
             </div>
-        </div>
+        {% endfor %}
     </div>
-
-
-
-
-
-    <!--===============================================================================================-->
-    <script src="{% static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
-    <!--===============================================================================================-->
-    <script src="{% static 'vendor/animsition/js/animsition.min.js' %}"></script>
-    <!--===============================================================================================-->
-    <script src="{% static 'vendor/bootstrap/js/popper.js' %}"></script>
-    <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
-    <!--===============================================================================================-->
-    <script src="{% static 'vendor/select2/select2.min.js' %}"></script>
-    <!--===============================================================================================-->
-    <script src="{% static 'vendor/daterangepicker/moment.min.js' %}"></script>
-    <script src="{% static 'vendor/daterangepicker/daterangepicker.js' %}"></script>
-    <!--===============================================================================================-->
-    <script src="{% static 'vendor/countdowntime/countdowntime.js' %} "></script>
-    <!--===============================================================================================-->
-    <script src="{% static 'js/main.js' %}"></script>
-
-</body>
 {% endblock %}
-
-</html>

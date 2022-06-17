@@ -1,6 +1,7 @@
 from enum import unique
 import json
 from django.db import models
+from django.utils.timezone import now
 import uuid
 
 # Create your models here.
@@ -12,7 +13,7 @@ class Repositories(models.Model):
 
 class ScanData(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    created_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(default=now, editable=False)
     repository = models.ForeignKey(Repositories, on_delete=models.CASCADE)
     
     grype_scan = models.JSONField()

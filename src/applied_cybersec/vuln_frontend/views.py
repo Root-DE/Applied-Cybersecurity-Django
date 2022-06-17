@@ -1,3 +1,4 @@
+from unicodedata import name
 from django.shortcuts import render
 from requests import request
 from django.contrib.auth import authenticate
@@ -5,6 +6,8 @@ from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect
 import sys
+
+from vuln_backend.models import *
 
 # Create your views here.
 
@@ -37,7 +40,26 @@ def auth_login(request):
 def dashboard(request):
     print("dashboard", file=sys.stderr)
     print(request.user.username, file=sys.stderr)
-    return render(request, 'dashboard.html', {"name": request.user.username})
+    # ------------------------------------
+    # get all the data we want to display
+    # ------------------------------------
+    # get some global statistics
+    # TODO
+
+    # get the newest statistics for each repository
+    repositories = Repositories.objects.all().order_by('name')
+    scan_data = []
+    for repository in repositories:
+        latest_scan = ScanData.objects.filter(repository=repository).latest('created_at')
+        scan_data.append({
+            'repo_name': repository.name,
+            'scan_date': latest_scan.created_at,
+            'statistics': Statistics.objects.filter(scan=latest_scan)[0]
+        })
+
+    print(scan_data)
+
+    return render(request, 'dashboard.html', {"name": request.user.username, 'scan_data': scan_data}) 
 
 @login_required
 def dashboard2(request):
