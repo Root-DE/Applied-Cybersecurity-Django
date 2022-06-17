@@ -20,7 +20,7 @@ services:
     image: applied_cybersec:latest
     hostname: appsec_app
     restart: unless-stopped
-    command: python /src/applied_cybersec/manage.py runserver 0.0.0.0:8000
+    # command: python /src/applied_cybersec/manage.py runserver 0.0.0.0:8000
     volumes:
       - ./src:/src
     ports:
@@ -28,6 +28,11 @@ services:
     networks:
       - frontend
       - db
+    environment:
+      WAIT_HOSTS: db:5432
+      WAIT_TIMEOUT: 60
+      DJANGO_AUTO_RELOAD: true
+
 
   nginx:
     image: nginx:latest
