@@ -20,11 +20,13 @@ from vuln_frontend import views as frontend_views
 
 urlpatterns = [
     # redirect to login page if not logged in
-    path('', frontend_views.auth_login, name='login'),
-    path('login/', frontend_views.auth_login, name='login'),
+    path('', auth_views.LoginView.as_view(template_name='auth_login.html'), name='login'),
+    # path('', frontend_views.auth_login, name='login'),
+    # path('login/', frontend_views.auth_login, name='auth_login'),
     path('admin/', admin.site.urls),
     path('api/', include('vuln_api.urls')),
     path('frontend/', include('vuln_frontend.urls')),
     path('dashboard/', frontend_views.dashboard, name='dashboard'),
+    path('dashboard2/', frontend_views.dashboard2, name='dashboard2'),
     path('logout/', auth_views.LogoutView.as_view(next_page="login"), name='logout'),
 ]

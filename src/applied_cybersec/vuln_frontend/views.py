@@ -10,16 +10,22 @@ import sys
 
 def auth_login(request):
     if request.method == 'POST':
+        print("POST")
         username = request.POST['username']
         password = request.POST['password']
         user = authenticate(request, username=username, password=password)
+        print("user: ", user)
         if user is not None:
-            return render(request, 'dashboard.html')
+            print("user is not None")
+            return dashboard(request)
         else:
-            return render(request, 'auth_login.html')
+            print("user is None")
+            return auth_login(request)
     if request.user.is_authenticated:
-        return render(request, 'dashboard.html')
+        print("user is authenticated")
+        return dashboard(request)
     else:
+        print("user is not authenticated")
         return render(request, 'auth_login.html')
 
 # def auth_logout(request):
@@ -29,4 +35,12 @@ def auth_login(request):
 
 @login_required
 def dashboard(request):
-    return render(request, 'dashboard.html')
+    print("dashboard", file=sys.stderr)
+    print(request.user.username, file=sys.stderr)
+    return render(request, 'dashboard.html', {"name": request.user.username})
+
+@login_required
+def dashboard2(request):
+    print("dashboard2", file=sys.stderr)
+    print(request.user.username, file=sys.stderr)
+    return render(request, 'dashboard2.html', {"name": request.user.username})
