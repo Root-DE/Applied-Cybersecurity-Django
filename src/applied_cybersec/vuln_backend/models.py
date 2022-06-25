@@ -15,7 +15,7 @@ class ScanData(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     created_at = models.DateTimeField(default=now, editable=False)
     repository = models.ForeignKey(Repositories, on_delete=models.CASCADE)
-    
+    workflow_id = models.IntegerField()
     grype_scan = models.JSONField()
     syft_scan = models.JSONField()
 

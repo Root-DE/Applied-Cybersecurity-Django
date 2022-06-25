@@ -3,7 +3,6 @@ from django.urls import path
 from vuln_api.views import *
 
 urlpatterns = [
-    path('send_scan_data/', Receive_Scan_Data.as_view(), name='receive_scan_data'),
     path('repo_notification/', repo_notification, name='repo_notification'),
 ]
 
