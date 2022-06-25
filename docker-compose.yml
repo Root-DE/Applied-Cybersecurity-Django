@@ -6,7 +6,7 @@ services:
     hostname: db
     restart: unless-stopped
     volumes:
-      - appsec_pg_data:/var/lib/postgresql/data
+      - pg_data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
     environment:
@@ -39,8 +39,9 @@ services:
       DB_NAME: $DB_NAME
       DB_USER: $DB_USER
       DB_PASSWORD: $DB_PASSWORD
-
-
+      GITHUB_PAT: $GITHUB_PAT
+      GITHUB_ORG: $GITHUB_ORG
+      USERS_OR_ORGS: $USERS_OR_ORGS
 
   nginx:
     image: nginx:latest
@@ -68,7 +69,7 @@ services:
       - db
   
 volumes:
-  appsec_pg_data:
+  pg_data:
   statics:
 
 networks:

@@ -3,3 +3,4 @@ nginx/certs/cert.pem
 nginx/certs/fullchain.pem
 nginx/certs/privkey.pem
 .env
+src/applied_cybersec/vuln_backend/migrations/

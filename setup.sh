@@ -4,7 +4,7 @@ file='/setup/init.log'
 if [ -f "$file" ]; then
     echo "system alredy set up, skipping initialization"
 else
-    python /src/applied_cybersec/manage.py makemigrations
+    python /src/applied_cybersec/manage.py makemigrations vuln_frontend vuln_backend vuln_api
     echo "--------------------------------------------------------"
     python /src/applied_cybersec/manage.py migrate
     echo "--------------------------------------------------------"

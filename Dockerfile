@@ -39,5 +39,5 @@ CMD /wait && /setup/setup.sh
 
 WORKDIR /
 
-COPY ./src /
+COPY ./src /src
 
