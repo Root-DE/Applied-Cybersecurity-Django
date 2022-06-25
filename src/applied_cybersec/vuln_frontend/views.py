@@ -80,11 +80,14 @@ def error_500(request):
     return render(request, '500.html')
 
 @login_required
-def download(type, repoid, created_at):
-    filename = type + "_" + str(repoid) + "_" + str(created_at)
+def download(self, result_type, repoid, created_at):
+    filename = result_type + "_" + str(repoid) + "_" + str(created_at)
     scan_data = ScanData.objects.get(created_at=created_at, repository=repoid)
-    sbom_json = scan_data.syft_scan
-    response = JsonResponse(sbom_json)
+    if result_type == "sbom":
+        output = scan_data.syft_scan
+    if result_type == "vuln":
+        output = scan_data.grype_scan
+    response = JsonResponse(output)
     # as download
     response['Content-Disposition'] = 'attachment; filename="' + filename + '.json"'
     return response
