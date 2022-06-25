@@ -29,4 +29,5 @@ urlpatterns = [
     path('dashboard/', frontend_views.dashboard, name='dashboard'),
     path('dashboard2/', frontend_views.dashboard2, name='dashboard2'),
     path('logout/', auth_views.LogoutView.as_view(next_page="login"), name='logout'),
+    path('500/', frontend_views.error_500, name='error_500'),
 ]
