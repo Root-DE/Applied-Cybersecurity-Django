@@ -1,0 +1,171 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Dashboard{% endblock title %}
+
+{% block content %}
+
+<div class="row">
+    <div class="card-deck">
+{% for scan in scan_data %}
+<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+<div class="card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <div class="card-body">
+            <h5 class="card-title">{{ scan.repo_name }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{ scan.scan_date }}</h6>
+            <p class="card-text">
+                <span class="span_artifact">{{ scan.statistics.number_dependencies }} artifacts</span><br>
+                <span class="span_vuln">{{ scan.statistics.number_vulnerabilities }} vulnerabilities</span><br>
+            </p>
+        </div>
+        <div class="card-footer">
+            <span><i class="bi-x-circle-fill"></i> Scan failed</span>
+        </div>
+      </div>
+      <div class="flip-card-back">
+        <div class="card-body">
+            <p class="card-text">
+                <canvas id="{{ scan.repo_name }}" width="100" height="100"></canvas>
+            </p>
+        </div>
+        <div class="card-footer">
+            <span><i class="bi-x-circle-fill"></i>Extendet infromation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+</div>
+</div>
+  
+    
+    {% comment %} <!-- Rotating card -->
+    <div class="row">
+    {% for scan in scan_data %}
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            <div class="card-wrapper flip-left">
+                <div class="card flip-left">
+                    <!-- Front of Card -->
+                    <div class="front">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ scan.repo_name }}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">{{ scan.scan_date }}</h6>
+                            <p class="card-text">
+                                <span class="span_artifact">{{ scan.statistics.number_dependencies }} artifacts</span><br>
+                                <span class="span_vuln">{{ scan.statistics.number_vulnerabilities }} vulnerabilities</span><br>
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <span><i class="bi-x-circle-fill"></i> Scan failed</span>
+                        </div>
+                    </div>
+                    <!-- Back of Card -->
+                    <div class="back">
+                        <div class="card-body">
+                            <p class="card-text">
+                                <span class="span_artifact">{{ scan.statistics.number_dependencies }} artifacts</span><br>
+                                <span class="span_vuln">{{ scan.statistics.number_vulnerabilities }} vulnerabilities</span><br>
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <span><i class="bi-x-circle-fill"></i>Extendet infromation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div> {% endcomment %}
+
+{% endblock %}
+
+{% block statics %}
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}" />
+
+    <script src="{% static 'js/dashboard.js' %}"></script>
+
+    {% comment %}  create the bar charts {% endcomment %}
+    <script type="text/javascript">
+        window.onload = function () {
+            var scans = {{ scan_data|safe }};
+            scans.forEach(function(scan) {
+                var ctx = document.getElementById(scan.repo_name).getContext('2d');
+                var myChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        datasets: [{
+                            data: [scan.number_vuln_critical, scan.number_vuln_high, scan.number_vuln_medium, scan.number_vuln_low, scan.number_vuln_negligible],
+                            backgroundColor: [
+                                '#00bcd4',
+                                '#f44336',
+                                '#ff9800',
+                                '#4caf50',
+                                '#9e9e9e'
+                            ],
+                            label: 'Dataset 1'
+                        }],
+                        labels: [
+                            'Critical',
+                            'High',
+                            'Medium',
+                            'Low',
+                            'Negligible'
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        legend: {
+                            position: 'top',
+                        },
+                        title: {
+                            display: true,
+                            text: 'Vulnerabilities'
+                        }
+                    }
+                });
+            });
+        };
+    </script>
+{% endblock %}
+
+{% comment %} var scans = {{ scan_data|safe }};
+            scans.forEach(function(scan) {
+                alert(scan.repo_name);
+                var ctx = document.getElementById(scan.repo_name).getContext('2d');
+                var myChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        datasets: [{
+                            data: [{{ scan.statistics.number_vuln_critical }}, {{ scan.statistics.number_vuln_high }}, {{ scan.statistics.number_vuln_medium }}, {{ scan.statistics.number_vuln_low }}, {{ scan.statistics.number_vuln_negligible }}],
+                            backgroundColor: [
+                                '#00bcd4',
+                                '#f44336',
+                                '#ff9800',
+                                '#4caf50',
+                                '#9e9e9e'
+                            ],
+                            label: 'Dataset 1'
+                        }],
+                        labels: [
+                            'Critical',
+                            'High',
+                            'Medium',
+                            'Low',
+                            'Negligible'
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        legend: {
+                            position: 'top',
+                        },
+                        title: {
+                            display: true,
+                            text: 'Vulnerabilities'
+                        }
+                    }
+                });
+            }); {% endcomment %}

@@ -31,6 +31,8 @@ class Statistics(models.Model):
     number_vuln_low = models.IntegerField()
     number_vuln_negligible = models.IntegerField()
     number_vuln_unknown = models.IntegerField()
+
+    # status = models.CharField(max_length=15)
     # TODO: more statistics?
 
 class Artifacts(models.Model):

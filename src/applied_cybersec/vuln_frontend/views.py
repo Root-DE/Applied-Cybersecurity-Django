@@ -51,10 +51,16 @@ def dashboard(request):
     scan_data = []
     for repository in repositories:
         latest_scan = ScanData.objects.filter(repository=repository).latest('created_at')
+        statistics = Statistics.objects.filter(scan=latest_scan)[0]
         scan_data.append({
             'repo_name': repository.name,
-            'scan_date': latest_scan.created_at,
-            'statistics': Statistics.objects.filter(scan=latest_scan)[0]
+            'scan_date': str(latest_scan.created_at),
+            # 'statistics': statistics,
+            'number_vuln_critical': statistics.number_vuln_critical,
+            'number_vuln_high': statistics.number_vuln_high,
+            'number_vuln_medium': statistics.number_vuln_medium,
+            'number_vuln_low': statistics.number_vuln_low,
+            'number_vuln_negligible': statistics.number_vuln_negligible, 
         })
 
     print(scan_data)
