@@ -30,11 +30,11 @@
                 <canvas id="{{ scan.repo_name }}" width="100" height="100"></canvas>
             </p>
         </div>
-            <form class="export_sbom" id="export_sbom" action="{% url 'download' repoid=scan.repo_id created_at=scan.scan_date %}">
+            <form class="export_sbom" id="export_sbom" action="{% url 'download' type='sbom' repoid=scan.repo_id created_at=scan.scan_date %}">
                 {% csrf_token %}
                 <button class="btn btn-outline-success" value="Export SBOM" type="submit">Export SBOM</button>
             </form> 
-            <form class="export_vulns" id="export_vulns" action="{% url 'download' repoid=scan.repo_id created_at=scan.scan_date %}">
+            <form class="export_vulns" id="export_vulns" action="{% url 'download' type='vuln' repoid=scan.repo_id created_at=scan.scan_date %}">
                  {% csrf_token %}
                  <button class="btn btn-outline-success" value="Export VULNS" type="submit">Export VULNS</button>
             </form> 

@@ -5,6 +5,7 @@ from django.contrib.auth import authenticate
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect
+from django.http import JsonResponse
 import sys
 
 from vuln_backend.models import *
@@ -48,12 +49,14 @@ def dashboard(request):
 
     # get the newest statistics for each repository
     repositories = Repositories.objects.all().order_by('name')
+    print("length", len(repositories), file=sys.stderr)
     scan_data = []
     for repository in repositories:
         latest_scan = ScanData.objects.filter(repository=repository).latest('created_at')
         statistics = Statistics.objects.filter(scan=latest_scan)[0]
         scan_data.append({
             'repo_name': repository.name,
+            'repo_id': repository.id,
             'scan_date': str(latest_scan.created_at),
             # 'statistics': statistics,
             'number_vuln_critical': statistics.number_vuln_critical,
@@ -72,3 +75,16 @@ def dashboard2(request):
     print("dashboard2", file=sys.stderr)
     print(request.user.username, file=sys.stderr)
     return render(request, 'dashboard2.html', {"name": request.user.username})
+
+def error_500(request):
+    return render(request, '500.html')
+
+@login_required
+def download(type, repoid, created_at):
+    filename = type + "_" + str(repoid) + "_" + str(created_at)
+    scan_data = ScanData.objects.get(created_at=created_at, repository=repoid)
+    sbom_json = scan_data.syft_scan
+    response = JsonResponse(sbom_json)
+    # as download
+    response['Content-Disposition'] = 'attachment; filename="' + filename + '.json"'
+    return response
