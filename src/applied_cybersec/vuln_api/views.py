@@ -1,11 +1,42 @@
 from requests import delete
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from rest_framework import status
+import sys
+from django.views.decorators.csrf import csrf_exempt
 
 import json
 from datetime import datetime
 
 from vuln_backend.models import *
+from django.http import HttpResponse, HttpResponseBadRequest
+
+@csrf_exempt
+def repo_notification(request):
+    if request.method == 'POST':
+        # get json
+        json_data = json.loads(request.body)
+        # get repo url
+        repo_url = json_data['repo_url']
+        print(repo_url, file=sys.stderr)
+        # if repo starts with 'https://github.com/Root-DE/ and doesn't contain '../'
+        if repo_url.startswith('https://github.com/Root-DE/') and "../" not in repo_url:
+            # check if repo is valid, no 300
+            pass
+            # get latest run
+
+            # 
+
+
+        else:
+            # invalid
+            html = "<html><body>Invalid repo url</body></html>"
+            return HttpResponseBadRequest(html)
+        return HttpResponse(status=200)
+    else:
+        # return invalid method
+        html = '<html><body>Invalid method</body></html>'
+        return HttpResponseBadRequest(html)
 
 # Create your views here.
 class Receive_Scan_Data(APIView):
@@ -19,7 +50,6 @@ class Receive_Scan_Data(APIView):
         return Response({"status": "ok"})
 
     def get(self, request):
-
         return Response({"message": "Hello, World!"})
 
     def post(self, request):
