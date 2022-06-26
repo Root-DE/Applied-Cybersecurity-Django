@@ -1,0 +1,62 @@
+name: Docker Scan
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron:  '0 8 * * *'
+  workflow_dispatch:
+
+jobs:
+  build_and_dev-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: set dev env
+      run: echo "image_tag_dev=$(echo ghcr.io/${{ github.repository }}/dev/test:latest |  tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
+    - name: get env
+      run: env
+    - name: Login to GitHub Container Registry
+      run: echo ${{ secrets.GITHUB_TOKEN }} | docker login ghcr.io -u root-de --password-stdin
+    - uses: actions/checkout@v3
+    - name: Build
+      run: docker build . -t ${{ env.image_tag_dev }}
+    - name: Push
+      run: docker push ${{ env.image_tag_dev }}
+
+  scan:
+    needs: build_and_dev-deploy
+    runs-on: ubuntu-latest
+    container: ghcr.io/root-de/applied-cybersecurity/scan:latest
+    steps:
+    - name: set dev env
+      run: echo "image_tag_dev=$(echo ghcr.io/${{ github.repository }}/dev/test:latest |  tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
+    - name: get SBOM
+      run: syft ${{ env.image_tag_dev }} -o json --file sbom.json
+    - name: get Vulnerabilites
+      run: grype sbom.json -o json --file vuln.json
+    - name: upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: scan
+        path: ./*.json
+    - name: notify listener
+      run: send_script.sh
+
+  deploy:
+    needs: [scan]
+    runs-on: ubuntu-latest
+    steps:
+    - name: Login to GitHub Container Registry
+      run: echo ${{ secrets.GITHUB_TOKEN }} | docker login ghcr.io -u root-de --password-stdin
+    - name: set dev env
+      run: echo "image_tag_dev=$(echo ghcr.io/${{ github.repository }}/dev/test:latest |  tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
+    - name: set prod env
+      run: echo "image_tag_prod=$(echo ghcr.io/${{ github.repository }}/test:latest |  tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
+    - name: deploy dev image as prod image
+      run: docker pull ${{ env.image_tag_dev }}
+    - name: tag dev image as prod image
+      run: docker tag ${{ env.image_tag_dev }} ${{ env.image_tag_prod }}
+    - name: push prod image
+      run: docker push ${{ env.image_tag_prod }}
+    - name: remove dev image
+      run: docker rmi ${{ env.image_tag_dev }}
