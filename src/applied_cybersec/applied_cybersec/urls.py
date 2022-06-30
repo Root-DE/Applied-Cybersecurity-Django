@@ -27,8 +27,8 @@ urlpatterns = [
     path('api/', include('vuln_api.urls')),
     path('frontend/', include('vuln_frontend.urls')),
     path('dashboard/', frontend_views.dashboard, name='dashboard'),
-    path('dashboard2/', frontend_views.dashboard2, name='dashboard2'),
     path('logout/', auth_views.LogoutView.as_view(next_page="login"), name='logout'),
     path('500/', frontend_views.error_500, name='error_500'),
     path('download/<str:result_type>/<str:repoid>/<str:created_at>/', frontend_views.download, name='download'),
+    path('details/<str:repo_org>/<str:repo_name>', frontend_views.details, name='details'),
 ]

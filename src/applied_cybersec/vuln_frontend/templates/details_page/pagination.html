@@ -1,0 +1,16 @@
+{% for page_number in vuln_page_obj.adjusted_elided_pages  %}
+    {% if page_number == page_obj.paginator.ELLIPSIS %}
+        {{page_number}}
+    {% else %}
+        <a
+            id="pagination_link_{{page_number}}"
+            href="/details/{{repo.organization}}/{{repo.name}}?page={{page_number}}"
+            data-repo-org="{{repo.organization}}"
+            data-repo-name="{{repo.name}}"
+            data-page-number="{{page_number}}"
+            class="{% if page_number == page_obj.number %}current{% endif %}"
+        >
+            {{page_number}}
+        </a>
+    {% endif %}
+{% endfor %}

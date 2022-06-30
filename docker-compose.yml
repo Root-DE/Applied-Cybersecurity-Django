@@ -68,9 +68,25 @@ services:
     networks:
       - db
   
+  pgadmin4:
+    image: dpage/pgadmin4
+    hostname: pgadmin4
+    restart: unless-stopped
+    ports:
+      - "8081:80"
+    networks:
+      - db
+    environment:
+      PGADMIN_DEFAULT_EMAIL: pgadmin4@pgadmin.org
+      PGADMIN_DEFAULT_PASSWORD: admin
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+    volumes:
+      - pgadmin:/var/lib/pgadmin
+  
 volumes:
   pg_data:
   statics:
+  pgadmin:
 
 networks:
   frontend:

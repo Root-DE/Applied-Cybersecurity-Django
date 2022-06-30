@@ -1,0 +1,33 @@
+{% for vuln in vulnerabilities %}
+<tr style="transform: rotate(0);">
+    <td scope="row">
+        {{ vuln.vuln_id }}
+        {% comment %} <a style="text-decoration:none;color:inherit;" href="test/{{test.uuid}}" class="stretched-link"></a>                         {% endcomment %}
+    </td>
+    <td>
+        {{ vuln.severity}}
+    </td>
+    <td style="text-align:center;">
+        {% if vuln.cvss|length > 0 %}
+            {{ vuln.cvss.0|get_item:"metrics"|get_item:"baseScore" }} (Version 2) </br>
+        {% endif %}
+        {% if vuln.cvss|length > 1 %}
+            {{ vuln.cvss.1|get_item:"metrics"|get_item:"baseScore" }} (Version 3)
+        {% endif %}
+    </td>
+    {% comment %} <td style="text-align:center;">
+        {% if test.resultDate %}{{test.resultDate}}{% else %}{% trans "Datum ausstehend" %}{% endif %}
+    </td> {% endcomment %}
+</tr>
+{% endfor %}
+<tr style="transform: rotate(0);">
+    <td scope="row">
+        Das
+    </td>
+    <td>
+        muss
+    </td>
+    <td style="text-align:center;">
+        klappen
+    </td>
+</tr>

@@ -7,15 +7,19 @@ import uuid
 # Create your models here.
 class Repositories(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    name = models.CharField(max_length=100)
+    organization = models.CharField(max_length=255)
+    name = models.CharField(max_length=255)
     url = models.URLField(unique=True)
     # TODO: more info about the repository?
+
+    class Meta:
+        unique_together = ('organization', 'name')
 
 class ScanData(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     created_at = models.DateTimeField(default=now, editable=False)
     repository = models.ForeignKey(Repositories, on_delete=models.CASCADE)
-    workflow_id = models.IntegerField()
+    workflow_id = models.BigIntegerField()
     grype_scan = models.JSONField()
     syft_scan = models.JSONField()
 
@@ -39,22 +43,20 @@ class Artifacts(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     scan = models.ManyToManyField(ScanData)
 
-    name = models.CharField(max_length=100)
-    version = models.CharField(max_length=100)
-    purl = models.CharField(max_length=250, unique=True)
-    type = models.CharField(max_length=100)
-    cpes = models.JSONField()
-    licenses = models.JSONField()
-
-    class Meta:
-        unique_together = ('name', 'version')
+    name = models.CharField(max_length=100, editable=False)
+    version = models.CharField(max_length=100, editable=False)
+    purl = models.CharField(max_length=250, editable=False)
+    type = models.CharField(max_length=100, editable=False)
+    cpes = models.JSONField(editable=False)
+    licenses = models.JSONField(editable=False)
 
 class Vulnerabilities(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    vuln_id = models.CharField(max_length=100, unique=True)
-    scan = models.ManyToManyField(ScanData)
+    vuln_id = models.CharField(max_length=100, editable=False)
 
-    severity = models.CharField(max_length=100)
-    cvss = models.JSONField()
-    fix = models.JSONField()
+    severity = models.CharField(max_length=100, editable=False)
+    cvss = models.JSONField(editable=False)
+    fix = models.JSONField(editable=False)
+
+    scan = models.ManyToManyField(ScanData)
     artifact = models.ManyToManyField(Artifacts)

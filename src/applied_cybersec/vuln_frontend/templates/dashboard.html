@@ -4,89 +4,48 @@
 {% block title %}Dashboard{% endblock title %}
 
 {% block content %}
-
-<div class="row">
+<div style="padding-top: 20px;">
+    <h1>
+        Dashboard
+    </h1>  
+    <div class="jumbotron" stye="overflow:auto;">        
+    <div class="container">
     <div class="card-deck">
-{% for scan in scan_data %}
-<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-<div class="card">
-    <div class="flip-card-inner">
-      <div class="flip-card-front">
-        <div class="card-body">
-            <h5 class="card-title">{{ scan.repo_name }}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">{{ scan.scan_date }}</h6>
-            <p class="card-text">
-                <span class="span_artifact">{{ scan.statistics.number_dependencies }} artifacts</span><br>
-                <span class="span_vuln">{{ scan.statistics.number_vulnerabilities }} vulnerabilities</span><br>
-            </p>
-        </div>
-        <div class="card-footer">
-            <span><i class="bi-x-circle-fill"></i> Scan failed</span>
-        </div>
-      </div>
-      <div class="flip-card-back">
-        <div class="card-body">
-            <p class="card-text">
-                <canvas id="{{ scan.repo_name }}" width="100" height="100"></canvas>
-            </p>
-        </div>
-            <form class="export_sbom" id="export_sbom" action="{% url 'download' result_type='sbom' repoid=scan.repo_id created_at=scan.scan_date %}">
-                {% csrf_token %}
-                <button class="btn btn-outline-success" form="export_sbom" value="Export SBOM" type="submit">Export SBOM</button>
-            </form> 
-            <form class="export_vulns" id="export_vulns" action="{% url 'download' result_type='vuln' repoid=scan.repo_id created_at=scan.scan_date %}">
-                 {% csrf_token %}
-                 <button class="btn btn-outline-success" form="export_vulns" value="Export VULNS" type="submit">Export VULNS</button>
-            </form> 
-        <div class="card-footer">
-            <span><i class="bi-x-circle-fill"></i>Extended information</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-{% endfor %}
-</div>
-</div>
-  
-    
-    {% comment %} <!-- Rotating card -->
-    <div class="row">
     {% for scan in scan_data %}
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-            <div class="card-wrapper flip-left">
-                <div class="card flip-left">
-                    <!-- Front of Card -->
-                    <div class="front">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ scan.repo_name }}</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">{{ scan.scan_date }}</h6>
-                            <p class="card-text">
-                                <span class="span_artifact">{{ scan.statistics.number_dependencies }} artifacts</span><br>
-                                <span class="span_vuln">{{ scan.statistics.number_vulnerabilities }} vulnerabilities</span><br>
-                            </p>
-                        </div>
-                        <div class="card-footer">
-                            <span><i class="bi-x-circle-fill"></i> Scan failed</span>
-                        </div>
-                    </div>
-                    <!-- Back of Card -->
-                    <div class="back">
-                        <div class="card-body">
-                            <p class="card-text">
-                                <span class="span_artifact">{{ scan.statistics.number_dependencies }} artifacts</span><br>
-                                <span class="span_vuln">{{ scan.statistics.number_vulnerabilities }} vulnerabilities</span><br>
-                            </p>
-                        </div>
-                        <div class="card-footer">
-                            <span><i class="bi-x-circle-fill"></i>Extended information</span>
-                        </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+    <div class="card" onclick="window.location.href='/details/{{scan.repo_org}}/{{scan.repo_name}}'">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <div class="card-body">
+                    <h5 class="card-title">{{ scan.repo_name }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ scan.scan_date }}</h6>
+                    <p class="card-text">
+                        <span class="span_artifact">{{ scan.statistics.number_dependencies }} artifacts</span><br>
+                        <span class="span_vuln">{{ scan.statistics.number_vulnerabilities }} vulnerabilities</span><br>
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <span><i class="bi-x-circle-fill"></i> Scan failed</span>
+                </div>
+            </div>
+            <div class="flip-card-back">
+                <div class="card-body">
+                    <div style="width:85%; height:85%">
+                        <canvas id="{{ scan.repo_name }}" width="100" height="100"></canvas>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    </div>
     {% endfor %}
-    </div> {% endcomment %}
+    </div>
+    </div>
+    </div>
+</div>
+
+    {% comment %} Variables {% endcomment %}
+    {{ scan_data|json_script:'scan_data' }}
 
 {% endblock %}
 
@@ -98,14 +57,14 @@
     {% comment %}  create the bar charts {% endcomment %}
     <script type="text/javascript">
         window.onload = function () {
-            var scans = {{ scan_data|safe }};
+            const scans = JSON.parse(document.getElementById('scan_data').textContent);
             scans.forEach(function(scan) {
                 var ctx = document.getElementById(scan.repo_name).getContext('2d');
                 var myChart = new Chart(ctx, {
-                    type: 'bar',
+                    type: 'horizontalBar',
                     data: {
                         datasets: [{
-                            data: [scan.number_vuln_critical, scan.number_vuln_high, scan.number_vuln_medium, scan.number_vuln_low, scan.number_vuln_negligible],
+                            data: [scan.statistics.number_vuln_critical, scan.statistics.number_vuln_high, scan.statistics.number_vuln_medium, scan.statistics.number_vuln_low, scan.statistics.number_vuln_negligible],
                             backgroundColor: [
                                 '#00bcd4',
                                 '#f44336',
@@ -113,7 +72,6 @@
                                 '#4caf50',
                                 '#9e9e9e'
                             ],
-                            label: 'Dataset 1'
                         }],
                         labels: [
                             'Critical',
@@ -126,11 +84,18 @@
                     options: {
                         responsive: true,
                         legend: {
-                            position: 'top',
+                            display: false
                         },
                         title: {
-                            display: true,
+                            display: false,
                             text: 'Vulnerabilities'
+                        },
+                        scales: {
+                            xAxes: [{
+                                ticks: {
+                                    display: false
+                                }  
+                            }]
                         }
                     }
                 });
@@ -138,6 +103,17 @@
         };
     </script>
 {% endblock %}
+
+{% comment %} 
+                <form class="export_sbom" id="export_sbom" action="{% url 'download' result_type='sbom' repoid=scan.repo_id created_at=scan.scan_date %}">
+                    {% csrf_token %}
+                    <button class="btn btn-outline-success" form="export_sbom" value="Export SBOM" type="submit">Export SBOM</button>
+                </form> 
+                <form class="export_vulns" id="export_vulns" action="{% url 'download' result_type='vuln' repoid=scan.repo_id created_at=scan.scan_date %}">
+                    {% csrf_token %}
+                    <button class="btn btn-outline-success" form="export_vulns" value="Export VULNS" type="submit">Export VULNS</button>
+                </form> 
+{% endcomment %}
 
 {% comment %} var scans = {{ scan_data|safe }};
             scans.forEach(function(scan) {
