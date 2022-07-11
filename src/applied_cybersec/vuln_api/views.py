@@ -203,12 +203,29 @@ def parse_grype_scan(grype_json, scan_entry, created_artifacts):
     }
     for match in grype_json['matches']:
         vulnerability = match['vulnerability']
-        # try to find the nvd entry
-        if not vulnerability['namespace'] == 'nvd':
-            for related_vuln in match['relatedVulnerabilities']:
-                if related_vuln['namespace'] == 'nvd':
-                    vulnerability = related_vuln
+
+        # get all entries that have cvss informations
+        cvss_vulns = []
+        if 'cvss' in vulnerability and vulnerability['cvss'] != []:
+            cvss_vulns.append(vulnerability)
+        for related_vuln in match['relatedVulnerabilities']:
+            if 'cvss' in related_vuln and related_vuln['cvss'] != []:
+                cvss_vulns.append(related_vuln)
+        
+        # if we have at least one cvss entry: 
+        if len(cvss_vulns) != 0:
+            # try to find the nvd entry in the cvss entries
+            for vuln in cvss_vulns:
+                if 'nvd' in vuln['namespace']:
+                    vulnerability = vuln
                     break
+        else:
+            # if we don't have any cvss entry, take try to find the nvd entry
+            if 'nvd' not in vulnerability['namespace']:
+                for related_vuln in match['relatedVulnerabilities']:
+                    if 'nvd' in related_vuln['namespace']:
+                        vulnerability = related_vuln
+                        break
         
         # try to find the artifact entry in the already created artifacts
         artifact = None
@@ -216,7 +233,6 @@ def parse_grype_scan(grype_json, scan_entry, created_artifacts):
             if created_artifact.name == match['artifact']['name'] and created_artifact.version == match['artifact']['version']:
                 artifact = created_artifact
                 break
-        # artifact = Artifacts.objects.get(name=match['artifact']['name'], version=match['artifact']['version'])
 
         # because we want a version history, we have to create a new vulnerability entry
         # only reuse the vulnerability if everything is the same
@@ -224,7 +240,9 @@ def parse_grype_scan(grype_json, scan_entry, created_artifacts):
             vuln_id=vulnerability['id'],
             severity=vulnerability['severity'],
             cvss=vulnerability['cvss'],
-            fix=match['vulnerability']['fix']
+            fix=match['vulnerability']['fix'],
+            description=vulnerability['description'] if 'description' in vulnerability else None,
+            url=vulnerability['dataSource'] if 'dataSource' in vulnerability else None,
         )
 
         # add scan and artifact entry to the vulnerability

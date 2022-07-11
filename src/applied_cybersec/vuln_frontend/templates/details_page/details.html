@@ -6,6 +6,11 @@
 
 {% block content %}
 
+{% comment %} VARIABLES {% endcomment %}
+{{ repo.organization|json_script:"repo_org" }}
+{{ repo.name|json_script:"repo_name" }}
+{{ end_pagination|json_script:"end_pagination" }}
+
 <div style="padding-top: 20px;">
     <h1>
         {{repo.name}}
@@ -14,116 +19,165 @@
 
 <!-- chart.js include -->
 
-<div class="jumbotron" style="margin-top: 10px;">
+{% comment %} <div class="jumbotron" style="margin-top: 10px;"> {% endcomment %}
     <canvas id="myChart" width="1000" height="400"></canvas>
-</div>
+{% comment %} </div> {% endcomment %}
 
 <script>
 var ctx = document.getElementById("myChart").getContext("2d");
 
 const colors = {
-  cvss_low: {
-    fill: '#ffe564',
-    stroke: '#ffe564'
-  },
-  cvss_medium: {
-    fill: '#ffbc64',
-    stroke: '#ffbc64',
-  },
-  cvss_high: {
-    fill: '#ff8f64',
-    stroke: '#ff8f64',
-  },
-  cvss_critical: {
-    fill: '#ff6464',
-    stroke: '#ff6464',
-  },
+    cvss_unknown: {
+        fill: '#8aa5bc',
+        stroke: '#154c79',
+    },
+    cvss_negligible: {
+        fill: '#f6f6f1',
+        stroke: '#eeeee4',
+    },
+    cvss_low: {
+        fill: '#F4E9A9',
+        stroke: '#ebd35b'
+    },
+    cvss_medium: {
+        fill: '#F4D4A9',
+        stroke: '#f2b25e',
+    },
+    cvss_high: {
+        fill: '#F4BEA9',
+        stroke: '#FF8F64',
+    },
+    cvss_critical: {
+        fill: '#F4A8A9',
+        stroke: '#FF6464',
+    },  
 };
 
 const number_vuln_critical = {{ graph_data|get_item:"critical" }};
 const numbber_vuln_high = {{ graph_data|get_item:"high" }};
 const number_vuln_medium = {{ graph_data|get_item:"medium" }};
 const number_vuln_low = {{ graph_data|get_item:"low" }};
+const number_vuln_negl = {{ graph_data|get_item:"negligible" }};
+const number_vuln_unknown = {{ graph_data|get_item:"unknown" }};
 var created_at = {{ graph_data|get_item:"created_at"|safe }};
 
 // change to type date:
 for (var i = 0; i < created_at.length; i++) {
-  created_at[i] = new Date(created_at[i]);
+    created_at[i] = new Date(created_at[i]);
 }
 
 const myChart = new Chart(ctx, {
-  type: 'line',
-  data: {
-    labels: created_at,
-    datasets: [{
-      label: "Low",
-      fill: true,
-      backgroundColor: 'rgba(255, 229, 100, 0.8)',
-      pointBackgroundColor: 'rgba(255, 229, 100, 0.8)',
-      borderColor:'rgba(255, 229, 100, 1)',
-      pointHighlightStroke: 'rgba(255, 229, 100, 1)',
-      borderCapStyle: 'butt',
-      data: number_vuln_low,
-
-    }, {
-      label: "Medium",
-      fill: true,
-      backgroundColor: 'rgba(255, 188, 100, 0.6)',
-      pointBackgroundColor: 'rgba(255, 188, 100, 0.6)',
-      borderColor:'rgba(255, 188, 100, 1)',
-      pointHighlightStroke: 'rgba(255, 188, 100, 1)',
-      borderCapStyle: 'butt',
-      data: number_vuln_medium,
-    }, {
-      label: "High",
-      fill: true,
-      backgroundColor: 'rgba(255, 143, 100, 0.4)',
-      pointBackgroundColor: 'rgba(255, 143, 100, 0.4)',
-      borderColor:'rgba(255, 143, 100, 1)',
-      pointHighlightStroke: 'rgba(255, 143, 100, 1)',
-      borderCapStyle: 'butt',
-      data: numbber_vuln_high,
-    }, {
-      label: "Critical",
-      fill: true,
-      backgroundColor: 'rgba(255, 100, 100, 0.2)',
-      pointBackgroundColor: 'rgba(255, 100, 100, 0.2)',
-      borderColor:'rgba(255, 100, 100, 1)',
-      pointHighlightStroke: 'rgba(255, 100, 100, 1)',
-      data: number_vuln_critical,
-    }]
-  },
-  options: {
-    // Can't just `stacked: true` like the docs say
-    scales: {
-        x: {
-        title: {
-          display: true,
-          text: 'Date of Scan'
+    type: 'line',
+    data: {
+        labels: created_at,
+        datasets: [{
+            label: "Unknown",
+            fill: true,
+            backgroundColor: colors.cvss_unknown.fill,
+            pointBackgroundColor: colors.cvss_unknown.fill,
+            borderColor: colors.cvss_unknown.stroke,
+            pointHighlightStroke: colors.cvss_unknown.stroke,
+            borderCapStyle: 'butt',
+            data: number_vuln_unknown,
+            pointRadius: 5,
+            pointHoverRadius: 10,
+        },{
+            label: "Negligible",
+            fill: true,
+            backgroundColor: colors.cvss_negligible.fill,
+            pointBackgroundColor: colors.cvss_negligible.fill,
+            borderColor: colors.cvss_negligible.stroke,
+            pointHighlightStroke: colors.cvss_negligible.stroke,
+            borderCapStyle: 'butt',
+            data: number_vuln_negl,
+            pointRadius: 5,
+            pointHoverRadius: 10,
+        },{
+            label: "Low",
+            fill: true,
+            backgroundColor: colors.cvss_low.fill,
+            pointBackgroundColor: colors.cvss_low.fill,
+            borderColor: colors.cvss_low.stroke,
+            pointHighlightStroke: colors.cvss_low.stroke,
+            borderCapStyle: 'butt',
+            data: number_vuln_low,
+            pointRadius: 5,
+            pointHoverRadius: 10,
+        }, {
+            label: "Medium",
+            fill: true,
+            backgroundColor: colors.cvss_medium.fill,
+            pointBackgroundColor: colors.cvss_medium.fill,
+            borderColor: colors.cvss_medium.stroke,
+            pointHighlightStroke: colors.cvss_medium.stroke,
+            borderCapStyle: 'butt',
+            data: number_vuln_medium,
+            pointRadius: 5,
+            pointHoverRadius: 10,
+        }, {
+            label: "High",
+            fill: true,
+            backgroundColor: colors.cvss_high.fill,
+            pointBackgroundColor: colors.cvss_high.fill,
+            borderColor: colors.cvss_high.stroke,
+            pointHighlightStroke: colors.cvss_high.stroke,
+            borderCapStyle: 'butt',
+            data: numbber_vuln_high,
+            pointRadius: 5,
+            pointHoverRadius: 10,
+        }, {
+            label: "Critical",
+            fill: true,
+            backgroundColor: colors.cvss_critical.fill,
+            pointBackgroundColor: colors.cvss_critical.fill,
+            borderColor: colors.cvss_critical.stroke,
+            pointHighlightStroke: colors.cvss_critical.stroke,
+            data: number_vuln_critical,
+            pointRadius: 5,
+            pointHoverRadius: 10,
+        }]
+    },
+    options: {
+        // Can't just `stacked: true` like the docs say
+        scales: {
+            x: {
+                title: {
+                    display: true,
+                    text: 'Date of Scan'
+                },
+                type: 'time',
+                time: {
+                    unit: 'day',
+                    displayFormats: {
+                    minute: 'DD T'
+                    },
+                    tooltipFormat: 'DD T'
+                },
+                grid: {
+                    z: 1
+                }
+            },
+            y: {
+                min: 0,
+                stacked: true,
+                title: {
+                    display: true,
+                    text: 'Vulnerabilities'
+                },
+                grid: {
+                    z: 1
+                }
+            }
         },
-        type: 'time',
-        time: {
-          unit: 'day',
+        animation: {
+            duration: 750,
+        },
+        plugins: {
+            legend: {
+                position: 'bottom'
+            }
         }
-      },
-      y: {
-        min: 0,
-        stacked: true,
-        title: {
-          display: true,
-          text: 'Vulnerabilities'
-        }
-      }
-    },
-    animation: {
-      duration: 750,
-    },
-    plugins: {
-      legend: {
-        position: 'bottom'
-      }
     }
-  }
 });
 </script>
 
@@ -136,67 +190,82 @@ const myChart = new Chart(ctx, {
             <p>Organisation: {{ repo.org }}</p>
             <p>URL: {{ repo.url }} </p>
         </div>
-        <div class="jumbotron col-md-6">
+        <div id="scan_data" class="jumbotron col-md-6">
             Scan Data:
             <p>ID: {{ selected_scan|get_item:"scan"|get_item:"id" }}</p>
             <p>Created At: {{ selected_scan|get_item:"scan"|get_item:"created_at" }}</p>
-            <p>Workflow ID: {{ selected_scan|get_item:"scan"|get_item:"workflow_id" }}</p>
+            Workflow ID:
+            <p id="workflow_id_src">{{ selected_scan|get_item:"scan"|get_item:"workflow_id" }}</p>
             <p>#Dependencies: {{ selected_scan|get_item:"statistics"|get_item:"number_dependencies" }}</p>
             <p>#Vulns: {{ selected_scan|get_item:"statistics"|get_item:"number_vulnerabilities" }}</p>
             <p>#Critical: {{ selected_scan|get_item:"statistics"|get_item:"number_vuln_critical" }}</p>
             <p>#High: {{ selected_scan|get_item:"statistics"|get_item:"number_vuln_high" }}</p>
             <p>#Medium: {{ selected_scan|get_item:"statistics"|get_item:"number_vuln_medium" }}</p>
             <p>#Low: {{ selected_scan|get_item:"statistics"|get_item:"number_vuln_low" }}</p>
+            <p>#Negligable: {{ selected_scan|get_item:"statistics"|get_item:"number_vuln_negligible" }}</p>
+            <p>#Unknown: {{ selected_scan|get_item:"statistics"|get_item:"number_vuln_unknown" }}</p>
         </div>
     </div>
 
     <br>
     <br>
-    <button onclick="select_scan('{{repo.organization}}','{{repo.name}}');">Test</button>
-    <br>
-    <form>
-        <div class="row form-group">
-            <div class="col-sm-4">
-                <div class="input-group date" id="datepicker">
-                    <input type="text" class="form-control">
-                    <span class="input-group-append">
-                        <span class="input-group-text bg-white">
-                            <i class="fa fa-calendar"></i>
-                        </span>
-                    </span>
+    <div>Select a Scan</div>
+    <div class="form-row">
+        <div class="form-group col-md-3">
+            <div class="input-group date" id="id_1">
+                <input type="text" id="datepicker_input" value="{{ selected_scan.scan.date }}" class="form-control"/>
+                <div class="input-group-addon input-group-append">
+                        <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
                 </div>
             </div>
         </div>
-    </form>
-
-    <script type="text/javascript">
-        $(function() {
-            $('#datepicker').datepicker();
-        });
-    </script>
-    <br>
-    <div id="pagination_div">
-        {% for page_number in vuln_page_obj.adjusted_elided_pages  %}
-            {% if page_number == page_obj.paginator.ELLIPSIS %}
-                {{page_number}}
-            {% else %}
-                <a
-                    id="pagination_link_{{page_number}}"
-                    href="/details/{{repo.organization}}/{{repo.name}}?page={{page_number}}"
-                    data-repo-org="{{repo.organization}}"
-                    data-repo-name="{{repo.name}}"
-                    data-page-number="{{page_number}}"
-                    class="{% if page_number == page_obj.number %}current{% endif %}"
-                >
-                    {{page_number}}
-                </a>
-            {% endif %}
-        {% endfor %}
+        <div class="form-group col-md-3" id="time_select_div">
+            <select id="time_select" class="form-select">
+                {% for time in selected_scan.other_scans %}
+                    {% if time == act_time  %}
+                        <option value="{{ time }}" selected>{{ time }}</option>
+                    {% else %}
+                        <option value="{{ time }}">{{ time }}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+        </div>
     </div>
+
+    <br>  
+    <br>
+    <br>
+
+    <div class="row">
+        {% comment %} Search Bar {% endcomment %}
+        <div id="vuln_search_div" class="form-group col-md-4">
+            <div class="input-group">
+                <input class="form-control py-2" type="search" placeholder="Search Vulnerabilities" value="" id="vuln_search_input">
+                <span class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </span>
+            </div>
+        </div>
+
+        {% comment %} Download buttons {% endcomment %}
+        <div id='download-div' style="float:right;" class="form-group col-md-4">
+            <form class="export_sbom" id="download_form" action="{% url 'download' %}" method="post">
+                {% csrf_token %}
+                <input type="hidden" id="workflow_id_target" name="workflow_id" value="{{ selected_scan.scan.workflow_id}}">
+                <input type="hidden" id="result_type_target" name="result_type" value="">
+
+                <button class="btn btn-outline-success" id="download_sbom_btn" form="export_sbom" value="Export SBOM" type="button">Export SBOM</button>
+                <button class="btn btn-outline-success" id="download_vuln_btn" form="export_vulns" value="Export VULNS" type="button">Export VULNS</button>
+            </form> 
+        </div>
+    </div>
+
 
     {% comment %} Vulnerability Table {% endcomment %}
     <div class="table-responsive">
-        <table class="table table-hover table-striped">
+        <table class="table">
             <thead>
                 <tr class="head_row">
                     <th style="width:25%;">Vulnerabbility ID</th>
@@ -206,26 +275,41 @@ const myChart = new Chart(ctx, {
                 </tr>
             </thead>
             <tbody id='vuln_table_body'>
-                {% for vuln in vuln_page_obj %}
-                <tr style="transform: rotate(0);">
+                {% for vuln_obj in vuln_page_obj %}
+                <tr id="vuln_row_{{vuln_obj.vulnerability.vuln_id}}" class="display_row">
                     <td scope="row">
-                        {{ vuln.vuln_id }}
-                        {% comment %} <a style="text-decoration:none;color:inherit;" href="test/{{test.uuid}}" class="stretched-link"></a>                         {% endcomment %}
+                        {{ vuln_obj.vulnerability.vuln_id }}
                     </td>
                     <td>
-                        {{ vuln.severity}}
+                        {{ vuln_obj.vulnerability.severity}}
                     </td>
                     <td style="text-align:center;">
-                        {% if vuln.cvss|length > 0 %}
-                            {{ vuln.cvss.0|get_item:"metrics"|get_item:"baseScore" }} (Version 2) </br>
+                        {% if vuln_obj.vulnerability.cvss|length > 0 %}
+                            {{ vuln_obj.vulnerability.cvss.0|get_item:"metrics"|get_item:"baseScore" }} (Version 2) </br>
                         {% endif %}
-                        {% if vuln.cvss|length > 1 %}
-                            {{ vuln.cvss.1|get_item:"metrics"|get_item:"baseScore" }} (Version 3)
+                        {% if vuln_obj.vulnerability.cvss|length > 1 %}
+                            {{ vuln_obj.vulnerability.cvss.1|get_item:"metrics"|get_item:"baseScore" }} (Version 3)
                         {% endif %}
                     </td>
-                    {% comment %} <td style="text-align:center;">
-                        {% if test.resultDate %}{{test.resultDate}}{% else %}{% trans "Datum ausstehend" %}{% endif %}
-                    </td> {% endcomment %}
+                </tr>
+                <tr id="vuln_hidden_row_{{vuln_obj.vulnerability.vuln_id}}" class="hidden_row">
+                    <td colspan="3" style="padding: 0">
+                        <div id="vuln_hidden_div_{{vuln_obj.vulnerability.vuln_id}}" class="vuln_hidden_div form-group">
+                            <label for="p_url">Vulnerable Software:</label>
+                            {% for artifact in vuln_obj.artifacts %}
+                                <p>Name: {{artifact.name}} Version: {{artifact.version}}</p>
+                            {% endfor %}
+                            <br>
+                            {% if vuln_obj.vulnerability.description %}
+                                <label for="ta_description">Description:</label>
+                                <textarea class="ta_description form-control" rows="4"  id="ta_description_{{vuln_obj.vulnerability.vuln_id}}" readonly>{{vuln_obj.vulnerability.description}}</textarea>
+                                <br>
+                            {% endif %}
+                            
+                            <a style="float:right;"  href="{{vuln_obj.vulnerability.url}}" target="_blank" id="p_url_{{vuln_obj.vulnerability.vuln_id}}">Go to further information</a>
+                            <br>
+                        </div>
+                    </td>
                 </tr>
                 {% endfor %}
             </tbody>
@@ -236,5 +320,13 @@ const myChart = new Chart(ctx, {
 
 
 {% block statics %}
+
+    {% comment %} Datetimepicker {% endcomment %}
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/details.css' %}">
+    <script src="{% static 'vendor/bootstrap-datetimepicker/js/moment.min.js' %}"></script>    
+    <script src="{% static 'vendor/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js' %}"></script>    
+
     <script src="{% static 'js/details_ajax.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/details.js' %}" type="text/javascript"></script>
 {% endblock %}

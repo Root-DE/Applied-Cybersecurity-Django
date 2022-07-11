@@ -1,0 +1,111 @@
+// auf details html
+    <div id="pagination_div">
+        {% for page_number in vuln_page_obj.adjusted_elided_pages  %}
+            {% if page_number == page_obj.paginator.ELLIPSIS %}
+                {{page_number}}
+            {% else %}
+                <a
+                    id="pagination_link_{{page_number}}"
+                    href="/details/{{repo.organization}}/{{repo.name}}?page={{page_number}}"
+                    data-page-number="{{page_number}}"
+                    class="{% if page_number == page_obj.number %}current{% endif %}"
+                >
+                    {{page_number}}
+                </a>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+// details_ajax.js
+
+    history.replaceState({
+        'pagination_div': document.getElementById('pagination_div').innerHTML,
+        'vuln_table_body': document.getElementById('vuln_table_body').innerHTML,
+        'scan_data': document.getElementById('scan_data').innerHTML,
+        'time_select_div': document.getElementById('time_select_div').innerHTML,
+        'act_date': document.getElementById('datepicker_input').value
+    }, '', window.location.href);
+
+
+    // pagination functionality
+    $('#pagination_div').on('click', 'a[id^="pagination_link_"]', function(e) {
+        e.preventDefault();
+
+        // get the date and page parameter from url
+        var url_params = new URLSearchParams(window.location.search);
+        var date = url_params.get('date');
+        if (date) {
+            date = decodeURI(date);
+        }
+
+        var repo_org = JSON.parse(document.getElementById('repo_org').textContent)
+        var repo_name = JSON.parse(document.getElementById('repo_name').textContent)
+        var page_number = $(this).attr('data-page-number');
+
+        var url = '/details/' + repo_org + '/' + repo_name
+        if (date) {
+            url += '?date=' + date + '&page=' + page_number
+        } else {
+            url += '?page=' + page_number
+        }
+
+        var pagination_div = document.getElementById('pagination_div');
+        var vuln_table_body = document.getElementById('vuln_table_body');
+
+        $.ajax({
+            url: url,
+            type: 'POST',
+            data: {
+                'action': 'paginate',
+                'page': page_number,
+            },
+            success: function(ajax_data) {
+                // set new table content
+                vuln_table_body.innerHTML = ajax_data.vuln_table
+                // set new pagination
+                pagination_div.innerHTML = ajax_data.pagination_div
+                var new_state = {
+                    'pagination_div': ajax_data.pagination_div,
+                    'vuln_table_body': ajax_data.vuln_table,
+                }
+                window.history.pushState(new_state, '', url)
+            }
+
+        });
+    }); // end pagination functionality
+
+
+// pagination.html
+
+{% for page_number in vuln_page_obj.adjusted_elided_pages  %}
+    {% if page_number == page_obj.paginator.ELLIPSIS %}
+        {{page_number}}
+    {% else %}
+        <a
+            id="pagination_link_{{page_number}}"
+            href="/details/{{repo.organization}}/{{repo.name}}?page={{page_number}}"
+            data-repo-org="{{repo.organization}}"
+            data-repo-name="{{repo.name}}"
+            data-page-number="{{page_number}}"
+            class="{% if page_number == page_obj.number %}current{% endif %}"
+        >
+            {{page_number}}
+        </a>
+    {% endif %}
+{% endfor %}
+
+
+// views.py
+
+
+    # vuln_page_obj.adjusted_elided_pages = paginator.get_elided_page_range(page)
+
+    
+    # try to get the page number from the url
+    page = request.GET.get('page', 1)
+
+    
+        elif request.POST['action'] == 'paginate':
+            ajax_data = {
+                'vuln_table': render_to_string('./details_page/vuln_table.html', {'vulnerabilities': vuln_page_obj}),
+            }

@@ -1,0 +1,11 @@
+Scan Data:
+<p>ID: {{ selected_scan|get_item:"scan"|get_item:"id" }}</p>
+<p>Created At: {{ selected_scan|get_item:"scan"|get_item:"created_at" }}</p>
+Workflow ID:
+<p id="workflow_id_src">{{ selected_scan|get_item:"scan"|get_item:"workflow_id" }}</p>
+<p>#Dependencies: {{ selected_scan|get_item:"statistics"|get_item:"number_dependencies" }}</p>
+<p>#Vulns: {{ selected_scan|get_item:"statistics"|get_item:"number_vulnerabilities" }}</p>
+<p>#Critical: {{ selected_scan|get_item:"statistics"|get_item:"number_vuln_critical" }}</p>
+<p>#High: {{ selected_scan|get_item:"statistics"|get_item:"number_vuln_high" }}</p>
+<p>#Medium: {{ selected_scan|get_item:"statistics"|get_item:"number_vuln_medium" }}</p>
+<p>#Low: {{ selected_scan|get_item:"statistics"|get_item:"number_vuln_low" }}</p>

@@ -57,6 +57,8 @@ class Vulnerabilities(models.Model):
     severity = models.CharField(max_length=100, editable=False)
     cvss = models.JSONField(editable=False)
     fix = models.JSONField(editable=False)
+    description = models.TextField(editable=False, null=True)
+    url = models.CharField(max_length=250, editable=False, null=True)
 
     scan = models.ManyToManyField(ScanData)
     artifact = models.ManyToManyField(Artifacts)

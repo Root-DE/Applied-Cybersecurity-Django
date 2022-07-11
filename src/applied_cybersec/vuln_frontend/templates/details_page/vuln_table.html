@@ -1,33 +1,37 @@
-{% for vuln in vulnerabilities %}
-<tr style="transform: rotate(0);">
+{% for vuln_obj in vuln_page_obj %}
+<tr id="vuln_row_{{vuln_obj.vulnerability.vuln_id}}" class="display_row">
     <td scope="row">
-        {{ vuln.vuln_id }}
-        {% comment %} <a style="text-decoration:none;color:inherit;" href="test/{{test.uuid}}" class="stretched-link"></a>                         {% endcomment %}
+        {{ vuln_obj.vulnerability.vuln_id }}
     </td>
     <td>
-        {{ vuln.severity}}
+        {{ vuln_obj.vulnerability.severity}}
     </td>
     <td style="text-align:center;">
-        {% if vuln.cvss|length > 0 %}
-            {{ vuln.cvss.0|get_item:"metrics"|get_item:"baseScore" }} (Version 2) </br>
+        {% if vuln_obj.vulnerability.cvss|length > 0 %}
+            {{ vuln_obj.vulnerability.cvss.0|get_item:"metrics"|get_item:"baseScore" }} (Version 2) </br>
         {% endif %}
-        {% if vuln.cvss|length > 1 %}
-            {{ vuln.cvss.1|get_item:"metrics"|get_item:"baseScore" }} (Version 3)
+        {% if vuln_obj.vulnerability.cvss|length > 1 %}
+            {{ vuln_obj.vulnerability.cvss.1|get_item:"metrics"|get_item:"baseScore" }} (Version 3)
         {% endif %}
     </td>
-    {% comment %} <td style="text-align:center;">
-        {% if test.resultDate %}{{test.resultDate}}{% else %}{% trans "Datum ausstehend" %}{% endif %}
-    </td> {% endcomment %}
+</tr>
+<tr id="vuln_hidden_row_{{vuln_obj.vulnerability.vuln_id}}" class="hidden_row">
+    <td colspan="3" style="padding: 0">
+        <div id="vuln_hidden_div_{{vuln_obj.vulnerability.vuln_id}}" class="vuln_hidden_div form-group">
+            <label for="p_url">Vulnerable Software:</label>
+            {% for artifact in vuln_obj.artifacts %}
+                <p>Name: {{artifact.name}} Version: {{artifact.version}}</p>
+            {% endfor %}
+            <br>
+            {% if vuln_obj.vulnerability.description %}
+                <label for="ta_description">Description:</label>
+                <textarea class="ta_description form-control" rows="4"  id="ta_description_{{vuln_obj.vulnerability.vuln_id}}" readonly>{{vuln_obj.vulnerability.description}}</textarea>
+                <br>
+            {% endif %}
+            
+            <a style="float:right;"  href="{{vuln_obj.vulnerability.url}}" target="_blank" id="p_url_{{vuln_obj.vulnerability.vuln_id}}">Go to further information</a>
+            <br>
+        </div>
+    </td>
 </tr>
 {% endfor %}
-<tr style="transform: rotate(0);">
-    <td scope="row">
-        Das
-    </td>
-    <td>
-        muss
-    </td>
-    <td style="text-align:center;">
-        klappen
-    </td>
-</tr>
