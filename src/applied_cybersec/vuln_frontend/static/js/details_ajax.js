@@ -40,27 +40,6 @@ $(document).ready(function() {
         $.load_scan(datetime);
     });
 
-    // select new scan on timeline
-    document.getElementById("myChart").onclick = function(evt) {
-        var activePoints = myChart.getElementsAtEventForMode(evt, 'point', true);
-
-        // make sure click was on an actual point
-        if (activePoints.length === 0) {
-            return;
-        }
-
-        var firstPoint = activePoints[0];
-        var label = myChart.data.labels[firstPoint.index];
-
-        var date = label;
-        //transform date object to string
-        var date_string = date.getDate() + '-' + ("0" + (date.getMonth() + 1)).slice(-2) + '-' + date.getFullYear() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
-
-        // load the new scan
-       $.load_scan(date_string);
-        
-    };
-
     // download file functionality
     $('#download_sbom_btn').click(function() {
         download_file('sbom');
@@ -277,6 +256,161 @@ window.onpopstate = function(event) {
     }
 }
 
+$.generate_myChart = function(graph_data) {
+
+    var ctx_line = document.getElementById("myChart").getContext("2d");
+
+    const number_vuln_critical = graph_data.critical;
+    const number_vuln_high = graph_data.high;
+    const number_vuln_medium = graph_data.medium;
+    const number_vuln_low = graph_data.low;
+    const number_vuln_negligible = graph_data.negligible;
+    const number_vuln_unknown = graph_data.unknown;
+
+    // change to type date:
+    for (var i = 0; i < graph_data.created_at.length; i++) {
+        graph_data.created_at[i] = new Date(graph_data.created_at[i]);
+    }
+
+    const myChart = new Chart(ctx_line, {
+        type: 'line',
+        data: {
+            labels: graph_data.created_at,
+            datasets: [{
+                label: "Unknown",
+                fill: true,
+                backgroundColor: colors.cvss_unknown.fill,
+                pointBackgroundColor: colors.cvss_unknown.fill,
+                borderColor: colors.cvss_unknown.stroke,
+                borderWidth: 1,
+                pointHighlightStroke: colors.cvss_unknown.stroke,
+                borderCapStyle: 'butt',
+                data: number_vuln_unknown,
+                pointRadius: 5,
+                pointHoverRadius: 10,
+            },{
+                label: "Negligible",
+                fill: true,
+                backgroundColor: colors.cvss_negligible.fill,
+                pointBackgroundColor: colors.cvss_negligible.fill,
+                borderColor: colors.cvss_negligible.stroke,
+                borderWidth: 1,
+                pointHighlightStroke: colors.cvss_negligible.stroke,
+                borderCapStyle: 'butt',
+                data: number_vuln_negligible,
+                pointRadius: 5,
+                pointHoverRadius: 10,
+            },{
+                label: "Low",
+                fill: true,
+                backgroundColor: colors.cvss_low.fill,
+                pointBackgroundColor: colors.cvss_low.fill,
+                borderColor: colors.cvss_low.stroke,
+                pointHighlightStroke: colors.cvss_low.stroke,
+                borderWidth: 1,
+                borderCapStyle: 'butt',
+                data: number_vuln_low,
+                pointRadius: 5,
+                pointHoverRadius: 10,
+            }, {
+                label: "Medium",
+                fill: true,
+                backgroundColor: colors.cvss_medium.fill,
+                pointBackgroundColor: colors.cvss_medium.fill,
+                borderColor: colors.cvss_medium.stroke,
+                pointHighlightStroke: colors.cvss_medium.stroke,
+                borderWidth: 1,
+                borderCapStyle: 'butt',
+                data: number_vuln_medium,
+                pointRadius: 5,
+                pointHoverRadius: 10,
+            }, {
+                label: "High",
+                fill: true,
+                backgroundColor: colors.cvss_high.fill,
+                pointBackgroundColor: colors.cvss_high.fill,
+                borderColor: colors.cvss_high.stroke,
+                pointHighlightStroke: colors.cvss_high.stroke,
+                borderWidth: 1,
+                borderCapStyle: 'butt',
+                data: number_vuln_high,
+                pointRadius: 5,
+                pointHoverRadius: 10,
+            }, {
+                label: "Critical",
+                fill: true,
+                backgroundColor: colors.cvss_critical.fill,
+                pointBackgroundColor: colors.cvss_critical.fill,
+                borderColor: colors.cvss_critical.stroke,
+                pointHighlightStroke: colors.cvss_critical.stroke,
+                borderWidth: 1,
+                data: number_vuln_critical,
+                pointRadius: 5,
+                pointHoverRadius: 10,
+            }]
+        },
+        options: {
+            // Can't just `stacked: true` like the docs say
+            scales: {
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Date of Scan'
+                    },
+                    type: 'time',
+                    time: {
+                        unit: 'day',
+                        displayFormats: {
+                        minute: 'DD T'
+                        },
+                        tooltipFormat: 'DD T'
+                    },
+                    grid: {
+                        z: 1
+                    }
+                },
+                y: {
+                    min: 0,
+                    stacked: true,
+                    title: {
+                        display: true,
+                        text: 'Vulnerabilities'
+                    },
+                    grid: {
+                        z: 1
+                    }
+                }
+            },
+            animation: {
+                duration: 750,
+            },
+            plugins: {
+                legend: {
+                    position: 'bottom'
+                }
+            },
+            onClick: function(evt) {
+                var activePoints = myChart.getElementsAtEventForMode(evt, 'point', true);
+                // make sure click was on an actual point
+                if (activePoints.length === 0) {
+                    return;
+                }
+
+                var firstPoint = activePoints[0];
+                var label = myChart.data.labels[firstPoint.index];
+
+                var date = label;
+                //transform date object to string
+                var date_string = date.getDate() + '-' + ("0" + (date.getMonth() + 1)).slice(-2) + '-' + date.getFullYear() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+
+                // load the new scan
+                $.load_scan(date_string);
+            }
+        }
+    });
+
+}
+
 $.generate_pieChart = function(statistics) {
     var ctx_pie = document.getElementById("pieChart").getContext('2d');
 
@@ -327,6 +461,13 @@ $.generate_pieChart = function(statistics) {
                                 colors.cvss_medium.fill,
                                 colors.cvss_high.fill,
                                 colors.cvss_critical.fill],
+                borderColor: [colors.cvss_unknown.stroke,
+                                colors.cvss_negligible.stroke,
+                                colors.cvss_low.stroke,
+                                colors.cvss_medium.stroke,
+                                colors.cvss_high.stroke,
+                                colors.cvss_critical.stroke],
+                borderWidth: [1, 1, 1, 1, 1, 1],
                 data: data_arr,
             }]
         },
@@ -346,5 +487,35 @@ $.generate_pieChart = function(statistics) {
 
 window.onload = function() {
     var statistics = JSON.parse(document.getElementById('statistics').textContent);
+    var graph_data = JSON.parse(document.getElementById('graph_data').textContent);
+    $.generate_myChart(graph_data);
     $.generate_pieChart(statistics);
+};
+
+// define color palette for the charts
+var colors = {
+    cvss_unknown: {
+        fill: '#8aa5bc',
+        stroke: '#154c79',
+    },
+    cvss_negligible: {
+        fill: '#f6f6f1',
+        stroke: '#eeeee4',
+    },
+    cvss_low: {
+        fill: '#F4E9A9',
+        stroke: '#ebd35b'
+    },
+    cvss_medium: {
+        fill: '#F4D4A9',
+        stroke: '#f2b25e',
+    },
+    cvss_high: {
+        fill: '#F4BEA9',
+        stroke: '#FF8F64',
+    },
+    cvss_critical: {
+        fill: '#F4A8A9',
+        stroke: '#FF6464',
+    },  
 };

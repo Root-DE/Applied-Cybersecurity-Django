@@ -32,6 +32,14 @@
     border: none;
 }
 
+.jumbotron {
+    padding: 20px 20px 20px 20px;
+}
+
+.jbt-header-center {
+    text-align: center;
+}
+
 .wrapper {
     margin: 0 auto;
     width: 300px;
@@ -45,12 +53,12 @@
 
 .jbt-details-left {
     float: left;
-    width: 48%;
+    width: 49.5%;
 }
 
 .jbt-details-right {
     float: right;
-    width: 48%;
+    width: 49.5%;
 }
 
 #time_select {
