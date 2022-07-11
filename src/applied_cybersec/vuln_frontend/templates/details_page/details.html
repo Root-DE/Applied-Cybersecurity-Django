@@ -24,194 +24,190 @@
 {% comment %} </div> {% endcomment %}
 
 <script>
-var ctx = document.getElementById("myChart").getContext("2d");
+    var ctx_line = document.getElementById("myChart").getContext("2d");
 
-const colors = {
-    cvss_unknown: {
-        fill: '#8aa5bc',
-        stroke: '#154c79',
-    },
-    cvss_negligible: {
-        fill: '#f6f6f1',
-        stroke: '#eeeee4',
-    },
-    cvss_low: {
-        fill: '#F4E9A9',
-        stroke: '#ebd35b'
-    },
-    cvss_medium: {
-        fill: '#F4D4A9',
-        stroke: '#f2b25e',
-    },
-    cvss_high: {
-        fill: '#F4BEA9',
-        stroke: '#FF8F64',
-    },
-    cvss_critical: {
-        fill: '#F4A8A9',
-        stroke: '#FF6464',
-    },  
-};
+    const colors = {
+        cvss_unknown: {
+            fill: '#8aa5bc',
+            stroke: '#154c79',
+        },
+        cvss_negligible: {
+            fill: '#f6f6f1',
+            stroke: '#eeeee4',
+        },
+        cvss_low: {
+            fill: '#F4E9A9',
+            stroke: '#ebd35b'
+        },
+        cvss_medium: {
+            fill: '#F4D4A9',
+            stroke: '#f2b25e',
+        },
+        cvss_high: {
+            fill: '#F4BEA9',
+            stroke: '#FF8F64',
+        },
+        cvss_critical: {
+            fill: '#F4A8A9',
+            stroke: '#FF6464',
+        },  
+    };
 
-const number_vuln_critical = {{ graph_data|get_item:"critical" }};
-const numbber_vuln_high = {{ graph_data|get_item:"high" }};
-const number_vuln_medium = {{ graph_data|get_item:"medium" }};
-const number_vuln_low = {{ graph_data|get_item:"low" }};
-const number_vuln_negl = {{ graph_data|get_item:"negligible" }};
-const number_vuln_unknown = {{ graph_data|get_item:"unknown" }};
-var created_at = {{ graph_data|get_item:"created_at"|safe }};
+    const number_vuln_critical = {{ graph_data|get_item:"critical" }};
+    const numbber_vuln_high = {{ graph_data|get_item:"high" }};
+    const number_vuln_medium = {{ graph_data|get_item:"medium" }};
+    const number_vuln_low = {{ graph_data|get_item:"low" }};
+    const number_vuln_negl = {{ graph_data|get_item:"negligible" }};
+    const number_vuln_unknown = {{ graph_data|get_item:"unknown" }};
+    var created_at = {{ graph_data|get_item:"created_at"|safe }};
 
-// change to type date:
-for (var i = 0; i < created_at.length; i++) {
-    created_at[i] = new Date(created_at[i]);
-}
+    // change to type date:
+    for (var i = 0; i < created_at.length; i++) {
+        created_at[i] = new Date(created_at[i]);
+    }
 
-const myChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-        labels: created_at,
-        datasets: [{
-            label: "Unknown",
-            fill: true,
-            backgroundColor: colors.cvss_unknown.fill,
-            pointBackgroundColor: colors.cvss_unknown.fill,
-            borderColor: colors.cvss_unknown.stroke,
-            pointHighlightStroke: colors.cvss_unknown.stroke,
-            borderCapStyle: 'butt',
-            data: number_vuln_unknown,
-            pointRadius: 5,
-            pointHoverRadius: 10,
-        },{
-            label: "Negligible",
-            fill: true,
-            backgroundColor: colors.cvss_negligible.fill,
-            pointBackgroundColor: colors.cvss_negligible.fill,
-            borderColor: colors.cvss_negligible.stroke,
-            pointHighlightStroke: colors.cvss_negligible.stroke,
-            borderCapStyle: 'butt',
-            data: number_vuln_negl,
-            pointRadius: 5,
-            pointHoverRadius: 10,
-        },{
-            label: "Low",
-            fill: true,
-            backgroundColor: colors.cvss_low.fill,
-            pointBackgroundColor: colors.cvss_low.fill,
-            borderColor: colors.cvss_low.stroke,
-            pointHighlightStroke: colors.cvss_low.stroke,
-            borderCapStyle: 'butt',
-            data: number_vuln_low,
-            pointRadius: 5,
-            pointHoverRadius: 10,
-        }, {
-            label: "Medium",
-            fill: true,
-            backgroundColor: colors.cvss_medium.fill,
-            pointBackgroundColor: colors.cvss_medium.fill,
-            borderColor: colors.cvss_medium.stroke,
-            pointHighlightStroke: colors.cvss_medium.stroke,
-            borderCapStyle: 'butt',
-            data: number_vuln_medium,
-            pointRadius: 5,
-            pointHoverRadius: 10,
-        }, {
-            label: "High",
-            fill: true,
-            backgroundColor: colors.cvss_high.fill,
-            pointBackgroundColor: colors.cvss_high.fill,
-            borderColor: colors.cvss_high.stroke,
-            pointHighlightStroke: colors.cvss_high.stroke,
-            borderCapStyle: 'butt',
-            data: numbber_vuln_high,
-            pointRadius: 5,
-            pointHoverRadius: 10,
-        }, {
-            label: "Critical",
-            fill: true,
-            backgroundColor: colors.cvss_critical.fill,
-            pointBackgroundColor: colors.cvss_critical.fill,
-            borderColor: colors.cvss_critical.stroke,
-            pointHighlightStroke: colors.cvss_critical.stroke,
-            data: number_vuln_critical,
-            pointRadius: 5,
-            pointHoverRadius: 10,
-        }]
-    },
-    options: {
-        // Can't just `stacked: true` like the docs say
-        scales: {
-            x: {
-                title: {
-                    display: true,
-                    text: 'Date of Scan'
-                },
-                type: 'time',
-                time: {
-                    unit: 'day',
-                    displayFormats: {
-                    minute: 'DD T'
+    const myChart = new Chart(ctx_line, {
+        type: 'line',
+        data: {
+            labels: created_at,
+            datasets: [{
+                label: "Unknown",
+                fill: true,
+                backgroundColor: colors.cvss_unknown.fill,
+                pointBackgroundColor: colors.cvss_unknown.fill,
+                borderColor: colors.cvss_unknown.stroke,
+                pointHighlightStroke: colors.cvss_unknown.stroke,
+                borderCapStyle: 'butt',
+                data: number_vuln_unknown,
+                pointRadius: 5,
+                pointHoverRadius: 10,
+            },{
+                label: "Negligible",
+                fill: true,
+                backgroundColor: colors.cvss_negligible.fill,
+                pointBackgroundColor: colors.cvss_negligible.fill,
+                borderColor: colors.cvss_negligible.stroke,
+                pointHighlightStroke: colors.cvss_negligible.stroke,
+                borderCapStyle: 'butt',
+                data: number_vuln_negl,
+                pointRadius: 5,
+                pointHoverRadius: 10,
+            },{
+                label: "Low",
+                fill: true,
+                backgroundColor: colors.cvss_low.fill,
+                pointBackgroundColor: colors.cvss_low.fill,
+                borderColor: colors.cvss_low.stroke,
+                pointHighlightStroke: colors.cvss_low.stroke,
+                borderCapStyle: 'butt',
+                data: number_vuln_low,
+                pointRadius: 5,
+                pointHoverRadius: 10,
+            }, {
+                label: "Medium",
+                fill: true,
+                backgroundColor: colors.cvss_medium.fill,
+                pointBackgroundColor: colors.cvss_medium.fill,
+                borderColor: colors.cvss_medium.stroke,
+                pointHighlightStroke: colors.cvss_medium.stroke,
+                borderCapStyle: 'butt',
+                data: number_vuln_medium,
+                pointRadius: 5,
+                pointHoverRadius: 10,
+            }, {
+                label: "High",
+                fill: true,
+                backgroundColor: colors.cvss_high.fill,
+                pointBackgroundColor: colors.cvss_high.fill,
+                borderColor: colors.cvss_high.stroke,
+                pointHighlightStroke: colors.cvss_high.stroke,
+                borderCapStyle: 'butt',
+                data: numbber_vuln_high,
+                pointRadius: 5,
+                pointHoverRadius: 10,
+            }, {
+                label: "Critical",
+                fill: true,
+                backgroundColor: colors.cvss_critical.fill,
+                pointBackgroundColor: colors.cvss_critical.fill,
+                borderColor: colors.cvss_critical.stroke,
+                pointHighlightStroke: colors.cvss_critical.stroke,
+                data: number_vuln_critical,
+                pointRadius: 5,
+                pointHoverRadius: 10,
+            }]
+        },
+        options: {
+            // Can't just `stacked: true` like the docs say
+            scales: {
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Date of Scan'
                     },
-                    tooltipFormat: 'DD T'
+                    type: 'time',
+                    time: {
+                        unit: 'day',
+                        displayFormats: {
+                        minute: 'DD T'
+                        },
+                        tooltipFormat: 'DD T'
+                    },
+                    grid: {
+                        z: 1
+                    }
                 },
-                grid: {
-                    z: 1
+                y: {
+                    min: 0,
+                    stacked: true,
+                    title: {
+                        display: true,
+                        text: 'Vulnerabilities'
+                    },
+                    grid: {
+                        z: 1
+                    }
                 }
             },
-            y: {
-                min: 0,
-                stacked: true,
-                title: {
-                    display: true,
-                    text: 'Vulnerabilities'
-                },
-                grid: {
-                    z: 1
+            animation: {
+                duration: 750,
+            },
+            plugins: {
+                legend: {
+                    position: 'bottom'
                 }
             }
-        },
-        animation: {
-            duration: 750,
-        },
-        plugins: {
-            legend: {
-                position: 'bottom'
-            }
         }
-    }
-});
+    });
 </script>
 
     {% comment %} Display Details Data {% endcomment %}
     <div class="row">
-        <div class="jumbotron col-md-6">
-            Repository Data:
-            <p>ID: {{ repo.id }}</p>
-            <p>Name: {{ repo.name }}</p>
-            <p>Organisation: {{ repo.org }}</p>
-            <p>URL: {{ repo.url }} </p>
-        </div>
-        <div id="scan_data" class="jumbotron col-md-6">
-            Scan Data:
-            <p>ID: {{ selected_scan|get_item:"scan"|get_item:"id" }}</p>
-            <p>Created At: {{ selected_scan|get_item:"scan"|get_item:"created_at" }}</p>
-            Workflow ID:
-            <p id="workflow_id_src">{{ selected_scan|get_item:"scan"|get_item:"workflow_id" }}</p>
-            <p>#Dependencies: {{ selected_scan|get_item:"statistics"|get_item:"number_dependencies" }}</p>
-            <p>#Vulns: {{ selected_scan|get_item:"statistics"|get_item:"number_vulnerabilities" }}</p>
-            <p>#Critical: {{ selected_scan|get_item:"statistics"|get_item:"number_vuln_critical" }}</p>
-            <p>#High: {{ selected_scan|get_item:"statistics"|get_item:"number_vuln_high" }}</p>
-            <p>#Medium: {{ selected_scan|get_item:"statistics"|get_item:"number_vuln_medium" }}</p>
-            <p>#Low: {{ selected_scan|get_item:"statistics"|get_item:"number_vuln_low" }}</p>
-            <p>#Negligable: {{ selected_scan|get_item:"statistics"|get_item:"number_vuln_negligible" }}</p>
-            <p>#Unknown: {{ selected_scan|get_item:"statistics"|get_item:"number_vuln_unknown" }}</p>
+        <div id="jbt-details-wrapper">
+            <div class="jumbotron col-md-6 jbt-details-left">
+                Repository Data:
+                <p>ID: {{ repo.id }}</p>
+                <p>Name: {{ repo.name }}</p>
+                <p>Organisation: {{ repo.org }}</p>
+                <p>URL: {{ repo.url }} </p>
+            </div>
+            <div id="scan_data" class="jumbotron col-md-6 jbt-details-right">
+                Scan ID:
+                <p>{{ selected_scan|get_item:"scan"|get_item:"id" }}</p>
+                Created At:
+                <p>{{ selected_scan|get_item:"scan"|get_item:"created_at" }}</p>
+                Workflow ID:
+                <p id="workflow_id_src">{{ selected_scan|get_item:"scan"|get_item:"workflow_id" }}</p>
+                <div class="wrapper">
+                    <canvas id="pieChart"></canvas>
+                </div>
+            </div>
         </div>
     </div>
 
-    <br>
-    <br>
     <div>Select a Scan</div>
     <div class="form-row">
-        <div class="form-group col-md-3">
+        <div class="form-group col-md-2">
             <div class="input-group date" id="id_1">
                 <input type="text" id="datepicker_input" value="{{ selected_scan.scan.date }}" class="form-control"/>
                 <div class="input-group-addon input-group-append">
@@ -219,7 +215,7 @@ const myChart = new Chart(ctx, {
                 </div>
             </div>
         </div>
-        <div class="form-group col-md-3" id="time_select_div">
+        <div class="form-group col-md-2" id="time_select_div">
             <select id="time_select" class="form-select">
                 {% for time in selected_scan.other_scans %}
                     {% if time == act_time  %}
@@ -231,10 +227,6 @@ const myChart = new Chart(ctx, {
             </select>
         </div>
     </div>
-
-    <br>  
-    <br>
-    <br>
 
     <div class="row">
         {% comment %} Search Bar {% endcomment %}
@@ -316,6 +308,10 @@ const myChart = new Chart(ctx, {
         </table>
     </div>
 </div>
+
+{% comment %} Variables {% endcomment %}
+{{ selected_scan.statistics|json_script:'statistics' }}
+
 {% endblock content %}
 
 

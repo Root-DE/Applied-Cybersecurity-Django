@@ -192,6 +192,8 @@ $(document).ready(function() {
                 time_select_div.innerHTML = ajax_data.time_select_div
                 // set new scan content
                 scan_data_div.innerHTML = ajax_data.scan_data
+                // refresh the pieChart
+                $.generate_pieChart(ajax_data.statistics);
                 // reset the search input
                 $('#vuln_search_input').val('');
                 new_state = {
@@ -201,8 +203,6 @@ $(document).ready(function() {
                     'act_date': ajax_data.scan_time,
                 }
                 window.history.pushState(new_state, '', url)
-
-                console.log(ajax_data.vuln_table);
 
                 // refresh the state
                 page += 1;
@@ -276,3 +276,75 @@ window.onpopstate = function(event) {
         alert("initial page")
     }
 }
+
+$.generate_pieChart = function(statistics) {
+    var ctx_pie = document.getElementById("pieChart").getContext('2d');
+
+    var data_arr = [
+        statistics.number_vuln_unknown,
+        statistics.number_vuln_negligible,
+        statistics.number_vuln_low,
+        statistics.number_vuln_medium,
+        statistics.number_vuln_high,
+        statistics.number_vuln_critical
+    ];
+                
+    const colors = {
+        cvss_unknown: {
+            fill: '#8aa5bc',
+            stroke: '#154c79',
+        },
+        cvss_negligible: {
+            fill: '#f6f6f1',
+            stroke: '#eeeee4',
+        },
+        cvss_low: {
+            fill: '#F4E9A9',
+            stroke: '#ebd35b'
+        },
+        cvss_medium: {
+            fill: '#F4D4A9',
+            stroke: '#f2b25e',
+        },
+        cvss_high: {
+            fill: '#F4BEA9',
+            stroke: '#FF8F64',
+        },
+        cvss_critical: {
+            fill: '#F4A8A9',
+            stroke: '#FF6464',
+        },  
+    };
+
+    const pieChart = new Chart(ctx_pie, {
+        type: 'pie',
+        data: {
+            labels: ['Unknown', 'Negligible', 'Low', 'Medium', 'High', 'Critical'],
+            datasets: [{
+                backgroundColor: [colors.cvss_unknown.fill, 
+                                colors.cvss_negligible.fill,
+                                colors.cvss_low.fill,
+                                colors.cvss_medium.fill,
+                                colors.cvss_high.fill,
+                                colors.cvss_critical.fill],
+                data: data_arr,
+            }]
+        },
+        options: {
+            title: {
+                display: true,
+                text: 'Vulnerability Categories'
+            },
+            plugins: {
+                legend: {
+                    position: 'bottom'
+                }
+            }
+        }
+    });
+}
+
+window.onload = function() {
+    var statistics = JSON.parse(document.getElementById('statistics').textContent);
+    $.generate_pieChart(statistics);
+};

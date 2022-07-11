@@ -31,3 +31,28 @@
     /* border-style: hidden; */
     border: none;
 }
+
+.wrapper {
+    margin: 0 auto;
+    width: 300px;
+    height: 300px;
+}
+
+#jbt-details-wrapper {
+    padding: 5%;
+    width: 100%;
+}
+
+.jbt-details-left {
+    float: left;
+    width: 48%;
+}
+
+.jbt-details-right {
+    float: right;
+    width: 48%;
+}
+
+#time_select {
+    width: 93%;
+}

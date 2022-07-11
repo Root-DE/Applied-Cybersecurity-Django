@@ -266,6 +266,7 @@ def details(request, repo_org, repo_name):
             ajax_data = {
                 'vuln_table': render_to_string('./details_page/vuln_table.html', {'vuln_page_obj': vuln_page_obj}),
                 'scan_data': render_to_string('./details_page/scan_data.html', {'selected_scan': selected_scan}),
+                'statistics': selected_scan['statistics'],
                 'scan_time': selected_scan['scan']['date'],
                 'time_select_div': render_to_string('./details_page/select_times.html', {
                     'times': selected_scan['other_scans'], 
