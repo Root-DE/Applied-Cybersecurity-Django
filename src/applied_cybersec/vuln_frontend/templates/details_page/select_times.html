@@ -1,0 +1,9 @@
+ <select id="time_select" class="form-select">
+    {% for time in times %}
+        {% if time == act_time  %}
+            <option value="{{ time }}" selected>{{ time }}</option>
+        {% else %}
+            <option value="{{ time }}">{{ time }}</option>
+        {% endif %}
+    {% endfor %}
+</select>
