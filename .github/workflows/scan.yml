@@ -51,7 +51,7 @@ jobs:
     - name: set dev env
       run: echo "image_tag_dev=$(echo ghcr.io/${{ github.repository }}/dev/test:latest |  tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
     - name: set prod env
-      run: echo "image_tag_prod=$(echo ghcr.io/${{ github.repository }}/test:latest |  tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
+      run: echo "image_tag_prod=$(echo ghcr.io/${{ github.repository }}:latest |  tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
     - name: deploy dev image as prod image
       run: docker pull ${{ env.image_tag_dev }}
     - name: tag dev image as prod image
