@@ -9,6 +9,7 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     padding: 10px; */
+    width: 100%;
     resize: none;
 }
 
@@ -63,4 +64,46 @@
 
 #time_select {
     width: 93%;
+}
+
+.cvss_span {
+    white-space: nowrap;
+    padding-right: 0.2rem;
+    padding-left: 0.2rem;
+}
+
+.cvss_span.none {
+    background-color: #154c79;
+}
+.cvss_span.low {
+    background-color: #ebd35b;
+}
+.cvss_span.medium {
+    background-color: #f2b25e;
+}
+.cvss_span.high {
+    background-color: #FF8F64;
+}
+.cvss_span.critical {
+    background-color: #FF6464;
+}
+
+.vuln_label {
+    font-size: 1.1rem;
+    color: #134372;
+}
+
+.fix_span {
+    white-space: nowrap;
+    padding: 0.2rem;
+}
+
+.fix_span.not_fixed {
+    /* background-color: #f08b88; */
+    /* color: #a03e3a; */
+    font-size: 1.1rem;
+    
+    border: 1px solid #a03e3a;
+    /* border-radius: 3px;
+    border-color: #a03e3a; */
 }

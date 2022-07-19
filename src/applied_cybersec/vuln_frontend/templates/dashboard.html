@@ -9,11 +9,6 @@
         Dashboard
     </h1>  
     <br>
-                {% comment %} <form class="d-flex" style="justify-content: center">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-                <br> {% endcomment %}
     
 
     <div class="jumbotron" style="overflow:auto;">
@@ -55,11 +50,15 @@
                             <div class="flip-card-inner">
                                 <div class="flip-card-front">
                                     <div class="card-body">
-                                        <h5 class="card-title">{{ scan.repo_name }}</h5>
+                                        <h5 class="card-title card-header-custom">{{ scan.repo_name }}</h5>
                                         <h6 class="card-subtitle mb-2 text-muted">{{ scan.scan_date }}</h6>
-                                        <p class="card-text">
-                                            <span class="span_artifact">{{ scan.statistics.number_dependencies }} artifacts</span><br>
-                                            <span class="span_vuln">{{ scan.statistics.number_vulnerabilities }} vulnerabilities</span><br>
+                                        <p class="card-text card-text-custom">
+                                            <div class="card-text-child">
+                                                <img class="artifact_icon" src="{% static 'images/icons/boxes.png' %}">
+                                                <span class="span_artifact">{{ scan.statistics.number_dependencies }} Artifacts</span><br>
+                                                <img class="vuln_icon" src="{% static 'images/icons/virus.png' %}">
+                                                <span class="span_vuln">{{ scan.statistics.number_vulnerabilities }} Vulnerabilities</span><br>
+                                            </div>
                                         </p>
                                     </div>
                                     <div class="card-footer">

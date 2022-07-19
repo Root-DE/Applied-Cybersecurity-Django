@@ -57,11 +57,12 @@ $.generate_graphs = function(graph_data) {
                         graph.statistics.number_vuln_high,
                         graph.statistics.number_vuln_medium,
                         graph.statistics.number_vuln_low,
-                        graph.statistics.number_vuln_negligible
+                        graph.statistics.number_vuln_negligible,
+                        graph.statistics.number_vuln_unknown
                     ],
-                    backgroundColor: ['#00bcd4', '#f44336', '#ff9800', '#4caf50', '#9e9e9e'],
+                    backgroundColor: ['#FF6464', '#FF8F64', '#f2b25e', '#ebd35b', '#eeeee4', '#154c79'],
                 }],
-                labels: ['Crit', 'High', 'Med', 'Low', 'Neg']
+                labels: ['Crit', 'High', 'Med', 'Low', 'Neg', 'Unk']
             },
             options: {
                 indexAxis: 'y',
