@@ -170,22 +170,54 @@ def details(request, repo_org, repo_name):
     # Extract all vulnerability data + additional information like artifacts
     # ====================================
     # get the vulnerabilities for the selected scan
-    vulnerabilities = Vulnerabilities.objects.filter(scan=selected_scan['scan']['id'])
+    vulnerabilities = Vulnerabilities.objects.filter(scan=selected_scan['scan']['id']).order_by('-vuln_id')
 
     # check if we have an ajax search
     page = 1
     search_term = None
+    sort_vulns = False
     if is_ajax:
         if request.method == 'POST':
             # get the page of the infinite scroll
             page = int(request.POST.get('page')) if 'page' in request.POST else 1       
             # get the search term
             search_term = request.POST.get('search_term').strip() if 'search_term' in request.POST else None
+            # get filter method
+            if 'action' in request.POST and request.POST.get('action') in ['filter', 'infinit_scroll']:
+                sort_vulns = True
 
     # if there is a search term, filter the vulnerabilities
     if search_term != "" and search_term is not None:
         # get the vulnerabilities
         vulnerabilities = vulnerabilities.filter(vuln_id__icontains=search_term)
+
+    if sort_vulns:
+        if request.POST.get('filter_type') == 'vuln_id':
+            # order vulns based on id order (alphabetically)
+            if request.POST.get('filter_direction') == 'asc':
+                vulnerabilities = sorted(vulnerabilities, key=lambda x: x.vuln_id)
+            else:
+                vulnerabilities = sorted(vulnerabilities, key=lambda x: x.vuln_id, reverse=True)
+        if request.POST.get('filter_type') == 'severity':
+            # order vulns based on severity order
+            severity_order = ['Unknown','Negligible','Low','Medium','High','Critical']
+            if request.POST.get('filter_direction') == 'asc':
+                vulnerabilities = sorted(vulnerabilities, key=lambda x: severity_order.index(x.severity))
+            else:
+                vulnerabilities = sorted(vulnerabilities, key=lambda x: severity_order.index(x.severity), reverse=True)
+        if request.POST.get('filter_type') == 'status':
+            # order vulns based on fix status order
+            status_order = ['fixed','unknown','not-fixed','wont-fix']
+            if request.POST.get('filter_direction') == 'asc':
+                vulnerabilities = sorted(vulnerabilities, key=lambda x: status_order.index(x.fix['state']))
+            else:
+                vulnerabilities = sorted(vulnerabilities, key=lambda x: status_order.index(x.fix['state']), reverse=True)
+        if request.POST.get('filter_type') == 'cvss':
+            # order vulns based on id order (alphabetically)
+            if request.POST.get('filter_direction') == 'asc':
+                vulnerabilities = sorted(vulnerabilities, key=lambda x: x.cvss[0]['metrics']['baseScore'] if len(x.cvss) > 0 else 0)
+            else:
+                vulnerabilities = sorted(vulnerabilities, key=lambda x: x.cvss[0]['metrics']['baseScore'] if len(x.cvss) > 0 else 0, reverse=True)
 
     # parse the vulnerabilities to a list of dicts with additional artifact information
     vuln_list = []
@@ -197,11 +229,14 @@ def details(request, repo_org, repo_name):
         artifacts_vuln = vulnerability.artifact.all()
         # 2. get the right artifact(s), that belong to the selected scan
         artifacts_vuln = artifacts_vuln.filter(scan=selected_scan['scan']['id'])
-        vuln_obj['artifacts'] = artifacts_vuln
+        # extract the cpe information
+        for artifact in artifacts_vuln:
+            vuln_obj['cpes'] = artifact.cpes
+        
         vuln_list.append(vuln_obj)
             
     # apply pagination
-    paginator = Paginator(vuln_list, 20)
+    paginator = Paginator(vuln_list, 40)
     # adjust the elided pages
     vuln_page_obj = paginator.get_page(page)
 
@@ -284,6 +319,11 @@ def details(request, repo_org, repo_name):
                 'vuln_table': render_to_string('./details_page/vuln_table.html', {'vuln_page_obj': vuln_page_obj}),
                 'end_pagination': True if page >= paginator.num_pages else False,
            }
+        elif request.POST['action'] == 'filter':
+            ajax_data = {
+                'vuln_table': render_to_string('./details_page/vuln_table.html', {'vuln_page_obj': vuln_page_obj}),
+                'end_pagination': True if page >= paginator.num_pages else False,
+            }
     return JsonResponse(ajax_data)
     
 

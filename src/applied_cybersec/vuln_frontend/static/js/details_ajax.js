@@ -68,6 +68,9 @@ $(document).ready(function() {
             }
             var search_term = document.getElementById('vuln_search_input').value;
             
+            // get the filter values
+            filter_type = document.getElementById('filter_input').value
+            filter_direction = document.getElementById('direction_input').value
 
             // send the request
             $.ajax({
@@ -77,6 +80,8 @@ $(document).ready(function() {
                     'action': 'infinit_scroll',
                     'page': page,
                     'search_term': search_term,
+                    'filter_type': filter_type,
+                    'filter_direction': filter_direction,
                 },
                 success: function(ajax_data) {
                     // set new table content
@@ -194,16 +199,71 @@ $(document).ready(function() {
         });
     }
 
+    $('th[id^="filter_"]').on('click', function() {
+        elem_id = $(this).attr('id');
+
+        // we start from beginning with new order
+        block_request = true;
+        page = 1;
+        end_pagination = false;
+
+        // build the url
+        var repo_org = JSON.parse(document.getElementById('repo_org').textContent)
+        var repo_name = JSON.parse(document.getElementById('repo_name').textContent)
+        var date = $('#datepicker_input').val();
+        var datetime = date + ' 23:59:59';
+        var url = '/details/' + repo_org + '/' + repo_name + '?date=' + datetime
+
+        // remove all filter icons first
+        filter_ids = ['filter_id', 'filter_sev', 'filter_stat', 'filter_cvss']
+        filter_ids.forEach(element => {
+            document.getElementById(element).getElementsByTagName('i')[0].className = ''
+        });
+
+        // now add the new filter icon
+        var filter_elem = document.getElementById(elem_id);
+        var filter_icon = filter_elem.getElementsByTagName('i')[0];
+        var filter_direction = document.getElementById('direction_input').value;
+        var filter_type = filter_elem.dataset.filter;
+        var new_direction = filter_direction == 'asc' ? 'desc' : 'asc';
+        filter_icon.className = new_direction == 'asc' ? 'fa fa-arrow-down' : 'fa fa-arrow-up';
+
+        // set the filter type to hidden input
+        document.getElementById('filter_input').value = filter_type;
+        document.getElementById('direction_input').value = new_direction;
+
+        // send the ajax to apply the new filter
+        $.ajax({
+            url: url,
+            type: 'POST',
+            data: {
+                'action': 'filter',
+                'filter_direction': new_direction,
+                'filter_type': filter_type,
+            },
+            success: function(ajax_data) {
+                // set new table content
+                vuln_table_body.innerHTML = ajax_data.vuln_table
+
+
+                // refresh the state
+                page += 1;
+                if (ajax_data.end_pagination === true) {
+                    end_pagination = true;
+                } else {
+                    block_request = false;
+                }
+            }
+        });
+    })
 
     // expand table row functionality
     // $("#vuln_table_body").find('tr[id^="vuln_hidden_div_"]').hide();
     $("#vuln_table_body").on('click', 'tr[id^="vuln_row_"]', function(event) {
-        console.log("clicked");
         event.stopPropagation();
         var $target = $(event.target);
         // id of clicked row
         clicked_id = $(this).attr("id").split('_').pop();
-        console.log(clicked_id);
         $("#vuln_hidden_div_" + clicked_id).slideToggle();
     });
 
@@ -519,3 +579,60 @@ var colors = {
         stroke: '#FF6464',
     },  
 };
+
+
+// function filter_table(elem_id) {
+//     // we start from beginning with new order
+//     block_request = true;
+//     page = 1;
+//     end_pagination = false;
+
+//     // build the url
+//     var repo_org = JSON.parse(document.getElementById('repo_org').textContent)
+//     var repo_name = JSON.parse(document.getElementById('repo_name').textContent)
+//     var date = $('#datepicker_input').val();
+//     var datetime = date + ' 23:59:59';
+//     var url = '/details/' + repo_org + '/' + repo_name + '?date=' + datetime
+
+//     // remove all filter icons first
+//     filter_ids = ['id_filter', 'sev_filter', 'stat_filter', 'cvss_filter']
+//     filter_ids.forEach(element => {
+//         document.getElementById(element).getElementsByTagName('i')[0].className = ''
+//     });
+    
+//     // now add the new filter icon
+//     var filter_elem = document.getElementById(elem_id);
+//     var filter_icon = filter_elem.getElementsByTagName('i')[0];
+//     var filter_direction = document.getElementById('direction_input').value;
+//     var filter_type = filter_elem.dataset.filter;
+//     var new_direction = filter_direction == 'asc' ? 'desc' : 'asc';
+//     filter_icon.className = new_direction == 'asc' ? 'fa fa-arrow-down' : 'fa fa-arrow-up';
+    
+//     // set the filter type to hidden input
+//     document.getElementById('filter_input').value = filter_type;
+//     document.getElementById('direction_input').value = new_direction;
+
+//     // send the ajax to apply the new filter
+//     $.ajax({
+//         url: url,
+//         type: 'POST',
+//         data: {
+//             'action': 'filter',
+//             'filter_direction': new_direction,
+//             'filter_type': filter_type,
+//         },
+//         success: function(ajax_data) {
+//             // set new table content
+//             vuln_table_body.innerHTML = ajax_data.vuln_table
+
+
+//             // refresh the state
+//             page += 1;
+//             if (ajax_data.end_pagination === true) {
+//                 end_pagination = true;
+//             } else {
+//                 block_request = false;
+//             }
+//         }
+//     });
+// }
