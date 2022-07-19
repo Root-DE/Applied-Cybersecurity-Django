@@ -270,3 +270,14 @@ def parse_repo_content(metadata_json):
         return {"status": "error", "message": "Error parsing the repository data"}
     print('created new Repository: ', created)
     return repository
+
+
+def find_best_version(grype_json):
+    # extract all vulnerabilities with a known fix
+    fixed_vulns = {}
+    for match in grype_json['matches']:
+        fix=match['vulnerability']['fix']
+        if fix["state"] == "fixed":
+            fixed_vulns[match['vulnerability']['id']]['versions'] = fix["versions"]
+            fixed_vulns[match['vulnerability']['id']]['purl'] = match['artifact']['purl']
+    pass
