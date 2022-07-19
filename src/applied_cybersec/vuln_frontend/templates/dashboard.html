@@ -54,10 +54,14 @@
                                         <h6 class="card-subtitle mb-2 text-muted">{{ scan.scan_date }}</h6>
                                         <p class="card-text card-text-custom">
                                             <div class="card-text-child">
-                                                <img class="artifact_icon" src="{% static 'images/icons/boxes.png' %}">
-                                                <span class="span_artifact">{{ scan.statistics.number_dependencies }} Artifacts</span><br>
-                                                <img class="vuln_icon" src="{% static 'images/icons/virus.png' %}">
-                                                <span class="span_vuln">{{ scan.statistics.number_vulnerabilities }} Vulnerabilities</span><br>
+                                                <div class="card-text-child-align-left">
+                                                    <img class="artifact_icon" src="{% static 'images/icons/boxes.png' %}">
+                                                    <span class="span_artifact">{{ scan.statistics.number_dependencies }} Artifacts</span><br>
+                                                </div>
+                                                <div class="card-text-child-align-left">
+                                                    <img class="vuln_icon" src="{% static 'images/icons/virus.png' %}">
+                                                    <span class="span_vuln">{{ scan.statistics.number_vulnerabilities }} Vulnerabilities</span><br>
+                                                </div>
                                             </div>
                                         </p>
                                     </div>
