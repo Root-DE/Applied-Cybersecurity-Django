@@ -105,11 +105,10 @@
         </div>
     </div>
 
-
     {% comment %} Vulnerability Table {% endcomment %}
     <div class="table-responsive">
         <input type="hidden" id="filter_input" value="vuln_id" />
-        <input type="hidden" id="direction_input" value="desc" />
+        <input type="hidden" id="direction_input" value="asc" />
         <table id="vuln_table" class="table">
             <thead>
                 <tr class="head_row">
@@ -132,11 +131,18 @@
                     {% comment %} <th style="width:22%;text-align:center;">{% trans "Testdatum" %}</th> {% endcomment %}
                 </tr>
             </thead>
-            <tbody id='vuln_table_body'>
+            <tbody id='vuln_table_body' disabled>
+                {% comment %} loading icon {% endcomment %}
+                <div id="loading_icon" class="spinner-border" role="status" style="display:none;">
+                    <span class="sr-only">Loading...</span>
+                </div>
                 {% for vuln_obj in vuln_page_obj %}
-                <tr id="vuln_row_{{vuln_obj.vulnerability.vuln_id}}" class="display_row">
+                <tr id="vuln_row_{{vuln_obj.vulnerability.vuln_id}}" class="display_row" {% if vuln_obj.vulnerability.actively_exploited %} style="background-color: #f8d7da;" {% endif %}>
                     <td scope="row">
                         {{ vuln_obj.vulnerability.vuln_id }}
+                        {% if vuln_obj.vulnerability.actively_exploited %}
+                            <img class="warning_icon" src="{% static 'images/icons/warning.png' %}">
+                        {% endif %}
                     </td>
                     <td style="text-align:center;">
                         {{ vuln_obj.vulnerability.severity}}
@@ -158,6 +164,13 @@
                         <div id="vuln_hidden_div_{{vuln_obj.vulnerability.vuln_id}}" class="vuln_hidden_div form-group">
                             {% comment %} Expandable Content {% endcomment %}
                             <div class="form-row">
+                                {% if vuln_obj.vulnerability.actively_exploited %}
+                                    <div class="form-group col-md-12">
+                                        <div class="alert alert-danger" role="alert">
+                                            <strong>This vulnerability is currently being exploited as indicated by <a href='https://www.cisa.gov/known-exploited-vulnerabilities-catalog' target="_blank">CISA</a>!</strong>
+                                        </div>
+                                    </div>
+                                {% endif %}
                                 {% comment %} CPE information {% endcomment %}
                                 <div class="form-group col-md-9">
                                     <label class="vuln_label" for="cpe_list_{{vuln_obj.vulnerability.vuln_id}}">Vulnerable Software:</label>
@@ -224,7 +237,6 @@
                                 {% comment %} link to further information {% endcomment %}
                                 <div class="form-group col-md-12">
                                     <a style="float:right;" href="{{vuln_obj.vulnerability.url}}" target="_blank">Go to further information</a>
-                                                                        
                                 </div>
 
                             

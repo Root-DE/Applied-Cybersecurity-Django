@@ -223,13 +223,18 @@ $(document).ready(function() {
         // now add the new filter icon
         var filter_elem = document.getElementById(elem_id);
         var filter_icon = filter_elem.getElementsByTagName('i')[0];
+        // if filter_type is changed always take ascending order
+        var filter_type_old = document.getElementById('filter_input').value
+        var filter_type_new = filter_elem.dataset.filter;
         var filter_direction = document.getElementById('direction_input').value;
-        var filter_type = filter_elem.dataset.filter;
-        var new_direction = filter_direction == 'asc' ? 'desc' : 'asc';
+        var new_direction = 'asc';
+        if (filter_type_old == filter_type_new) {
+            new_direction = filter_direction == 'asc' ? 'desc' : 'asc';
+        }
         filter_icon.className = new_direction == 'asc' ? 'fa fa-arrow-down' : 'fa fa-arrow-up';
 
         // set the filter type to hidden input
-        document.getElementById('filter_input').value = filter_type;
+        document.getElementById('filter_input').value = filter_type_new;
         document.getElementById('direction_input').value = new_direction;
 
         // send the ajax to apply the new filter
@@ -239,12 +244,15 @@ $(document).ready(function() {
             data: {
                 'action': 'filter',
                 'filter_direction': new_direction,
-                'filter_type': filter_type,
+                'filter_type': filter_type_new,
+            },
+            beforeSend: function() {
+                // show the loading icon
+                document.getElementById('loading_icon').style.display = 'block';
             },
             success: function(ajax_data) {
                 // set new table content
                 vuln_table_body.innerHTML = ajax_data.vuln_table
-
 
                 // refresh the state
                 page += 1;
@@ -253,6 +261,10 @@ $(document).ready(function() {
                 } else {
                     block_request = false;
                 }
+            },
+            complete: function() {
+                // hide the loading icon
+                document.getElementById('loading_icon').style.display = 'none';
             }
         });
     })

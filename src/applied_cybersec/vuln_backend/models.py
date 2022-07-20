@@ -59,6 +59,7 @@ class Vulnerabilities(models.Model):
     fix = models.JSONField(editable=False)
     description = models.TextField(editable=False, null=True)
     url = models.CharField(max_length=250, editable=False, null=True)
+    actively_exploited = models.BooleanField(editable=True, default=False)
 
     scan = models.ManyToManyField(ScanData)
     artifact = models.ManyToManyField(Artifacts)

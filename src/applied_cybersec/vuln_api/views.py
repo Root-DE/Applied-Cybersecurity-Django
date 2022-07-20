@@ -7,7 +7,8 @@ from django.views.decorators.csrf import csrf_exempt
 from django.db import transaction
 
 import json
-from datetime import datetime
+from datetime import datetime, timedelta
+import requests
 
 from vuln_backend.models import *
 from django.http import HttpResponse, HttpResponseBadRequest
@@ -167,6 +168,10 @@ def create_db_entries(grype_file, syft_file, metadata_json, workflow_id, created
         number_vuln_negligible=vuln_stats['Negligible'],
         number_vuln_unknown=vuln_stats['Unknown']
     )
+
+    # check if there are known exploited vulnerabilities in the scan
+    exploited_vulns = get_known_exploited_vulns()
+    print("The following vulnerabilities have been identified as currently being exploited: " + str(exploited_vulns))
     
     return {"status": "ok"}
 
@@ -281,3 +286,32 @@ def find_best_version(grype_json):
             fixed_vulns[match['vulnerability']['id']]['versions'] = fix["versions"]
             fixed_vulns[match['vulnerability']['id']]['purl'] = match['artifact']['purl']
     pass
+
+def get_known_exploited_vulns():
+
+    # Retrieve known exploited vulnerabilities from cisa.gov
+    response = requests.get("https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json")
+    json_response = response.json()
+    vulns = json_response.get('vulnerabilities')
+
+    week_delta = timedelta(weeks=12)
+    now = datetime.now()
+
+    exploited_vulns = []
+    for vuln in vulns:
+        dueDate = datetime.strptime(vuln.get('dueDate'), '%Y-%m-%d')
+
+        # check if vuln is in given timeframe
+        if now <= dueDate + week_delta:
+            try:
+                cve_id = vuln.get('cveId')
+                vuln_entry = Vulnerabilities.objects.get(vuln_id=cve_id)
+                vuln_entry.actively_exploited = True
+                vuln_entry.save()
+                exploited_vulns.append(cve_id)
+                print(cve_id, 'is actively exploited')
+
+            except Vulnerabilities.DoesNotExist:
+                pass
+    
+    return exploited_vulns

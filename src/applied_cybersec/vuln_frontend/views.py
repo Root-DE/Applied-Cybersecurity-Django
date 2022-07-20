@@ -195,12 +195,12 @@ def details(request, repo_org, repo_name):
         if request.POST.get('filter_type') == 'vuln_id':
             # order vulns based on id order (alphabetically)
             if request.POST.get('filter_direction') == 'asc':
-                vulnerabilities = sorted(vulnerabilities, key=lambda x: x.vuln_id)
-            else:
                 vulnerabilities = sorted(vulnerabilities, key=lambda x: x.vuln_id, reverse=True)
+            else:
+                vulnerabilities = sorted(vulnerabilities, key=lambda x: x.vuln_id)
         if request.POST.get('filter_type') == 'severity':
             # order vulns based on severity order
-            severity_order = ['Unknown','Negligible','Low','Medium','High','Critical']
+            severity_order = ['Critical', 'High', 'Medium', 'Low', 'Negligible', 'Unknown']
             if request.POST.get('filter_direction') == 'asc':
                 vulnerabilities = sorted(vulnerabilities, key=lambda x: severity_order.index(x.severity))
             else:
@@ -215,9 +215,9 @@ def details(request, repo_org, repo_name):
         if request.POST.get('filter_type') == 'cvss':
             # order vulns based on id order (alphabetically)
             if request.POST.get('filter_direction') == 'asc':
-                vulnerabilities = sorted(vulnerabilities, key=lambda x: x.cvss[0]['metrics']['baseScore'] if len(x.cvss) > 0 else 0)
-            else:
                 vulnerabilities = sorted(vulnerabilities, key=lambda x: x.cvss[0]['metrics']['baseScore'] if len(x.cvss) > 0 else 0, reverse=True)
+            else:
+                vulnerabilities = sorted(vulnerabilities, key=lambda x: x.cvss[0]['metrics']['baseScore'] if len(x.cvss) > 0 else 0)
 
     # parse the vulnerabilities to a list of dicts with additional artifact information
     vuln_list = []
