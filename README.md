@@ -13,7 +13,7 @@
 - download the docker compose file
 - run ´docker-compose up -d´ to start the application
 - setup the GitHub Actions to trigger the scan:
-    - [GitHub Actions](
+    - [GitHub Actions]
 
 ## Usage
 - Threshold
