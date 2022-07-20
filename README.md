@@ -1,7 +1,7 @@
 # Applied-Cybersecurity-Django
 
 ## Introduction
-- What?
+- What is it?
 - Container Image Analysis in build pipelines leveraging open-source tools to generate SBOM and scan for vulnerabilities. Results are centrally collected and visualized within a dashboard giving an overview over the organisation and individual repositories as well as scans.
 - Why?
     - Vulnerability Scanning (in Container Images)
