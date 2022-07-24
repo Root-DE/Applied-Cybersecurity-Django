@@ -37,8 +37,13 @@ def validate_request(request, headers):
     repo_org = json_data['repo_org']
     repo_name = json_data['repo_name']
 
+    orgs = os.environ['GITHUB_ACCS'].lower()
+
+    # contains comma separated orgs
+    orgs = orgs.split(',')
+
     # check if owner is correct
-    if repo_org.lower() != os.environ['GITHUB_ORG'].lower():
+    if repo_org.lower() not in orgs:
         return HttpResponseBadRequest("Org not in scope")
     
     # get repos from owner
