@@ -2,7 +2,9 @@ $(document).ready(function() {
     var page = 2;
     var block_request = false;
     var end_pagination = JSON.parse(document.getElementById('end_pagination').textContent);
-
+    
+    $('[data-toggle="tooltip"]').tooltip();
+    
     // save the state of the initial page
     history.replaceState({
         'vuln_table_body': document.getElementById('vuln_table_body').innerHTML,
@@ -83,6 +85,10 @@ $(document).ready(function() {
                     'filter_type': filter_type,
                     'filter_direction': filter_direction,
                 },
+                beforeSend: function() {
+                    // show the loading icon
+                    document.getElementById('loading_div_scroll').style.display = 'block';
+                },
                 success: function(ajax_data) {
                     // set new table content
                     vuln_table_body.innerHTML += ajax_data.vuln_table
@@ -95,6 +101,10 @@ $(document).ready(function() {
                     } else {
                         block_request = false;
                     }
+                },
+                complete: function() {
+                    // hide the loading icon
+                    document.getElementById('loading_div_scroll').style.display = 'none';
                 }
             });
         }
@@ -248,7 +258,7 @@ $(document).ready(function() {
             },
             beforeSend: function() {
                 // show the loading icon
-                document.getElementById('loading_icon').style.display = 'block';
+                document.getElementById('loading_div').style.display = 'block';
             },
             success: function(ajax_data) {
                 // set new table content
@@ -264,7 +274,7 @@ $(document).ready(function() {
             },
             complete: function() {
                 // hide the loading icon
-                document.getElementById('loading_icon').style.display = 'none';
+                document.getElementById('loading_div').style.display = 'none';
             }
         });
     })

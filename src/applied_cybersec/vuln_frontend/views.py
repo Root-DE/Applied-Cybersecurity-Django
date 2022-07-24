@@ -234,7 +234,7 @@ def details(request, repo_org, repo_name):
             vuln_obj['cpes'] = artifact.cpes
         
         vuln_list.append(vuln_obj)
-            
+
     # apply pagination
     paginator = Paginator(vuln_list, 40)
     # adjust the elided pages

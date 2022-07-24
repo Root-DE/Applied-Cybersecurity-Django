@@ -1,10 +1,16 @@
 <div class="jbt-header-center">
     <h3>Scan Data</h3>
 </div>
-Scan ID:
-<p>{{ selected_scan|get_item:"scan"|get_item:"id" }}</p>
-Created At:
+{% comment %} Scan ID:
+<p>{{ selected_scan|get_item:"scan"|get_item:"id" }}</p> {% endcomment %}
+Scan created at:
 <p>{{ selected_scan|get_item:"scan"|get_item:"created_at" }}</p>
+Detected Software: 
+<p>{{selected_scan.statistics.number_dependencies}}</p>
+<p></p>
+Vulnerabilities: 
+<p>{{selected_scan.statistics.number_vulnerabilities}}</p>
+<p></p>
 Workflow ID:
 <p id="workflow_id_src">{{ selected_scan|get_item:"scan"|get_item:"workflow_id" }}</p>
 <div class="wrapper">

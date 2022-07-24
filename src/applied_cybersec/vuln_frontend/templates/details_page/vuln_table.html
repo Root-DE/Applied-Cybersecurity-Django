@@ -1,5 +1,7 @@
+{% load static %}
+
 {% for vuln_obj in vuln_page_obj %}
-<tr id="vuln_row_{{vuln_obj.vulnerability.vuln_id}}" class="display_row">
+<tr id="vuln_row_{{vuln_obj.vulnerability.vuln_id}}" class="display_row" {% if vuln_obj.vulnerability.actively_exploited %} style="background-color: #f8d7da;" {% endif %}>
     <td scope="row">
         {{ vuln_obj.vulnerability.vuln_id }}
         {% if vuln_obj.vulnerability.actively_exploited %}
