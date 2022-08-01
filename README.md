@@ -5,9 +5,9 @@ This tool is built to perform container image analysis in build pipelines levera
 
 - 🗃 **Software bill-of-material (SBOM)** of all dependencies
 - 🔥 Up-to-date **vulnerability scan** based on the generated SBOM
-- 🔏 **Signed attestation** (verifyable artifacts)
+- 🔏 **Signed attestation** (verifiable artifacts)
 
-A custom Github action integrated into the build pipeline of an image repository generates above artifacts and notifies a django-based application which collects the artifacts and stores them centrally. The information is visualized within a dashboard enabling an organisations security team to keep track over the organisations images, their dependencies and found vulnerabilities. To enhance supply chain security, signed provenance is generated within an attestation file in alignment with the SLSA framework.
+A custom GitHub action integrated into the build pipeline of an image repository generates above artifacts and notifies a Django-based application which collects the artifacts and stores them centrally. The information is visualized within a dashboard enabling an organizations security team to keep track over the organizations images, their dependencies and found vulnerabilities. To enhance supply chain security, signed provenance is generated within an attestation file in alignment with the SLSA framework.
 
 <p align="center">
     <img src="./docs/tool_screenshots.jpg" height="550px">
@@ -15,10 +15,10 @@ A custom Github action integrated into the build pipeline of an image repository
 <p align="center">Screenshots taken from the tools UI</p>
 
 ## Introduction
-With the digitalisation and the high degree of interconnectedness between firms, supply chain attacks have been on the rise. Security incidents such as those resulting from attacks like SolarWinds or Kaseya increased awareness and attention towards mitigating supply chain risks and investing into supply chain security.
+With the digitalization and the high degree of interconnectedness between firms, supply chain attacks have been on the rise. Security incidents such as those resulting from attacks like SolarWinds or Kaseya increased awareness and attention towards mitigating supply chain risks and investing into supply chain security.
 
-Container images are often only scanned after they have been built and published to image registries. This allows 'unsafe' images to run in production. Integrating vulnerability scanning into the build pipeline which acts as a quality gate mitigates that risk. Having a precise overview of what dependencies are used within images as well as highlighting known CVEs, is necessary information organisations should be aware of. Versions that fix known vulnerabilities are indicated and provide a clear path to fix for developers. 
-The action also generates attestation including build parameters for each image which is cryptographically signed to be verifyable afterwards.
+Container images are often only scanned after they have been built and published to image registries. This allows 'unsafe' images to run in production. Integrating vulnerability scanning into the build pipeline which acts as a quality gate mitigates that risk. Having a precise overview of what dependencies are used within images as well as highlighting known CVEs, is necessary information organizations should be aware of. Versions that fix known vulnerabilities are indicated and provide a clear path to fix for developers. 
+The action also generates attestation including build parameters for each image which is cryptographically signed to be verifiable afterwards
 
 ## Tools and Frameworks Used
 The tools build upon are all open-source and actively maintained. These are [Syft](https://github.com/anchore/syft) and [Grype](https://github.com/anchore/grype) which are maintained by [Anchore](https://github.com/anchore) as well as the [SLSA framework](https://slsa.dev/).
@@ -27,7 +27,7 @@ The tools build upon are all open-source and actively maintained. These are [Syf
 + mention available formats
 
 ### Grype
-+ we build an image that contains grype and syft
++ we build an image that contains Grype and Syft
 
 ### Supply Chain Levels for Software Artifacts (SLSA)
 SLSA is a security framework that has been developed to prevent tampering, improve integrity, and secure packages and infrastructure in projects. Under given conditions, an attacker could exploit various attack vectors within a supply chain. SLSA differs between 
@@ -35,32 +35,32 @@ SLSA is a security framework that has been developed to prevent tampering, impro
 - build integrity, 
 - and integrity of third-party dependencies
 
-SLSA defines 4 levels of compliance that can be achieved with higher security requirements:
+SLSA defines four levels of compliance that can be achieved with higher security requirements:
 
-|   SLSA Level	|   Requirements	|
-|:---:	|:---:	|
-|   1	|   Documentation of the build process	|
-|   2	|   Tamper resistance of the build service	|
-|   3	|   Extra resistance to specific threats	|
-|   4	|   Highest levels of confidence and trust	|
+|   SLSA Level  |   Requirements    |
+|:---:  |:---:  |
+|   1   |   Documentation of the build process  |
+|   2   |   Tamper resistance of the build service  |
+|   3   |   Extra resistance to specific threats    |
+|   4   |   Highest levels of confidence and trust  |
 
-For a more detailled description of each level's requirements, please see the [official SLSA documentation](https://slsa.dev/spec/v0.1/levels).
+For a more detailed description of each level's requirements, please see the [official SLSA documentation](https://slsa.dev/spec/v0.1/levels).
 
 Besides the [framework itself](https://slsa.dev/spec/v0.1/index) which is currently in alpha, the SLSA developers maintain a [repository](https://github.com/slsa-framework/slsa-github-generator) providing helpful tools to achieve SLSA compliance.
 
 #### What SLSA artifacts does this project produce?
 This project generates a signed provenance for scanned container images. The attestation is generated through signing a predicate file containing environment variables of the build process in a format which is compliant with the SLSA framework.
 
-An example as well as the structure of the provanence artifact can be found [here](https://slsa.dev/provenance/v0.2).
+An example as well as the structure of the provenance artifact can be found [here](https://slsa.dev/provenance/v0.2).
 
 ### Pipeline
 <p align="center">
     <img src="./docs/pipeline.png" width="550px">
     The Pipeline
 </p>
-The pipeline (see above) is run whenever there are changes to the repository through a push, when a release is created and daily at 9am UTC. The daily scan is necessary because the container can use software that was not known to be vulnerable during the last scan, but is now.
+The pipeline (see above) runs whenever there are changes to the repository through a push when a release is created and daily at 9am UTC. The daily scan is necessary because the container can use software that was not known to be vulnerable during the last scan but is now.
 
-In the first step, the pipeline builds the Docker Image. As can be seen below, meta information about the build process, such as the architecture of the GitHub runner, is generated in addition to the build image, and the digest of the image. From the metainformation and the digest, the provenane is now generated. Afterwards it is signed keyless via cosign (see [here](https://github.com/sigstore/cosign/blob/main/KEYLESS.md)). As part of the process, the signature is written to both the Transparency Logs and, along with the provenance, the GitHub Container Registry (ghcr.io). The Image is than also pushed to the Container Registry.
+In the first step, the pipeline builds the Docker Image. As can be seen below, meta information about the build process, such as the architecture of the GitHub runner, is generated in addition to the build image, and the digest of the image. From the metainformation and the digest, the provenance is now generated. Afterwards it is signed keyless via cosign (see [here](https://github.com/sigstore/cosign/blob/main/KEYLESS.md)). As part of the process, the signature is written to both the Transparency Logs and, along with the provenance, the GitHub Container Registry (ghcr.io). The Image is then also pushed to the Container Registry.
 
 The image we use to scan for Vulnerabilities is also on ghcr.io. This scan image now takes the previously built image as input and generates the SBOM and a list of vulnerabilities, which are then transferred to the backend via the notify and pull approach as described in the section [Architecture](#architecture).
 
@@ -75,23 +75,22 @@ The image we use to scan for Vulnerabilities is also on ghcr.io. This scan image
     The Architecture
 </p>
 
-The architecture consits of a container-based envapproach with Docker because containers are lightweight and require less resources than VMs. Containers are easy to deploy, and can be deployed on any environment where Docker runs. Django web framework is used for the project because it is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. Nginx is used as proxy and to deliver the statics, but this is not relevant for the concept behind it, therefore not in the graphic. A personal access token for GitHub is stored in Django. The account behind it has access to the runs of the actions of several repositories. Each repo performs image scanning as well as the generation of an SBOM.
+The architecture consists of a container-based approach with Docker because containers are lightweight and require less resources than VMs. Containers are easy to deploy and can be deployed on any environment where Docker runs. Django web framework is used for the project because it is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. Nginx is used as proxy and to deliver the statics, but this is not relevant for the concept behind it, therefore not in the graphic. A personal access token for GitHub is stored in Django. The account behind it has access to the runs of the actions of several repositories. Each repo performs image scanning as well as the generation of an SBOM.
 
-In order to keep the scanning with its databases as well as the creation of the SBOMs always up to date, the image used for this (along with the database behind it) is rebuilt daily. After the repos have been scanned, they send a notification to Django, which leads to the subsequent loading, saving and processing of the artifacts that result from a scan.
-
+To keep the scanning with its databases as well as the creation of the SBOMs always up to date, the image used for this (along with the database behind it) is rebuilt daily. After the repos have been scanned, they send a notification to Django, which leads to the subsequent loading, saving, and processing of the artifacts that result from a scan.
 
 ## Installation
 1. Download and install Docker for your system as described here [How to install Docker](https://docs.docker.com/get-docker/)
 2. Download this repository by running `git clone https://github.com/Root-DE/Applied-Cybersecurity-Django`
 2. Create a copy of the [template.env](./template.env) file, rename it to `.env`, and fill it with your own values
 3. Adapt the [nginx configuration file](./nginx/conf.d/nginx_django.conf) to your needs or remove the configuration file
-4. Run `docker-compose up -d` to start the application. This will start nginx, the django application, the database and adminer where you can see the current state of the database. If you don't want to use adminer, you can remove the adminer container from the docker-compose.yml file.
+4. Run `docker-compose up -d` to start the application. This will start nginx, the Django application, the database and Adminer where you can see the current state of the database. If you do not want to use Adminer, you can remove the Adminer container from the docker-compose.yml file.
 5. Open your browser and go to https://your-domain/ to see the dashboard.
 6. Set up the GitHub actions for each repository to trigger the scan by copying the [scan.yml](./.github/workflows/scan.yml) to the *.github/workflows/* directory of the respective repository. 
 
 ## User Interface Functionalities
 ### Authentication
-Before having access to the platform itself and its findings , a user has to login first. The initial credentials for the admin should be set as described in [Installation](#installation).
+Before having access to the platform itself and its findings, a user has to login first. The initial credentials for the admin should be set as described in [Installation](#installation).
 <p align="center">
     <img src="./docs/login.png" height="550px">
 </p>
@@ -111,7 +110,7 @@ Each repository running the workflow is represented as a single card which shows
 
 Hovering over the card shows the background which gives an overview of the risk categories of the vulnerabilities based on their CVSS score.
 
-When using more than one organisation to structure Github repositories, the organisation filter can be used to only show repositories that belong to a specific organisation. When operating a high amount of repositories, the search functionality can be used to look for specific repositories. 
+When using more than one organization to structure GitHub repositories, the organization filter can be used to only show repositories that belong to a specific organization. When operating a high amount of repositories, the search functionality can be used to look for specific repositories. 
 
 The search functionality can also be used to look for repositories that contain a specific CVE-ID to quickly identify potential risks.
 
@@ -124,7 +123,7 @@ The detail page contains information on the repository itself as well as scans t
 </p>
 <p align="center">Details - Time Series Graph</p>
 
-On the top of the details page, a time serias graph is shown that is displaying the amount of vulnerabilities found for each category, also based on the CVSS score.
+On the top of the details page, a time series graph is shown that is displaying the number of vulnerabilities found for each category, also based on the CVSS score.
 By clicking on one of the past data points in the graph, the information for the selected scan is displayed on the page below. The database also integrates the vulnerability history so that the vulnerability information is up to date for the date it ran.
 
 <p align="center">
@@ -146,9 +145,9 @@ Scrolling down, the result of the vulnerability scan is shown. A scan can be sel
 - Status (Fix available?)
 - CVSS Score
 
-The SBOM as well as the vulnerability information is also written to the database as a whole. Using the export buttons, the SBOM as well as the vulnerability information can be exported for further processing.
+The SBOM as well as the vulnerability information is also written to the database. Using the export buttons, the SBOM as well as the vulnerability information can be exported for further processing.
 
-By clicking one of the vulnerabilities, more information is shown so that the user is able to assess what the vulnerability itself is about and which dependencies and versions are vulnerable. 
+By clicking one of the vulnerabilities, more information is shown so that the user can assess what the vulnerability itself is about and which dependencies and versions are vulnerable. 
 
 <p align="center">
     <img src="./docs/details_4.png" width="550px">
@@ -169,10 +168,10 @@ If one of the vulnerabilities that is found by Grype's vulnerability scan is wit
 
 @jobroe10 - Jonas Schmitz
 
-@BrianPfitz - Brian Pfitmann
+@BrianPfitz - Brian Pfitzmann
 
 ## Future Work
 - Integration of more scanning tools
-- Enhance the visualisation of the results
+- Enhance the visualization of the results
 - Lifecycle Management (add more repositories, remove repositories)
 - Advantages of that approach (SIEM, Rule Engines)
