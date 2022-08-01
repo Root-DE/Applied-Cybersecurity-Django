@@ -9,7 +9,7 @@ This tool is built to perform container image analysis in build pipelines levera
 A custom Github action integrated into the build pipeline of a image repository generates above artifacts and notifies a django-based application which collects the artifacts and stores them centrally. The information is visualized within a dashboard enabling an organisations security team to keeping tracover the organisations images, their dependencies and found vulnerabilities. To enhance supply chain security, signed provenance is generated within an attestation file in alignment with the SLSA framework.
 
 <p align="center">
-    <img src="./docs/tool_screenshots.jpg" height="350px">
+    <img src="./docs/tool_screenshots.jpg" height="550px">
 </p>
 <p align="center">Screenshots taken from the tools UI</p>
 
@@ -52,19 +52,19 @@ An example as well as the structure of the provanence artifact can be found [her
 
 ### Pipeline
 <p align="center">
-    <img src="./docs/pipeline.png" width="350px">
+    <img src="./docs/pipeline.png" width="550px">
 </p>
 
 
 <p align="center">
-    <img src="./docs/build.png" width="350px">
+    <img src="./docs/build.png" width="550px">
 </p>
 
 
 
 ### Architecture
 <p align="center">
-    <img src="./docs/architecture.png" width="350px">
+    <img src="./docs/architecture.png" width="550px">
 </p>
 
 Our architecture consits of a container-based envapproach with Docker  because containers are lightweight and require less resources than VMs. Containers are easy to deploy, and can be deployed on any environment where Docker runs. Django web framework is used for our project because it is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. Nginx is used as proxy and to deliver the statics, but this is not relevant for the concept behind it, therefore not in the graphic. A personal access token for GitHub is stored in Django. The account behind it has access to the runs of the actions of several repositories. Each repo performs image scanning as well as the generation of an SBOM. In order to keep the scanning with its databases as well as the creation of the SBOMs always up to date, the image used for this (along with the database behind it) is rebuilt daily. After the repos have been scanned, they send a notification to Django, which leads to the subsequent loading, saving and processing of the artifacts that result from a scan.
@@ -83,7 +83,7 @@ Our architecture consits of a container-based envapproach with Docker  because c
 ### Authentication
 Before having access to the platform itself and its findings , a user has to login first. The initial credentials for the admin should be set as described in [Installation](#installation).
 <p align="center">
-    <img src="./docs/login.png" height="350px">
+    <img src="./docs/login.png" height="550px">
 </p>
 <p align="center">User Authentication</p>
 
@@ -110,7 +110,7 @@ By clicking on a repository-card, the detail page of that given repository is sh
 The detail page contains information on the repository itself as well as scans that ran. When clicking on the repository, details of the latest scan are shown.
 
 <p align="center">
-    <img src="./docs/details_1.png" width="450px">
+    <img src="./docs/details_1.png" width="550px">
 </p>
 <p align="center">Details - Time Series Graph</p>
 
@@ -118,14 +118,14 @@ On the top of the details page, a time serias graph is shown that is displaying 
 By clicking on one of the past data points in the graph, the information for the selected scan is displayed on the page below. The database also integrates the vulnerability history so that the vulnerability information is up to date for the date it ran.
 
 <p align="center">
-    <img src="./docs/details_2.png" width="450px">
+    <img src="./docs/details_2.png" width="550px">
 </p>
 <p align="center">Details - Detail Data</p>
 
 Above screenshot shows the repository and scan information that is displayed. The box on the bottom-left is currently only a placeholder and shows the SLSA requirements for reaching specific levels of compliance. Work todo is currently listed in the section [Future Work](#future-work).
 
 <p align="center">
-    <img src="./docs/details_3.png" width="450px">
+    <img src="./docs/details_3.png" width="550px">
 </p>
 <p align="center">Details - Vulnerability Table</p>
 
@@ -141,14 +141,14 @@ The SBOM as well as the vulnerability information is also written to the databas
 By clicking one of the vulnerabilities, more information is shown so that the user is able to assess what the vulnerability itself is about and which dependencies and versions are vulnerable. 
 
 <p align="center">
-    <img src="./docs/details_4.png" width="450px">
+    <img src="./docs/details_4.png" width="550px">
 </p>
 <p align="center">Details - Vulnerability Specifics</p>
 
 Information on the vulnerable software versions, a fix (if existing), a description as well as a link to the official NVD database is included.
 
 <p align="center">
-    <img src="./docs/details_5.png" width="450px">
+    <img src="./docs/details_5.png" width="550px">
 </p>
 <p align="center">Details - Known Exploited Vulnerabilities</p>
 
