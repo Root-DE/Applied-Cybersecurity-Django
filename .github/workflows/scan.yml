@@ -1,10 +1,14 @@
 name: Scan
 
 on:
+  release:
+    types: [published]
   push:
     branches: [ "main" ]
+  schedule:
+    - cron:  '0 8 * * *'
   workflow_dispatch:
 
 jobs:
   scanPush:
-    uses: root-de/applied-cybersecurity-django/.github/workflows/scan-template.yml@main        
+    uses: root-de/applied-cybersecurity-django/.github/workflows/scan-template.yml@main 
