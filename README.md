@@ -24,6 +24,13 @@ The tools build upon are all open-source and actively maintained.
 
 ### Supply Chain Levels for Software Artifacts (SLSA)
 
+### Pipeline
+
+### Architecture
+- Architecture Picture (Notify and Pull, Django)
+- Advantages of that approach
+
+
 ## Installation
 - [Docker](https://www.docker.com/)
 - download the docker compose file
@@ -35,11 +42,6 @@ The tools build upon are all open-source and actively maintained.
 - Threshold
 - Dashboard Overview (Cards, Search Function)
 - Details
-
-
-## Architecture
-- Architecture Picture (Notify and Pull, Django)
-- Advantages of that approach
 
 ## Contributing
 
