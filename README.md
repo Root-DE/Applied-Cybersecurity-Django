@@ -8,7 +8,7 @@ This tool is built to perform container image analysis in build pipelines levera
 
 A custom Github action integrated into the build pipeline of a image repository generates above artifacts and notifies a django-based application which collects the artifacts and stores them centrally. The information is visualized within a dashboard enabling an organisations security team to keeping tracover the organisations images, their dependencies and found vulnerabilities. To enhance supply chain security, signed provenance is generated within an attestation file in alignment with the SLSA framework.
 
-![dashboard-example](./docs/tool_screenshots.jpg)
+![tool_screenshot](https://user-images.githubusercontent.com/39306294/182119941-053a10d5-69b8-4cc9-a686-503e4fe96a53.jpg)
 
 
 ## Introduction
