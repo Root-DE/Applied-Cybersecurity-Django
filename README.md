@@ -166,7 +166,9 @@ If one of the vulnerabilities that is found by Grype's vulnerability scan is wit
 
 ## Contributing
 @Root-DE - Till Nowakowski
+
 @jobroe10 - Jonas Schmitz
+
 @BrianPfitz - Brian Pfitmann
 
 ## Future Work
