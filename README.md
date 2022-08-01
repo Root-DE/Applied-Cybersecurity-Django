@@ -1,14 +1,15 @@
-# Container Image Analysis in build pipelines
+# Container Image Analysis in Build Pipelines
 
 ## tl;dr
 This tool is built to perform container image analysis in build pipelines leveraging open-source tools. The artifacts generated for each container image are:
-- **Software bill-of-material (SBOM)** of all dependencies
-- Up-to-date **vulnerability scan** based on the generated SBOM
-- **Signed attestation** (verifyable artifacts)
+- 🗃 **Software bill-of-material (SBOM)** of all dependencies
+- 🔍 Up-to-date **vulnerability scan** based on the generated SBOM
+- 🔏 **Signed attestation** (verifyable artifacts)
 
 A custom Github action integrated into the build pipeline of a image repository generates above artifacts and notifies a django-based application which collects the artifacts and stores them centrally. The information is visualized within a dashboard enabling an organisations security team to keeping tracover the organisations images, their dependencies and found vulnerabilities. To enhance supply chain security, signed provenance is generated within an attestation file in alignment with the SLSA framework.
 
-![tool_screenshots](https://user-images.githubusercontent.com/39306294/182122299-370e2299-c9cb-47a2-af71-473150dc5923.jpg)
+![dashboard-example](./docs/tool_screenshots.jpg)
+<p style="text-align: center;">Screenshots taken from the tools UI</p>
 
 ## Introduction
 With the digitalisation and the high degree of interconnectedness between firms, supply chain attacks have been on the rise. Security incidents such as those resulting from attacks like SolarWinds or Kaseya increased awareness and attention towards mitigating supply chain risks and investing into supply chain security.
@@ -30,6 +31,8 @@ SLSA is a security framework that has been developed to prevent tampering, impro
 - and integrity of third-party dependencies
 
 SLSA defines 4 levels of compliance that can be achieved with higher security requirements:
+<center>
+
 |   SLSA Level	|   Requirements	|
 |:---:	|:---:	|
 |   1	|   Documentation of the build process	|
@@ -37,8 +40,9 @@ SLSA defines 4 levels of compliance that can be achieved with higher security re
 |   3	|   Extra resistance to specific threats	|
 |   4	|   Highest levels of confidence and trust	|
 
-For a more detailled description of each level's requirements, please see the [official SLSA documentation](https://slsa.dev/spec/v0.1/levels).
+</center>
 
+For a more detailled description of each level's requirements, please see the [official SLSA documentation](https://slsa.dev/spec/v0.1/levels).
 
 Besides the [framework itself](https://slsa.dev/spec/v0.1/index) which is currently in alpha, the SLSA developers maintain a [repository](https://github.com/slsa-framework/slsa-github-generator) providing helpful tools to achieve SLSA compliance.
 
@@ -56,15 +60,16 @@ An example as well as the structure of the provanence artifact can be found [her
 
 
 ## Installation
-1. Download and install Docker for your System as described here [How to install Docker](https://docs.docker.com/get-docker/)
-2. download this repository by running `git clone https://github.com/Root-DE/Applied-Cybersecurity-Django`
-2. create a copy of the [template.env](./template.env) file, rename it to `.env`, and fill it with your own values
-3. adapt the [nginx configuration file](./nginx/conf.d/nginx_django.conf) to your needs or remove the configuration file
-4. run `docker-compose up -d` to run the application. This will start nginx, the django application, the database and adminer where you can see the current state of the database. If you don't want to use the adminer, you can remove the adminer container from the docker-compose.yml file.
-5. open your browser and go to `https://<your-domain>/` to see the dashboard.
-6. setup the GitHub Actions for each of the repositories to trigger the scan as described [here](https://github.com/Root-DE/Scan-Action)
+1. Download and install Docker for your system as described here [How to install Docker](https://docs.docker.com/get-docker/)
+2. Download this repository by running `git clone https://github.com/Root-DE/Applied-Cybersecurity-Django`
+2. Create a copy of the [template.env](./template.env) file, rename it to `.env`, and fill it with your own values
+3. Adapt the [nginx configuration file](./nginx/conf.d/nginx_django.conf) to your needs or remove the configuration file
+4. Run `docker-compose up -d` to start the application. This will start nginx, the django application, the database and adminer where you can see the current state of the database. If you don't want to use adminer, you can remove the adminer container from the docker-compose.yml file.
+5. Open your browser and go to https://your-domain/ to see the dashboard.
+6. Set up the GitHub actions for each repository to trigger the scan by copying the [scan.yml](./.github/workflows/scan.yml) to the *.github/workflows/* directory of the respective repository. 
 
 ## Usage
+
 - Threshold
 - Dashboard Overview (Cards, Search Function)
 - Details
