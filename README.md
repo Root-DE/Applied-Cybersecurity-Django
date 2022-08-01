@@ -3,10 +3,10 @@ Scanning container images for vulnerabilities and generating signed provenance a
 ## tl;dr
 This tool is built to perform container image analysis in build pipelines leveraging open-source tools. The artifacts generated for each container image are:
 - 🗃 **Software bill-of-material (SBOM)** of all dependencies
-- 🔍 Up-to-date **vulnerability scan** based on the generated SBOM
+- 🔥 Up-to-date **vulnerability scan** based on the generated SBOM
 - 🔏 **Signed attestation** (verifyable artifacts)
 
-A custom Github action integrated into the build pipeline of a image repository generates above artifacts and notifies a django-based application which collects the artifacts and stores them centrally. The information is visualized within a dashboard enabling an organisations security team to keeping tracover the organisations images, their dependencies and found vulnerabilities. To enhance supply chain security, signed provenance is generated within an attestation file in alignment with the SLSA framework.
+A custom Github action integrated into the build pipeline of an image repository generates above artifacts and notifies a django-based application which collects the artifacts and stores them centrally. The information is visualized within a dashboard enabling an organisations security team to keep track over the organisations images, their dependencies and found vulnerabilities. To enhance supply chain security, signed provenance is generated within an attestation file in alignment with the SLSA framework.
 
 <p align="center">
     <img src="./docs/tool_screenshots.jpg" height="550px">
