@@ -52,6 +52,7 @@ An example as well as the structure of the provanence artifact can be found [her
 ### Pipeline
 
 ### Architecture
+![architecture](./docs/architecture.png)
 - Architecture Picture (Notify and Pull, Django)
 - Advantages of that approach
 
@@ -66,10 +67,19 @@ An example as well as the structure of the provanence artifact can be found [her
 6. Set up the GitHub actions for each repository to trigger the scan by copying the [scan.yml](./.github/workflows/scan.yml) to the *.github/workflows/* directory of the respective repository. 
 
 ## Usage
+### Dashboard Overview (Cards, Search Function)
+![dashboard-example](./docs/dashboard_example.png)
+<p style="text-align: center;">Screenshots taken from the tools UI</p>
 
-- Threshold
-- Dashboard Overview (Cards, Search Function)
-- Details
+### Details
+![details-example-1](./docs/details_1.png)
+<p style="text-align: center;">Screenshots taken from the tools UI</p>
+
+![details-example-2](./docs/details_2.png)
+<p style="text-align: center;">Screenshots taken from the tools UI</p>
+
+![details-example-3](./docs/details_3.png)
+<p style="text-align: center;">Screenshots taken from the tools UI</p>
 
 ## Contributing
 
