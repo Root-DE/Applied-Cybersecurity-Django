@@ -2,6 +2,7 @@
 Scanning container images for vulnerabilities and generating signed provenance aligned with SLSA.
 ## tl;dr
 This tool is built to perform container image analysis in build pipelines leveraging open-source tools. The artifacts generated for each container image are:
+
 - 🗃 **Software bill-of-material (SBOM)** of all dependencies
 - 🔥 Up-to-date **vulnerability scan** based on the generated SBOM
 - 🔏 **Signed attestation** (verifyable artifacts)
@@ -23,8 +24,10 @@ The action also generates attestation including build parameters for each image 
 The tools build upon are all open-source and actively maintained. These are [Syft](https://github.com/anchore/syft) and [Grype](https://github.com/anchore/grype) which are maintained by [Anchore](https://github.com/anchore) as well as the [SLSA framework](https://slsa.dev/).
 
 ### Syft
++ mention available formats
 
 ### Grype
++ we build an image that contains grype and syft
 
 ### Supply Chain Levels for Software Artifacts (SLSA)
 SLSA is a security framework that has been developed to prevent tampering, improve integrity, and secure packages and infrastructure in projects. Under given conditions, an attacker could exploit various attack vectors within a supply chain. SLSA differs between 
@@ -53,21 +56,24 @@ An example as well as the structure of the provanence artifact can be found [her
 ### Pipeline
 <p align="center">
     <img src="./docs/pipeline.png" width="550px">
+    The Pipeline
 </p>
-
+The pipeline (see above) is run whenever there are changes to the repository through a push, when a release is created and daily at 9am UTC. The daily scan is necessary because the container can use software that was not known to be vulnerable during the last scan, but is now.
+In the first step, the pipeline builds the Docker Image. As can be seen below, meta information about the build process, such as the architecture of the GitHub runner, is generated in addition to the build image, and the digest of the image. From the metainformation and the digest, the provenane is now generated. Afterwards it is signed keyless via cosign (see [here](https://github.com/sigstore/cosign/blob/main/KEYLESS.md)). As part of the process, the signature is written to both the Transparency Logs and, along with the provenance, the GitHub Container Registry (ghcr.io). The Image is than also pushed to the Container Registry. 
+The image we use to scan for Vulnerabilities is also on ghcr.io. This scan image now takes the previously built image as input and generates the SBOM and a list of vulnerabilities, which are then transferred to the backend via the notify and pull approach as described in the section [Architecture](#architecture).
 
 <p align="center">
     <img src="./docs/build.png" width="550px">
+    The Build Process
 </p>
-
-
 
 ### Architecture
 <p align="center">
     <img src="./docs/architecture.png" width="550px">
+    The Architecture
 </p>
 
-Our architecture consits of a container-based envapproach with Docker  because containers are lightweight and require less resources than VMs. Containers are easy to deploy, and can be deployed on any environment where Docker runs. Django web framework is used for our project because it is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. Nginx is used as proxy and to deliver the statics, but this is not relevant for the concept behind it, therefore not in the graphic. A personal access token for GitHub is stored in Django. The account behind it has access to the runs of the actions of several repositories. Each repo performs image scanning as well as the generation of an SBOM. In order to keep the scanning with its databases as well as the creation of the SBOMs always up to date, the image used for this (along with the database behind it) is rebuilt daily. After the repos have been scanned, they send a notification to Django, which leads to the subsequent loading, saving and processing of the artifacts that result from a scan.
+The architecture consits of a container-based envapproach with Docker  because containers are lightweight and require less resources than VMs. Containers are easy to deploy, and can be deployed on any environment where Docker runs. Django web framework is used for the project because it is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. Nginx is used as proxy and to deliver the statics, but this is not relevant for the concept behind it, therefore not in the graphic. A personal access token for GitHub is stored in Django. The account behind it has access to the runs of the actions of several repositories. Each repo performs image scanning as well as the generation of an SBOM. In order to keep the scanning with its databases as well as the creation of the SBOMs always up to date, the image used for this (along with the database behind it) is rebuilt daily. After the repos have been scanned, they send a notification to Django, which leads to the subsequent loading, saving and processing of the artifacts that result from a scan.
 
 
 ## Installation
@@ -155,6 +161,9 @@ Information on the vulnerable software versions, a fix (if existing), a descript
 If one of the vulnerabilities that is found by Grype's vulnerability scan is within the "Known Exploited Vulnerabilities" list which is maintained by [CISA](https://www.cisa.gov/known-exploited-vulnerabilities-catalog), the vulnerability is marked as above to support prioritization within the vulnerability management process. Note: The above vulnerability is marked manually as currently being exploited to demonstrate the feature.
 
 ## Contributing
+@Root-DE - Till Nowakowski
+@jobroe10 - Jonas Schmitz
+@BrianPfitz - Brian Pfitmann
 
 ## Future Work
 - Integration of more scanning tools
