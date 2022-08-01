@@ -7,4 +7,4 @@ on:
 
 jobs:
   scanPush:
-    uses: root-de/scan-action/.github/workflows/scan.yml@main        
+    uses: root-de/applied-cybersecurity-django/.github/workflows/scan-template.yml@main        
