@@ -8,6 +8,8 @@ This tool is built to perform container image analysis in build pipelines levera
 
 A custom Github action integrated into the build pipeline of a image repository generates above artifacts and notifies a django-based application which collects the artifacts and stores them centrally. The information is visualized within a dashboard enabling an organisations security team to keeping tracover the organisations images, their dependencies and found vulnerabilities. To enhance supply chain security, signed provenance is generated within an attestation file in alignment with the SLSA framework.
 
+![dashboard-example](https://raw.githubusercontent.com//Root-DE/Applied-Cybersecurity-Django/src/applied_cybersec/vuln_frontend/static/images/dashboard.jpg)
+
 ## Introduction
 With the digitalisation and the high degree of interconnectedness between firms, supply chain attacks have been on the rise. Security incidents such as those resulting from attacks like SolarWinds or Kaseya increased awareness and attention towards mitigating supply chain risks and investing into supply chain security.
 
