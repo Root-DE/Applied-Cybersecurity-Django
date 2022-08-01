@@ -17,7 +17,7 @@ services:
       - db
 
   appsec_app:
-    image: applied_cybersec:latest
+    image: ghcr.io/root-de/applied-cybersecurity-django:latest
     hostname: appsec_app
     restart: unless-stopped
     # command: python /src/applied_cybersec/manage.py runserver 0.0.0.0:8000
@@ -67,21 +67,6 @@ services:
       - db
     networks:
       - db
-  
-  pgadmin4:
-    image: dpage/pgadmin4
-    hostname: pgadmin4
-    restart: unless-stopped
-    ports:
-      - "8081:80"
-    networks:
-      - db
-    environment:
-      PGADMIN_DEFAULT_EMAIL: pgadmin4@pgadmin.org
-      PGADMIN_DEFAULT_PASSWORD: admin
-      PGADMIN_CONFIG_SERVER_MODE: 'False'
-    volumes:
-      - pgadmin:/var/lib/pgadmin
   
 volumes:
   pg_data:
