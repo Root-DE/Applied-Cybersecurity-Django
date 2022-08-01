@@ -9,7 +9,7 @@ This tool is built to perform container image analysis in build pipelines levera
 A custom Github action integrated into the build pipeline of a image repository generates above artifacts and notifies a django-based application which collects the artifacts and stores them centrally. The information is visualized within a dashboard enabling an organisations security team to keeping tracover the organisations images, their dependencies and found vulnerabilities. To enhance supply chain security, signed provenance is generated within an attestation file in alignment with the SLSA framework.
 
 ![dashboard-example](./docs/tool_screenshots.jpg)
-<p style="text-align: center;">Screenshots taken from the tools UI</p>
+<p align= "center">Screenshots taken from the tools UI</p>
 
 ## Introduction
 With the digitalisation and the high degree of interconnectedness between firms, supply chain attacks have been on the rise. Security incidents such as those resulting from attacks like SolarWinds or Kaseya increased awareness and attention towards mitigating supply chain risks and investing into supply chain security.
@@ -31,7 +31,6 @@ SLSA is a security framework that has been developed to prevent tampering, impro
 - and integrity of third-party dependencies
 
 SLSA defines 4 levels of compliance that can be achieved with higher security requirements:
-<center>
 
 |   SLSA Level	|   Requirements	|
 |:---:	|:---:	|
@@ -39,8 +38,6 @@ SLSA defines 4 levels of compliance that can be achieved with higher security re
 |   2	|   Tamper resistance of the build service	|
 |   3	|   Extra resistance to specific threats	|
 |   4	|   Highest levels of confidence and trust	|
-
-</center>
 
 For a more detailled description of each level's requirements, please see the [official SLSA documentation](https://slsa.dev/spec/v0.1/levels).
 
