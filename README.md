@@ -24,10 +24,20 @@ The action also generates attestation including build parameters for each image 
 The tools build upon are all open-source and actively maintained. These are [Syft](https://github.com/anchore/syft) and [Grype](https://github.com/anchore/grype) which are maintained by [Anchore](https://github.com/anchore) as well as the [SLSA framework](https://slsa.dev/).
 
 ### Syft
+Syft is an open-source tool for generating a Software Bill of Material (SBOM for short), and is developed by the company Anchore. A SBOM is also often referred to as a code base inventory, since it contains all identifiable components, including their license and version information. This inventory of the code should then make it possible later to recognize and eliminate weak points or also license-legal pitfalls more effectively. 
+
+A very important feature of Syft is that not only entire project folders, but also container images can be scanned. Furthermore, the tool supports 18 different ecosystems, such as Alpine, Rust, Go, Java or Python. A sample output of Syft (applied to the image {IMAGENAME}) can be viewed here {ref}. Of particular interest is the list of artifacts found, as these are subsequently used to identify vulnerabilities. Information such as the name of the artifact, the exact version and the unique identifiers like the Common Platform Enumeration (CPE) or the Package URL (PURL) are therefore particularly important. Other more informative data, are barely considered by us at the moment, because the focus should be on the vulnerabilities first. Information such as the description of the artifact, the licenses or even the metadata are therefore neglected in the current version. However, if the focus of the project is later expanded to include the software used in the organization, such information can add further value for the company. 
+
 + mention available formats
 
 ### Grype
-+ we build an image that contains Grype and Syft
+Once Syft generated a detailed SBOM, the next step is to scan all found artifacts for vulnerabilities. For this we use a tool called Grype, which is also developed by Anchore and therefore works together with Syft's SBOM without any problems.
+
+All vulnerability information is managed by Grype in its own database and kept up to date by a daily update. The database is made up of many different publicly available sources. These sources include the National Vulnerability Database (NVD), the Alpine Linux SecDB, the RedHat Linux Security Data and many more. Using these sources, Grype is able to find vulnerabilities in the most common operating system packages (for example, Alpine, CentOS, Debian, etc.) and in many language-specific packages (for example, Java, Python, PHP, Rust, etc.). 
+
+The result of a Grype scan on the Syft SBOM already considered in section {ref} can be seen here{ref}. In contrast to the artifact information, this time we are interested in identifying data (for example, CVE-ID), as well as informative data, such as the description of the vulnerability, the Common Vulnerability Scoring System (CVSS), or even information about a possible fix. We then display this data on our dashboard, giving developers an initial overview of the security of their container images. In addition to the data provided by Grype, we also determine the so-called best-secure version, which should also allow developers to easily resolve vulnerabilities.
+
+This best-secure-version functionality will be examined in more detail below.
 
 ### Supply Chain Levels for Software Artifacts (SLSA)
 SLSA is a security framework that has been developed to prevent tampering, improve integrity, and secure packages and infrastructure in projects. Under given conditions, an attacker could exploit various attack vectors within a supply chain. SLSA differs between 
