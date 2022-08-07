@@ -39,6 +39,12 @@ The result of a Grype scan on the Syft SBOM already considered in section {ref} 
 
 This best-secure-version functionality will be examined in more detail below.
 
+#### Next-Secure-Version feature
+In a vulnerability identification tool, one of the most important pieces of information for developers is the next version of software in which the vulnerabilities have been fixed. Since Grype provides this information, we can give the developers recommendations for action in the respective scan summaries. So, if a build process could not be executed because of too extensive vulnerabilities, it is often enough to look at the dashboard and update to the version listed there.
+
+However, it may also happen in some cases that this update does not automatically lead to an increase in security. If the version in which the initial vulnerability was fixed contains one or more new vulnerabilities, security may even be reduced in the worst case. For this reason, in addition to the Grype information, we introduce the Next-Secure version. This feature checks whether there is a newer version of the software used that does not have any known vulnerabilities. To do this, we check the fix versions given by Grype for new vulnerabilities by sending another request to Grype. If further vulnerabilities exist, we again request Grype with the next supposedly secure versions. This will continue until either a safe version is found or there are no known updates. In the second case, we do not make any recommendations for action, as it is difficult for us to decide which vulnerabilities are the least critical for the respective company without appropriate background knowledge. In this case, the developers have to decide for themselves whether an update to a different version makes sense or whether one should try to avoid the vulnerabilities in other ways.
+
+
 ### Supply Chain Levels for Software Artifacts (SLSA)
 SLSA is a security framework that has been developed to prevent tampering, improve integrity, and secure packages and infrastructure in projects. Under given conditions, an attacker could exploit various attack vectors within a supply chain. SLSA differs between 
 - **source** integrity,
