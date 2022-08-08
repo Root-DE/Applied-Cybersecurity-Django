@@ -72,8 +72,8 @@ An example as well as the structure of the provenance artifact can be found [her
 ### Pipeline
 <p align="center">
     <img src="./docs/pipeline.png" width="550px">
-    The Pipeline
 </p>
+<p align="center">The Pipeline</p>
 The pipeline (see above) runs whenever there are changes to the repository through a push when a release is created and daily at 9am UTC. The daily scan is necessary because the container can use software that was not known to be vulnerable during the last scan but is now.
 
 In the first step, the pipeline builds the Docker Image. As can be seen below, meta information about the build process, such as the architecture of the GitHub runner, is generated in addition to the build image, and the digest of the image. From the metainformation and the digest, the provenance is now generated. Afterwards it is signed keyless via cosign (see [here](https://github.com/sigstore/cosign/blob/main/KEYLESS.md)). As part of the process, the signature is written to both the Transparency Logs and, along with the provenance, the GitHub Container Registry (ghcr.io). The Image is then also pushed to the Container Registry.
@@ -82,14 +82,14 @@ The image we use to scan for Vulnerabilities is also on ghcr.io. This scan image
 
 <p align="center">
     <img src="./docs/build.png" width="550px">
-    The Build Process
 </p>
+<p align="center">The Build Process</p>
 
 ### Architecture
 <p align="center">
     <img src="./docs/architecture.png" width="550px">
-    The Architecture
 </p>
+<p align="center">The Architecture</p>
 
 The architecture consists of a container-based approach with Docker because containers are lightweight and require less resources than VMs. Containers are easy to deploy and can be deployed on any environment where Docker runs. Django web framework is used for the project because it is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. Nginx is used as proxy and to deliver the statics, but this is not relevant for the concept behind it, therefore not in the graphic. A personal access token for GitHub is stored in Django. The account behind it has access to the runs of the actions of several repositories. Each repo performs image scanning as well as the generation of an SBOM.
 
