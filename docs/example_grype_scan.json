@@ -1,0 +1,3393 @@
+{
+ "matches": [
+  {
+   "vulnerability": {
+    "id": "CVE-2018-25032",
+    "dataSource": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-25032",
+    "namespace": "alpine:3.15",
+    "severity": "High",
+    "urls": [
+     "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-25032"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [
+      "1.2.12-r0"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2018-25032",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2018-25032",
+     "namespace": "nvd",
+     "severity": "High",
+     "urls": [
+      "https://www.openwall.com/lists/oss-security/2022/03/24/1",
+      "https://github.com/madler/zlib/commit/5c44459c3b28a9bd3283aaceab7c615f8020c531",
+      "http://www.openwall.com/lists/oss-security/2022/03/25/2",
+      "http://www.openwall.com/lists/oss-security/2022/03/26/1",
+      "https://www.openwall.com/lists/oss-security/2022/03/28/1",
+      "https://github.com/madler/zlib/compare/v1.2.11...v1.2.12",
+      "https://www.openwall.com/lists/oss-security/2022/03/28/3",
+      "https://github.com/madler/zlib/issues/605",
+      "https://www.debian.org/security/2022/dsa-5111",
+      "https://lists.debian.org/debian-lts-announce/2022/04/msg00000.html",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/NS2D2GFPFGOJUL4WQ3DUAY7HF4VWQ77F/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/XOKFMSNQ5D5WGMALBNBXU3GE442V74WU/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/VOKNP2L734AEL47NRYGVZIKEFOUBQY5Y/",
+      "https://lists.debian.org/debian-lts-announce/2022/05/msg00008.html",
+      "https://support.apple.com/kb/HT213255",
+      "https://support.apple.com/kb/HT213256",
+      "https://support.apple.com/kb/HT213257",
+      "http://seclists.org/fulldisclosure/2022/May/33",
+      "http://seclists.org/fulldisclosure/2022/May/35",
+      "http://seclists.org/fulldisclosure/2022/May/38",
+      "https://security.netapp.com/advisory/ntap-20220526-0009/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/DF62MVMH3QUGMBDCB3DY2ERQ6EBHTADB/",
+      "https://www.oracle.com/security-alerts/cpujul2022.html",
+      "https://security.netapp.com/advisory/ntap-20220729-0004/"
+     ],
+     "description": "zlib before 1.2.12 allows memory corruption when deflating (i.e., when compressing) if the input has many distant matches.",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+       "metrics": {
+        "baseScore": 5,
+        "exploitabilityScore": 10,
+        "impactScore": 2.9
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+       "metrics": {
+        "baseScore": 7.5,
+        "exploitabilityScore": 3.9,
+        "impactScore": 3.6
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "apk-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "alpine",
+       "version": "3.15.0"
+      },
+      "namespace": "alpine:3.15",
+      "package": {
+       "name": "zlib",
+       "version": "1.2.11-r3"
+      }
+     },
+     "found": {
+      "versionConstraint": "< 1.2.12-r0 (apk)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "zlib",
+    "version": "1.2.11-r3",
+    "type": "apk",
+    "locations": [
+     {
+      "path": "/lib/apk/db/installed",
+      "layerID": "sha256:671e3248113cc5479cb7fad8a05e164e54469ddba2a1ef5ff15274408398f862"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "Zlib"
+    ],
+    "cpes": [
+     "cpe:2.3:a:zlib:zlib:1.2.11-r3:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:alpine/zlib@1.2.11-r3?arch=x86_64&upstream=zlib&distro=alpine-3.15.0",
+    "upstreams": [
+     {
+      "name": "zlib"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2021-37750",
+    "dataSource": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-37750",
+    "namespace": "alpine:3.15",
+    "severity": "Medium",
+    "urls": [
+     "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-37750"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [
+      "1.19.3-r0"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2021-37750",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2021-37750",
+     "namespace": "nvd",
+     "severity": "Medium",
+     "urls": [
+      "https://github.com/krb5/krb5/releases",
+      "https://web.mit.edu/kerberos/advisories/",
+      "https://github.com/krb5/krb5/commit/d775c95af7606a51bf79547a94fa52ddd1cb7f49",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/MFCLW7D46E4VCREKKH453T5DA4XOLHU2/",
+      "https://security.netapp.com/advisory/ntap-20210923-0002/",
+      "https://lists.debian.org/debian-lts-announce/2021/09/msg00019.html",
+      "https://www.oracle.com/security-alerts/cpujul2022.html"
+     ],
+     "description": "The Key Distribution Center (KDC) in MIT Kerberos 5 (aka krb5) before 1.18.5 and 1.19.x before 1.19.3 has a NULL pointer dereference in kdc/do_tgs_req.c via a FAST inner body that lacks a server field.",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:N/AC:L/Au:S/C:N/I:N/A:P",
+       "metrics": {
+        "baseScore": 4,
+        "exploitabilityScore": 8,
+        "impactScore": 2.9
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+       "metrics": {
+        "baseScore": 6.5,
+        "exploitabilityScore": 2.8,
+        "impactScore": 3.6
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-indirect-match",
+     "matcher": "apk-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "alpine",
+       "version": "3.15.0"
+      },
+      "namespace": "alpine:3.15",
+      "package": {
+       "name": "krb5",
+       "version": "1.19.2-r4"
+      }
+     },
+     "found": {
+      "versionConstraint": "< 1.19.3-r0 (apk)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "krb5-libs",
+    "version": "1.19.2-r4",
+    "type": "apk",
+    "locations": [
+     {
+      "path": "/lib/apk/db/installed",
+      "layerID": "sha256:671e3248113cc5479cb7fad8a05e164e54469ddba2a1ef5ff15274408398f862"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "MIT"
+    ],
+    "cpes": [
+     "cpe:2.3:a:krb5-libs:krb5-libs:1.19.2-r4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:krb5-libs:krb5_libs:1.19.2-r4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:krb5_libs:krb5-libs:1.19.2-r4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:krb5_libs:krb5_libs:1.19.2-r4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:krb5:krb5-libs:1.19.2-r4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:krb5:krb5_libs:1.19.2-r4:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:alpine/krb5-libs@1.19.2-r4?arch=x86_64&upstream=krb5&distro=alpine-3.15.0",
+    "upstreams": [
+     {
+      "name": "krb5"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2021-4160",
+    "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2021-4160",
+    "namespace": "nvd",
+    "severity": "Medium",
+    "urls": [
+     "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=6fc1aaaf303185aa5e483e06bdfae16daa9193a7",
+     "https://www.openssl.org/news/secadv/20220128.txt",
+     "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=3bf7b73ea7123045b8f972badc67ed6878e6c37f",
+     "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=e9e726506cd2a3fd9c0f12daf8cc1fe934c7dddb",
+     "https://www.debian.org/security/2022/dsa-5103",
+     "https://www.oracle.com/security-alerts/cpuapr2022.html",
+     "https://www.oracle.com/security-alerts/cpujul2022.html"
+    ],
+    "description": "There is a carry propagation bug in the MIPS32 and MIPS64 squaring procedure. Many EC algorithms are affected, including some of the TLS 1.3 default curves. Impact was not analyzed in detail, because the pre-requisites for attack are considered unlikely and include reusing private keys. Analysis suggests that attacks against RSA and DSA as a result of this defect would be very difficult to perform and are not believed likely. Attacks against DH are considered just feasible (although very difficult) because most of the work necessary to deduce information about a private key may be performed offline. The amount of resources required for such an attack would be significant. However, for an attack on TLS to be meaningful, the server would have to share the DH private key among multiple clients, which is no longer an option since CVE-2016-0701. This issue affects OpenSSL versions 1.0.2, 1.1.1 and 3.0.0. It was addressed in the releases of 1.1.1m and 3.0.1 on the 15th of December 2021. For the 1.0.2 release it is addressed in git commit 6fc1aaaf3 that is available to premium support customers only. It will be made available in 1.0.2zc when it is released. The issue only affects OpenSSL on MIPS platforms. Fixed in OpenSSL 3.0.1 (Affected 3.0.0). Fixed in OpenSSL 1.1.1m (Affected 1.1.1-1.1.1l). Fixed in OpenSSL 1.0.2zc-dev (Affected 1.0.2-1.0.2zb).",
+    "cvss": [
+     {
+      "version": "2.0",
+      "vector": "AV:N/AC:M/Au:N/C:P/I:N/A:N",
+      "metrics": {
+       "baseScore": 4.3,
+       "exploitabilityScore": 8.6,
+       "impactScore": 2.9
+      },
+      "vendorMetadata": {}
+     },
+     {
+      "version": "3.1",
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "metrics": {
+       "baseScore": 5.9,
+       "exploitabilityScore": 2.2,
+       "impactScore": 3.6
+      },
+      "vendorMetadata": {}
+     }
+    ],
+    "fix": {
+     "versions": [],
+     "state": "unknown"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [],
+   "matchDetails": [
+    {
+     "type": "cpe-match",
+     "matcher": "apk-matcher",
+     "searchedBy": {
+      "namespace": "nvd",
+      "cpes": [
+       "cpe:2.3:a:openssl:openssl:1.1.1l-r7:*:*:*:*:*:*:*"
+      ]
+     },
+     "found": {
+      "versionConstraint": "= 3.0.0 || = 3.0.0 || = 3.0.0 || = 3.0.0 || = 3.0.0 || = 3.0.0 || = 3.0.0 || = 3.0.0 || = 3.0.0 || = 3.0.0 || = 3.0.0 || = 3.0.0 || = 3.0.0 || = 3.0.0 || = 3.0.0 || = 3.0.0 || = 3.0.0 || = 3.0.0 || = 3.0.0 || = 3.0.0 || >= 1.0.2, <= 1.0.2zb || >= 1.1.1, < 1.1.1m (unknown)",
+      "cpes": [
+       "cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:*"
+      ]
+     }
+    }
+   ],
+   "artifact": {
+    "name": "libcrypto1.1",
+    "version": "1.1.1l-r7",
+    "type": "apk",
+    "locations": [
+     {
+      "path": "/lib/apk/db/installed",
+      "layerID": "sha256:671e3248113cc5479cb7fad8a05e164e54469ddba2a1ef5ff15274408398f862"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "OpenSSL"
+    ],
+    "cpes": [
+     "cpe:2.3:a:libcrypto1.1:libcrypto1.1:1.1.1l-r7:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:alpine/libcrypto1.1@1.1.1l-r7?arch=x86_64&upstream=openssl&distro=alpine-3.15.0",
+    "upstreams": [
+     {
+      "name": "openssl"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2021-4160",
+    "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2021-4160",
+    "namespace": "nvd",
+    "severity": "Medium",
+    "urls": [
+     "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=6fc1aaaf303185aa5e483e06bdfae16daa9193a7",
+     "https://www.openssl.org/news/secadv/20220128.txt",
+     "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=3bf7b73ea7123045b8f972badc67ed6878e6c37f",
+     "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=e9e726506cd2a3fd9c0f12daf8cc1fe934c7dddb",
+     "https://www.debian.org/security/2022/dsa-5103",
+     "https://www.oracle.com/security-alerts/cpuapr2022.html",
+     "https://www.oracle.com/security-alerts/cpujul2022.html"
+    ],
+    "description": "There is a carry propagation bug in the MIPS32 and MIPS64 squaring procedure. Many EC algorithms are affected, including some of the TLS 1.3 default curves. Impact was not analyzed in detail, because the pre-requisites for attack are considered unlikely and include reusing private keys. Analysis suggests that attacks against RSA and DSA as a result of this defect would be very difficult to perform and are not believed likely. Attacks against DH are considered just feasible (although very difficult) because most of the work necessary to deduce information about a private key may be performed offline. The amount of resources required for such an attack would be significant. However, for an attack on TLS to be meaningful, the server would have to share the DH private key among multiple clients, which is no longer an option since CVE-2016-0701. This issue affects OpenSSL versions 1.0.2, 1.1.1 and 3.0.0. It was addressed in the releases of 1.1.1m and 3.0.1 on the 15th of December 2021. For the 1.0.2 release it is addressed in git commit 6fc1aaaf3 that is available to premium support customers only. It will be made available in 1.0.2zc when it is released. The issue only affects OpenSSL on MIPS platforms. Fixed in OpenSSL 3.0.1 (Affected 3.0.0). Fixed in OpenSSL 1.1.1m (Affected 1.1.1-1.1.1l). Fixed in OpenSSL 1.0.2zc-dev (Affected 1.0.2-1.0.2zb).",
+    "cvss": [
+     {
+      "version": "2.0",
+      "vector": "AV:N/AC:M/Au:N/C:P/I:N/A:N",
+      "metrics": {
+       "baseScore": 4.3,
+       "exploitabilityScore": 8.6,
+       "impactScore": 2.9
+      },
+      "vendorMetadata": {}
+     },
+     {
+      "version": "3.1",
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "metrics": {
+       "baseScore": 5.9,
+       "exploitabilityScore": 2.2,
+       "impactScore": 3.6
+      },
+      "vendorMetadata": {}
+     }
+    ],
+    "fix": {
+     "versions": [],
+     "state": "unknown"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [],
+   "matchDetails": [
+    {
+     "type": "cpe-match",
+     "matcher": "apk-matcher",
+     "searchedBy": {
+      "namespace": "nvd",
+      "cpes": [
+       "cpe:2.3:a:openssl:openssl:1.1.1l-r7:*:*:*:*:*:*:*"
+      ]
+     },
+     "found": {
+      "versionConstraint": "= 3.0.0 || = 3.0.0 || = 3.0.0 || = 3.0.0 || = 3.0.0 || = 3.0.0 || = 3.0.0 || = 3.0.0 || = 3.0.0 || = 3.0.0 || = 3.0.0 || = 3.0.0 || = 3.0.0 || = 3.0.0 || = 3.0.0 || = 3.0.0 || = 3.0.0 || = 3.0.0 || = 3.0.0 || = 3.0.0 || >= 1.0.2, <= 1.0.2zb || >= 1.1.1, < 1.1.1m (unknown)",
+      "cpes": [
+       "cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:*"
+      ]
+     }
+    }
+   ],
+   "artifact": {
+    "name": "libssl1.1",
+    "version": "1.1.1l-r7",
+    "type": "apk",
+    "locations": [
+     {
+      "path": "/lib/apk/db/installed",
+      "layerID": "sha256:671e3248113cc5479cb7fad8a05e164e54469ddba2a1ef5ff15274408398f862"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "OpenSSL"
+    ],
+    "cpes": [
+     "cpe:2.3:a:libssl1.1:libssl1.1:1.1.1l-r7:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:alpine/libssl1.1@1.1.1l-r7?arch=x86_64&upstream=openssl&distro=alpine-3.15.0",
+    "upstreams": [
+     {
+      "name": "openssl"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2021-45960",
+    "dataSource": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-45960",
+    "namespace": "alpine:3.15",
+    "severity": "High",
+    "urls": [
+     "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-45960"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [
+      "2.4.3-r0"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2021-45960",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2021-45960",
+     "namespace": "nvd",
+     "severity": "High",
+     "urls": [
+      "https://github.com/libexpat/libexpat/issues/531",
+      "https://github.com/libexpat/libexpat/pull/534",
+      "https://bugzilla.mozilla.org/show_bug.cgi?id=1217609",
+      "http://www.openwall.com/lists/oss-security/2022/01/17/3",
+      "https://security.netapp.com/advisory/ntap-20220121-0004/",
+      "https://www.tenable.com/security/tns-2022-05",
+      "https://www.debian.org/security/2022/dsa-5073",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-484086.pdf"
+     ],
+     "description": "In Expat (aka libexpat) before 2.4.3, a left shift by 29 (or more) places in the storeAtts function in xmlparse.c can lead to realloc misbehavior (e.g., allocating too few bytes, or only freeing memory).",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:N/AC:L/Au:S/C:C/I:C/A:C",
+       "metrics": {
+        "baseScore": 9,
+        "exploitabilityScore": 8,
+        "impactScore": 10
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+       "metrics": {
+        "baseScore": 8.8,
+        "exploitabilityScore": 2.8,
+        "impactScore": 5.9
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "apk-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "alpine",
+       "version": "3.15.0"
+      },
+      "namespace": "alpine:3.15",
+      "package": {
+       "name": "expat",
+       "version": "2.4.1-r0"
+      }
+     },
+     "found": {
+      "versionConstraint": "< 2.4.3-r0 (apk)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "expat",
+    "version": "2.4.1-r0",
+    "type": "apk",
+    "locations": [
+     {
+      "path": "/lib/apk/db/installed",
+      "layerID": "sha256:671e3248113cc5479cb7fad8a05e164e54469ddba2a1ef5ff15274408398f862"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "MIT"
+    ],
+    "cpes": [
+     "cpe:2.3:a:expat:expat:2.4.1-r0:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:alpine/expat@2.4.1-r0?arch=x86_64&upstream=expat&distro=alpine-3.15.0",
+    "upstreams": [
+     {
+      "name": "expat"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2021-46143",
+    "dataSource": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-46143",
+    "namespace": "alpine:3.15",
+    "severity": "High",
+    "urls": [
+     "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-46143"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [
+      "2.4.3-r0"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2021-46143",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2021-46143",
+     "namespace": "nvd",
+     "severity": "High",
+     "urls": [
+      "https://github.com/libexpat/libexpat/issues/532",
+      "https://github.com/libexpat/libexpat/pull/538",
+      "http://www.openwall.com/lists/oss-security/2022/01/17/3",
+      "https://security.netapp.com/advisory/ntap-20220121-0006/",
+      "https://www.tenable.com/security/tns-2022-05",
+      "https://www.debian.org/security/2022/dsa-5073",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-484086.pdf"
+     ],
+     "description": "In doProlog in xmlparse.c in Expat (aka libexpat) before 2.4.3, an integer overflow exists for m_groupSize.",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P",
+       "metrics": {
+        "baseScore": 6.8,
+        "exploitabilityScore": 8.6,
+        "impactScore": 6.4
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+       "metrics": {
+        "baseScore": 7.8,
+        "exploitabilityScore": 1.8,
+        "impactScore": 5.9
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "apk-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "alpine",
+       "version": "3.15.0"
+      },
+      "namespace": "alpine:3.15",
+      "package": {
+       "name": "expat",
+       "version": "2.4.1-r0"
+      }
+     },
+     "found": {
+      "versionConstraint": "< 2.4.3-r0 (apk)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "expat",
+    "version": "2.4.1-r0",
+    "type": "apk",
+    "locations": [
+     {
+      "path": "/lib/apk/db/installed",
+      "layerID": "sha256:671e3248113cc5479cb7fad8a05e164e54469ddba2a1ef5ff15274408398f862"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "MIT"
+    ],
+    "cpes": [
+     "cpe:2.3:a:expat:expat:2.4.1-r0:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:alpine/expat@2.4.1-r0?arch=x86_64&upstream=expat&distro=alpine-3.15.0",
+    "upstreams": [
+     {
+      "name": "expat"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2021-46828",
+    "dataSource": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-46828",
+    "namespace": "alpine:3.15",
+    "severity": "High",
+    "urls": [
+     "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-46828"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [
+      "1.3.2-r1"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2021-46828",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2021-46828",
+     "namespace": "nvd",
+     "severity": "High",
+     "urls": [
+      "http://git.linux-nfs.org/?p=steved/libtirpc.git;a=commit;h=86529758570cef4c73fb9b9c4104fdc510f701ed",
+      "https://www.debian.org/security/2022/dsa-5200"
+     ],
+     "description": "In libtirpc before 1.3.3rc1, remote attackers could exhaust the file descriptors of a process that uses libtirpc because idle TCP connections are mishandled. This can, in turn, lead to an svc_run infinite loop without accepting new connections.",
+     "cvss": [
+      {
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+       "metrics": {
+        "baseScore": 7.5,
+        "exploitabilityScore": 3.9,
+        "impactScore": 3.6
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "apk-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "alpine",
+       "version": "3.15.0"
+      },
+      "namespace": "alpine:3.15",
+      "package": {
+       "name": "libtirpc",
+       "version": "1.3.2-r0"
+      }
+     },
+     "found": {
+      "versionConstraint": "< 1.3.2-r1 (apk)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "libtirpc",
+    "version": "1.3.2-r0",
+    "type": "apk",
+    "locations": [
+     {
+      "path": "/lib/apk/db/installed",
+      "layerID": "sha256:671e3248113cc5479cb7fad8a05e164e54469ddba2a1ef5ff15274408398f862"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "BSD-3-Clause"
+    ],
+    "cpes": [
+     "cpe:2.3:a:libtirpc:libtirpc:1.3.2-r0:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:alpine/libtirpc@1.3.2-r0?arch=x86_64&upstream=libtirpc&distro=alpine-3.15.0",
+    "upstreams": [
+     {
+      "name": "libtirpc"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2021-46828",
+    "dataSource": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-46828",
+    "namespace": "alpine:3.15",
+    "severity": "High",
+    "urls": [
+     "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-46828"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [
+      "1.3.2-r1"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2021-46828",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2021-46828",
+     "namespace": "nvd",
+     "severity": "High",
+     "urls": [
+      "http://git.linux-nfs.org/?p=steved/libtirpc.git;a=commit;h=86529758570cef4c73fb9b9c4104fdc510f701ed",
+      "https://www.debian.org/security/2022/dsa-5200"
+     ],
+     "description": "In libtirpc before 1.3.3rc1, remote attackers could exhaust the file descriptors of a process that uses libtirpc because idle TCP connections are mishandled. This can, in turn, lead to an svc_run infinite loop without accepting new connections.",
+     "cvss": [
+      {
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+       "metrics": {
+        "baseScore": 7.5,
+        "exploitabilityScore": 3.9,
+        "impactScore": 3.6
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-indirect-match",
+     "matcher": "apk-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "alpine",
+       "version": "3.15.0"
+      },
+      "namespace": "alpine:3.15",
+      "package": {
+       "name": "libtirpc",
+       "version": "1.3.2-r0"
+      }
+     },
+     "found": {
+      "versionConstraint": "< 1.3.2-r1 (apk)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "libtirpc-conf",
+    "version": "1.3.2-r0",
+    "type": "apk",
+    "locations": [
+     {
+      "path": "/lib/apk/db/installed",
+      "layerID": "sha256:671e3248113cc5479cb7fad8a05e164e54469ddba2a1ef5ff15274408398f862"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "BSD-3-Clause"
+    ],
+    "cpes": [
+     "cpe:2.3:a:libtirpc-conf:libtirpc-conf:1.3.2-r0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:libtirpc-conf:libtirpc_conf:1.3.2-r0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:libtirpc_conf:libtirpc-conf:1.3.2-r0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:libtirpc_conf:libtirpc_conf:1.3.2-r0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:libtirpc:libtirpc-conf:1.3.2-r0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:libtirpc:libtirpc_conf:1.3.2-r0:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:alpine/libtirpc-conf@1.3.2-r0?arch=x86_64&upstream=libtirpc&distro=alpine-3.15.0",
+    "upstreams": [
+     {
+      "name": "libtirpc"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2022-0778",
+    "dataSource": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-0778",
+    "namespace": "alpine:3.15",
+    "severity": "High",
+    "urls": [
+     "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-0778"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [
+      "1.1.1n-r0"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2022-0778",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2022-0778",
+     "namespace": "nvd",
+     "severity": "High",
+     "urls": [
+      "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=380085481c64de749a6dd25cdf0bcf4360b30f83",
+      "https://www.openssl.org/news/secadv/20220315.txt",
+      "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=a466912611aa6cbdf550cd10601390e587451246",
+      "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=3118eb64934499d93db3230748a452351d1d9a65",
+      "https://www.debian.org/security/2022/dsa-5103",
+      "https://lists.debian.org/debian-lts-announce/2022/03/msg00024.html",
+      "https://lists.debian.org/debian-lts-announce/2022/03/msg00023.html",
+      "https://security.netapp.com/advisory/ntap-20220321-0002/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/GDB3GQVJPXJE7X5C5JN6JAA4XUDWD6E6/",
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0002",
+      "https://www.tenable.com/security/tns-2022-06",
+      "https://www.tenable.com/security/tns-2022-07",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/323SNN6ZX7PRJJWP2BUAFLPUAE42XWLZ/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/W6K3PR542DXWLEFFMFIDMME4CWMHJRMG/",
+      "https://www.tenable.com/security/tns-2022-08",
+      "https://www.oracle.com/security-alerts/cpuapr2022.html",
+      "https://www.tenable.com/security/tns-2022-09",
+      "https://security.netapp.com/advisory/ntap-20220429-0005/",
+      "https://support.apple.com/kb/HT213256",
+      "https://support.apple.com/kb/HT213255",
+      "https://support.apple.com/kb/HT213257",
+      "http://seclists.org/fulldisclosure/2022/May/38",
+      "http://seclists.org/fulldisclosure/2022/May/35",
+      "http://seclists.org/fulldisclosure/2022/May/33",
+      "http://packetstormsecurity.com/files/167344/OpenSSL-1.0.2-1.1.1-3.0-BN_mod_sqrt-Infinite-Loop.html",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-712929.pdf",
+      "https://www.oracle.com/security-alerts/cpujul2022.html"
+     ],
+     "description": "The BN_mod_sqrt() function, which computes a modular square root, contains a bug that can cause it to loop forever for non-prime moduli. Internally this function is used when parsing certificates that contain elliptic curve public keys in compressed form or explicit elliptic curve parameters with a base point encoded in compressed form. It is possible to trigger the infinite loop by crafting a certificate that has invalid explicit curve parameters. Since certificate parsing happens prior to verification of the certificate signature, any process that parses an externally supplied certificate may thus be subject to a denial of service attack. The infinite loop can also be reached when parsing crafted private keys as they can contain explicit elliptic curve parameters. Thus vulnerable situations include: - TLS clients consuming server certificates - TLS servers consuming client certificates - Hosting providers taking certificates or private keys from customers - Certificate authorities parsing certification requests from subscribers - Anything else which parses ASN.1 elliptic curve parameters Also any other applications that use the BN_mod_sqrt() where the attacker can control the parameter values are vulnerable to this DoS issue. In the OpenSSL 1.0.2 version the public key is not parsed during initial parsing of the certificate which makes it slightly harder to trigger the infinite loop. However any operation which requires the public key from the certificate will trigger the infinite loop. In particular the attacker can use a self-signed certificate to trigger the loop during verification of the certificate signature. This issue affects OpenSSL versions 1.0.2, 1.1.1 and 3.0. It was addressed in the releases of 1.1.1n and 3.0.2 on the 15th March 2022. Fixed in OpenSSL 3.0.2 (Affected 3.0.0,3.0.1). Fixed in OpenSSL 1.1.1n (Affected 1.1.1-1.1.1m). Fixed in OpenSSL 1.0.2zd (Affected 1.0.2-1.0.2zc).",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+       "metrics": {
+        "baseScore": 5,
+        "exploitabilityScore": 10,
+        "impactScore": 2.9
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+       "metrics": {
+        "baseScore": 7.5,
+        "exploitabilityScore": 3.9,
+        "impactScore": 3.6
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-indirect-match",
+     "matcher": "apk-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "alpine",
+       "version": "3.15.0"
+      },
+      "namespace": "alpine:3.15",
+      "package": {
+       "name": "openssl",
+       "version": "1.1.1l-r7"
+      }
+     },
+     "found": {
+      "versionConstraint": "< 1.1.1n-r0 (apk)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "libcrypto1.1",
+    "version": "1.1.1l-r7",
+    "type": "apk",
+    "locations": [
+     {
+      "path": "/lib/apk/db/installed",
+      "layerID": "sha256:671e3248113cc5479cb7fad8a05e164e54469ddba2a1ef5ff15274408398f862"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "OpenSSL"
+    ],
+    "cpes": [
+     "cpe:2.3:a:libcrypto1.1:libcrypto1.1:1.1.1l-r7:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:alpine/libcrypto1.1@1.1.1l-r7?arch=x86_64&upstream=openssl&distro=alpine-3.15.0",
+    "upstreams": [
+     {
+      "name": "openssl"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2022-0778",
+    "dataSource": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-0778",
+    "namespace": "alpine:3.15",
+    "severity": "High",
+    "urls": [
+     "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-0778"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [
+      "3.3.4-r3"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2022-0778",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2022-0778",
+     "namespace": "nvd",
+     "severity": "High",
+     "urls": [
+      "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=380085481c64de749a6dd25cdf0bcf4360b30f83",
+      "https://www.openssl.org/news/secadv/20220315.txt",
+      "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=a466912611aa6cbdf550cd10601390e587451246",
+      "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=3118eb64934499d93db3230748a452351d1d9a65",
+      "https://www.debian.org/security/2022/dsa-5103",
+      "https://lists.debian.org/debian-lts-announce/2022/03/msg00024.html",
+      "https://lists.debian.org/debian-lts-announce/2022/03/msg00023.html",
+      "https://security.netapp.com/advisory/ntap-20220321-0002/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/GDB3GQVJPXJE7X5C5JN6JAA4XUDWD6E6/",
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0002",
+      "https://www.tenable.com/security/tns-2022-06",
+      "https://www.tenable.com/security/tns-2022-07",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/323SNN6ZX7PRJJWP2BUAFLPUAE42XWLZ/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/W6K3PR542DXWLEFFMFIDMME4CWMHJRMG/",
+      "https://www.tenable.com/security/tns-2022-08",
+      "https://www.oracle.com/security-alerts/cpuapr2022.html",
+      "https://www.tenable.com/security/tns-2022-09",
+      "https://security.netapp.com/advisory/ntap-20220429-0005/",
+      "https://support.apple.com/kb/HT213256",
+      "https://support.apple.com/kb/HT213255",
+      "https://support.apple.com/kb/HT213257",
+      "http://seclists.org/fulldisclosure/2022/May/38",
+      "http://seclists.org/fulldisclosure/2022/May/35",
+      "http://seclists.org/fulldisclosure/2022/May/33",
+      "http://packetstormsecurity.com/files/167344/OpenSSL-1.0.2-1.1.1-3.0-BN_mod_sqrt-Infinite-Loop.html",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-712929.pdf",
+      "https://www.oracle.com/security-alerts/cpujul2022.html"
+     ],
+     "description": "The BN_mod_sqrt() function, which computes a modular square root, contains a bug that can cause it to loop forever for non-prime moduli. Internally this function is used when parsing certificates that contain elliptic curve public keys in compressed form or explicit elliptic curve parameters with a base point encoded in compressed form. It is possible to trigger the infinite loop by crafting a certificate that has invalid explicit curve parameters. Since certificate parsing happens prior to verification of the certificate signature, any process that parses an externally supplied certificate may thus be subject to a denial of service attack. The infinite loop can also be reached when parsing crafted private keys as they can contain explicit elliptic curve parameters. Thus vulnerable situations include: - TLS clients consuming server certificates - TLS servers consuming client certificates - Hosting providers taking certificates or private keys from customers - Certificate authorities parsing certification requests from subscribers - Anything else which parses ASN.1 elliptic curve parameters Also any other applications that use the BN_mod_sqrt() where the attacker can control the parameter values are vulnerable to this DoS issue. In the OpenSSL 1.0.2 version the public key is not parsed during initial parsing of the certificate which makes it slightly harder to trigger the infinite loop. However any operation which requires the public key from the certificate will trigger the infinite loop. In particular the attacker can use a self-signed certificate to trigger the loop during verification of the certificate signature. This issue affects OpenSSL versions 1.0.2, 1.1.1 and 3.0. It was addressed in the releases of 1.1.1n and 3.0.2 on the 15th March 2022. Fixed in OpenSSL 3.0.2 (Affected 3.0.0,3.0.1). Fixed in OpenSSL 1.1.1n (Affected 1.1.1-1.1.1m). Fixed in OpenSSL 1.0.2zd (Affected 1.0.2-1.0.2zc).",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+       "metrics": {
+        "baseScore": 5,
+        "exploitabilityScore": 10,
+        "impactScore": 2.9
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+       "metrics": {
+        "baseScore": 7.5,
+        "exploitabilityScore": 3.9,
+        "impactScore": 3.6
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "apk-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "alpine",
+       "version": "3.15.0"
+      },
+      "namespace": "alpine:3.15",
+      "package": {
+       "name": "libretls",
+       "version": "3.3.4-r2"
+      }
+     },
+     "found": {
+      "versionConstraint": "< 3.3.4-r3 (apk)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "libretls",
+    "version": "3.3.4-r2",
+    "type": "apk",
+    "locations": [
+     {
+      "path": "/lib/apk/db/installed",
+      "layerID": "sha256:671e3248113cc5479cb7fad8a05e164e54469ddba2a1ef5ff15274408398f862"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "ISC",
+     "AND",
+     "(BSD-3-Clause",
+     "OR",
+     "MIT)"
+    ],
+    "cpes": [
+     "cpe:2.3:a:libretls:libretls:3.3.4-r2:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:alpine/libretls@3.3.4-r2?arch=x86_64&upstream=libretls&distro=alpine-3.15.0",
+    "upstreams": [
+     {
+      "name": "libretls"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2022-0778",
+    "dataSource": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-0778",
+    "namespace": "alpine:3.15",
+    "severity": "High",
+    "urls": [
+     "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-0778"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [
+      "1.1.1n-r0"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2022-0778",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2022-0778",
+     "namespace": "nvd",
+     "severity": "High",
+     "urls": [
+      "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=380085481c64de749a6dd25cdf0bcf4360b30f83",
+      "https://www.openssl.org/news/secadv/20220315.txt",
+      "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=a466912611aa6cbdf550cd10601390e587451246",
+      "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=3118eb64934499d93db3230748a452351d1d9a65",
+      "https://www.debian.org/security/2022/dsa-5103",
+      "https://lists.debian.org/debian-lts-announce/2022/03/msg00024.html",
+      "https://lists.debian.org/debian-lts-announce/2022/03/msg00023.html",
+      "https://security.netapp.com/advisory/ntap-20220321-0002/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/GDB3GQVJPXJE7X5C5JN6JAA4XUDWD6E6/",
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0002",
+      "https://www.tenable.com/security/tns-2022-06",
+      "https://www.tenable.com/security/tns-2022-07",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/323SNN6ZX7PRJJWP2BUAFLPUAE42XWLZ/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/W6K3PR542DXWLEFFMFIDMME4CWMHJRMG/",
+      "https://www.tenable.com/security/tns-2022-08",
+      "https://www.oracle.com/security-alerts/cpuapr2022.html",
+      "https://www.tenable.com/security/tns-2022-09",
+      "https://security.netapp.com/advisory/ntap-20220429-0005/",
+      "https://support.apple.com/kb/HT213256",
+      "https://support.apple.com/kb/HT213255",
+      "https://support.apple.com/kb/HT213257",
+      "http://seclists.org/fulldisclosure/2022/May/38",
+      "http://seclists.org/fulldisclosure/2022/May/35",
+      "http://seclists.org/fulldisclosure/2022/May/33",
+      "http://packetstormsecurity.com/files/167344/OpenSSL-1.0.2-1.1.1-3.0-BN_mod_sqrt-Infinite-Loop.html",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-712929.pdf",
+      "https://www.oracle.com/security-alerts/cpujul2022.html"
+     ],
+     "description": "The BN_mod_sqrt() function, which computes a modular square root, contains a bug that can cause it to loop forever for non-prime moduli. Internally this function is used when parsing certificates that contain elliptic curve public keys in compressed form or explicit elliptic curve parameters with a base point encoded in compressed form. It is possible to trigger the infinite loop by crafting a certificate that has invalid explicit curve parameters. Since certificate parsing happens prior to verification of the certificate signature, any process that parses an externally supplied certificate may thus be subject to a denial of service attack. The infinite loop can also be reached when parsing crafted private keys as they can contain explicit elliptic curve parameters. Thus vulnerable situations include: - TLS clients consuming server certificates - TLS servers consuming client certificates - Hosting providers taking certificates or private keys from customers - Certificate authorities parsing certification requests from subscribers - Anything else which parses ASN.1 elliptic curve parameters Also any other applications that use the BN_mod_sqrt() where the attacker can control the parameter values are vulnerable to this DoS issue. In the OpenSSL 1.0.2 version the public key is not parsed during initial parsing of the certificate which makes it slightly harder to trigger the infinite loop. However any operation which requires the public key from the certificate will trigger the infinite loop. In particular the attacker can use a self-signed certificate to trigger the loop during verification of the certificate signature. This issue affects OpenSSL versions 1.0.2, 1.1.1 and 3.0. It was addressed in the releases of 1.1.1n and 3.0.2 on the 15th March 2022. Fixed in OpenSSL 3.0.2 (Affected 3.0.0,3.0.1). Fixed in OpenSSL 1.1.1n (Affected 1.1.1-1.1.1m). Fixed in OpenSSL 1.0.2zd (Affected 1.0.2-1.0.2zc).",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+       "metrics": {
+        "baseScore": 5,
+        "exploitabilityScore": 10,
+        "impactScore": 2.9
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+       "metrics": {
+        "baseScore": 7.5,
+        "exploitabilityScore": 3.9,
+        "impactScore": 3.6
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-indirect-match",
+     "matcher": "apk-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "alpine",
+       "version": "3.15.0"
+      },
+      "namespace": "alpine:3.15",
+      "package": {
+       "name": "openssl",
+       "version": "1.1.1l-r7"
+      }
+     },
+     "found": {
+      "versionConstraint": "< 1.1.1n-r0 (apk)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "libssl1.1",
+    "version": "1.1.1l-r7",
+    "type": "apk",
+    "locations": [
+     {
+      "path": "/lib/apk/db/installed",
+      "layerID": "sha256:671e3248113cc5479cb7fad8a05e164e54469ddba2a1ef5ff15274408398f862"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "OpenSSL"
+    ],
+    "cpes": [
+     "cpe:2.3:a:libssl1.1:libssl1.1:1.1.1l-r7:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:alpine/libssl1.1@1.1.1l-r7?arch=x86_64&upstream=openssl&distro=alpine-3.15.0",
+    "upstreams": [
+     {
+      "name": "openssl"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2022-1271",
+    "dataSource": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-1271",
+    "namespace": "alpine:3.15",
+    "severity": "Unknown",
+    "urls": [
+     "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-1271"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [
+      "5.2.5-r1"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [],
+   "matchDetails": [
+    {
+     "type": "exact-indirect-match",
+     "matcher": "apk-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "alpine",
+       "version": "3.15.0"
+      },
+      "namespace": "alpine:3.15",
+      "package": {
+       "name": "xz",
+       "version": "5.2.5-r0"
+      }
+     },
+     "found": {
+      "versionConstraint": "< 5.2.5-r1 (apk)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "xz-libs",
+    "version": "5.2.5-r0",
+    "type": "apk",
+    "locations": [
+     {
+      "path": "/lib/apk/db/installed",
+      "layerID": "sha256:671e3248113cc5479cb7fad8a05e164e54469ddba2a1ef5ff15274408398f862"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "GPL-2.0-or-later",
+     "AND",
+     "Public-Domain",
+     "AND",
+     "LGPL-2.1-or-later"
+    ],
+    "cpes": [
+     "cpe:2.3:a:xz-libs:xz-libs:5.2.5-r0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:xz-libs:xz_libs:5.2.5-r0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:xz_libs:xz-libs:5.2.5-r0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:xz_libs:xz_libs:5.2.5-r0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:xz:xz-libs:5.2.5-r0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:xz:xz_libs:5.2.5-r0:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:alpine/xz-libs@5.2.5-r0?arch=x86_64&upstream=xz&distro=alpine-3.15.0",
+    "upstreams": [
+     {
+      "name": "xz"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2022-2097",
+    "dataSource": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-2097",
+    "namespace": "alpine:3.15",
+    "severity": "High",
+    "urls": [
+     "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-2097"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [
+      "1.1.1q-r0"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2022-2097",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2022-2097",
+     "namespace": "nvd",
+     "severity": "High",
+     "urls": [
+      "https://www.openssl.org/news/secadv/20220705.txt",
+      "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=a98f339ddd7e8f487d6e0088d4a9a42324885a93",
+      "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=919925673d6c9cfed3c1085497f5dfbbed5fc431",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/V6567JERRHHJW2GNGJGKDRNHR7SNPZK7/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/R6CK57NBQFTPUMXAPJURCGXUYT76NQAK/",
+      "https://security.netapp.com/advisory/ntap-20220715-0011/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/VCMNWKERPBKOEBNL7CLTTX3ZZCZLH7XA/"
+     ],
+     "description": "AES OCB mode for 32-bit x86 platforms using the AES-NI assembly optimised implementation will not encrypt the entirety of the data under some circumstances. This could reveal sixteen bytes of data that was preexisting in the memory that wasn't written. In the special case of \"in place\" encryption, sixteen bytes of the plaintext would be revealed. Since OpenSSL does not support OCB based cipher suites for TLS and DTLS, they are both unaffected. Fixed in OpenSSL 3.0.5 (Affected 3.0.0-3.0.4). Fixed in OpenSSL 1.1.1q (Affected 1.1.1-1.1.1p).",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N",
+       "metrics": {
+        "baseScore": 5,
+        "exploitabilityScore": 10,
+        "impactScore": 2.9
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+       "metrics": {
+        "baseScore": 7.5,
+        "exploitabilityScore": 3.9,
+        "impactScore": 3.6
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-indirect-match",
+     "matcher": "apk-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "alpine",
+       "version": "3.15.0"
+      },
+      "namespace": "alpine:3.15",
+      "package": {
+       "name": "openssl",
+       "version": "1.1.1l-r7"
+      }
+     },
+     "found": {
+      "versionConstraint": "< 1.1.1q-r0 (apk)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "libcrypto1.1",
+    "version": "1.1.1l-r7",
+    "type": "apk",
+    "locations": [
+     {
+      "path": "/lib/apk/db/installed",
+      "layerID": "sha256:671e3248113cc5479cb7fad8a05e164e54469ddba2a1ef5ff15274408398f862"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "OpenSSL"
+    ],
+    "cpes": [
+     "cpe:2.3:a:libcrypto1.1:libcrypto1.1:1.1.1l-r7:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:alpine/libcrypto1.1@1.1.1l-r7?arch=x86_64&upstream=openssl&distro=alpine-3.15.0",
+    "upstreams": [
+     {
+      "name": "openssl"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2022-2097",
+    "dataSource": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-2097",
+    "namespace": "alpine:3.15",
+    "severity": "High",
+    "urls": [
+     "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-2097"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [
+      "1.1.1q-r0"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2022-2097",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2022-2097",
+     "namespace": "nvd",
+     "severity": "High",
+     "urls": [
+      "https://www.openssl.org/news/secadv/20220705.txt",
+      "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=a98f339ddd7e8f487d6e0088d4a9a42324885a93",
+      "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=919925673d6c9cfed3c1085497f5dfbbed5fc431",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/V6567JERRHHJW2GNGJGKDRNHR7SNPZK7/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/R6CK57NBQFTPUMXAPJURCGXUYT76NQAK/",
+      "https://security.netapp.com/advisory/ntap-20220715-0011/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/VCMNWKERPBKOEBNL7CLTTX3ZZCZLH7XA/"
+     ],
+     "description": "AES OCB mode for 32-bit x86 platforms using the AES-NI assembly optimised implementation will not encrypt the entirety of the data under some circumstances. This could reveal sixteen bytes of data that was preexisting in the memory that wasn't written. In the special case of \"in place\" encryption, sixteen bytes of the plaintext would be revealed. Since OpenSSL does not support OCB based cipher suites for TLS and DTLS, they are both unaffected. Fixed in OpenSSL 3.0.5 (Affected 3.0.0-3.0.4). Fixed in OpenSSL 1.1.1q (Affected 1.1.1-1.1.1p).",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N",
+       "metrics": {
+        "baseScore": 5,
+        "exploitabilityScore": 10,
+        "impactScore": 2.9
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+       "metrics": {
+        "baseScore": 7.5,
+        "exploitabilityScore": 3.9,
+        "impactScore": 3.6
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-indirect-match",
+     "matcher": "apk-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "alpine",
+       "version": "3.15.0"
+      },
+      "namespace": "alpine:3.15",
+      "package": {
+       "name": "openssl",
+       "version": "1.1.1l-r7"
+      }
+     },
+     "found": {
+      "versionConstraint": "< 1.1.1q-r0 (apk)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "libssl1.1",
+    "version": "1.1.1l-r7",
+    "type": "apk",
+    "locations": [
+     {
+      "path": "/lib/apk/db/installed",
+      "layerID": "sha256:671e3248113cc5479cb7fad8a05e164e54469ddba2a1ef5ff15274408398f862"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "OpenSSL"
+    ],
+    "cpes": [
+     "cpe:2.3:a:libssl1.1:libssl1.1:1.1.1l-r7:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:alpine/libssl1.1@1.1.1l-r7?arch=x86_64&upstream=openssl&distro=alpine-3.15.0",
+    "upstreams": [
+     {
+      "name": "openssl"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2022-22822",
+    "dataSource": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-22822",
+    "namespace": "alpine:3.15",
+    "severity": "Critical",
+    "urls": [
+     "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-22822"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [
+      "2.4.3-r0"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2022-22822",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2022-22822",
+     "namespace": "nvd",
+     "severity": "Critical",
+     "urls": [
+      "https://github.com/libexpat/libexpat/pull/539",
+      "http://www.openwall.com/lists/oss-security/2022/01/17/3",
+      "https://www.tenable.com/security/tns-2022-05",
+      "https://www.debian.org/security/2022/dsa-5073",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-484086.pdf"
+     ],
+     "description": "addBinding in xmlparse.c in Expat (aka libexpat) before 2.4.3 has an integer overflow.",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+       "metrics": {
+        "baseScore": 7.5,
+        "exploitabilityScore": 10,
+        "impactScore": 6.4
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+       "metrics": {
+        "baseScore": 9.8,
+        "exploitabilityScore": 3.9,
+        "impactScore": 5.9
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "apk-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "alpine",
+       "version": "3.15.0"
+      },
+      "namespace": "alpine:3.15",
+      "package": {
+       "name": "expat",
+       "version": "2.4.1-r0"
+      }
+     },
+     "found": {
+      "versionConstraint": "< 2.4.3-r0 (apk)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "expat",
+    "version": "2.4.1-r0",
+    "type": "apk",
+    "locations": [
+     {
+      "path": "/lib/apk/db/installed",
+      "layerID": "sha256:671e3248113cc5479cb7fad8a05e164e54469ddba2a1ef5ff15274408398f862"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "MIT"
+    ],
+    "cpes": [
+     "cpe:2.3:a:expat:expat:2.4.1-r0:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:alpine/expat@2.4.1-r0?arch=x86_64&upstream=expat&distro=alpine-3.15.0",
+    "upstreams": [
+     {
+      "name": "expat"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2022-22823",
+    "dataSource": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-22823",
+    "namespace": "alpine:3.15",
+    "severity": "Critical",
+    "urls": [
+     "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-22823"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [
+      "2.4.3-r0"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2022-22823",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2022-22823",
+     "namespace": "nvd",
+     "severity": "Critical",
+     "urls": [
+      "https://github.com/libexpat/libexpat/pull/539",
+      "http://www.openwall.com/lists/oss-security/2022/01/17/3",
+      "https://www.tenable.com/security/tns-2022-05",
+      "https://www.debian.org/security/2022/dsa-5073",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-484086.pdf"
+     ],
+     "description": "build_model in xmlparse.c in Expat (aka libexpat) before 2.4.3 has an integer overflow.",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+       "metrics": {
+        "baseScore": 7.5,
+        "exploitabilityScore": 10,
+        "impactScore": 6.4
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+       "metrics": {
+        "baseScore": 9.8,
+        "exploitabilityScore": 3.9,
+        "impactScore": 5.9
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "apk-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "alpine",
+       "version": "3.15.0"
+      },
+      "namespace": "alpine:3.15",
+      "package": {
+       "name": "expat",
+       "version": "2.4.1-r0"
+      }
+     },
+     "found": {
+      "versionConstraint": "< 2.4.3-r0 (apk)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "expat",
+    "version": "2.4.1-r0",
+    "type": "apk",
+    "locations": [
+     {
+      "path": "/lib/apk/db/installed",
+      "layerID": "sha256:671e3248113cc5479cb7fad8a05e164e54469ddba2a1ef5ff15274408398f862"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "MIT"
+    ],
+    "cpes": [
+     "cpe:2.3:a:expat:expat:2.4.1-r0:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:alpine/expat@2.4.1-r0?arch=x86_64&upstream=expat&distro=alpine-3.15.0",
+    "upstreams": [
+     {
+      "name": "expat"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2022-22824",
+    "dataSource": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-22824",
+    "namespace": "alpine:3.15",
+    "severity": "Critical",
+    "urls": [
+     "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-22824"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [
+      "2.4.3-r0"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2022-22824",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2022-22824",
+     "namespace": "nvd",
+     "severity": "Critical",
+     "urls": [
+      "https://github.com/libexpat/libexpat/pull/539",
+      "http://www.openwall.com/lists/oss-security/2022/01/17/3",
+      "https://www.tenable.com/security/tns-2022-05",
+      "https://www.debian.org/security/2022/dsa-5073",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-484086.pdf"
+     ],
+     "description": "defineAttribute in xmlparse.c in Expat (aka libexpat) before 2.4.3 has an integer overflow.",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+       "metrics": {
+        "baseScore": 7.5,
+        "exploitabilityScore": 10,
+        "impactScore": 6.4
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+       "metrics": {
+        "baseScore": 9.8,
+        "exploitabilityScore": 3.9,
+        "impactScore": 5.9
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "apk-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "alpine",
+       "version": "3.15.0"
+      },
+      "namespace": "alpine:3.15",
+      "package": {
+       "name": "expat",
+       "version": "2.4.1-r0"
+      }
+     },
+     "found": {
+      "versionConstraint": "< 2.4.3-r0 (apk)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "expat",
+    "version": "2.4.1-r0",
+    "type": "apk",
+    "locations": [
+     {
+      "path": "/lib/apk/db/installed",
+      "layerID": "sha256:671e3248113cc5479cb7fad8a05e164e54469ddba2a1ef5ff15274408398f862"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "MIT"
+    ],
+    "cpes": [
+     "cpe:2.3:a:expat:expat:2.4.1-r0:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:alpine/expat@2.4.1-r0?arch=x86_64&upstream=expat&distro=alpine-3.15.0",
+    "upstreams": [
+     {
+      "name": "expat"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2022-22825",
+    "dataSource": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-22825",
+    "namespace": "alpine:3.15",
+    "severity": "High",
+    "urls": [
+     "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-22825"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [
+      "2.4.3-r0"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2022-22825",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2022-22825",
+     "namespace": "nvd",
+     "severity": "High",
+     "urls": [
+      "https://github.com/libexpat/libexpat/pull/539",
+      "http://www.openwall.com/lists/oss-security/2022/01/17/3",
+      "https://www.tenable.com/security/tns-2022-05",
+      "https://www.debian.org/security/2022/dsa-5073",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-484086.pdf"
+     ],
+     "description": "lookup in xmlparse.c in Expat (aka libexpat) before 2.4.3 has an integer overflow.",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P",
+       "metrics": {
+        "baseScore": 6.8,
+        "exploitabilityScore": 8.6,
+        "impactScore": 6.4
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+       "metrics": {
+        "baseScore": 8.8,
+        "exploitabilityScore": 2.8,
+        "impactScore": 5.9
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "apk-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "alpine",
+       "version": "3.15.0"
+      },
+      "namespace": "alpine:3.15",
+      "package": {
+       "name": "expat",
+       "version": "2.4.1-r0"
+      }
+     },
+     "found": {
+      "versionConstraint": "< 2.4.3-r0 (apk)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "expat",
+    "version": "2.4.1-r0",
+    "type": "apk",
+    "locations": [
+     {
+      "path": "/lib/apk/db/installed",
+      "layerID": "sha256:671e3248113cc5479cb7fad8a05e164e54469ddba2a1ef5ff15274408398f862"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "MIT"
+    ],
+    "cpes": [
+     "cpe:2.3:a:expat:expat:2.4.1-r0:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:alpine/expat@2.4.1-r0?arch=x86_64&upstream=expat&distro=alpine-3.15.0",
+    "upstreams": [
+     {
+      "name": "expat"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2022-22826",
+    "dataSource": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-22826",
+    "namespace": "alpine:3.15",
+    "severity": "High",
+    "urls": [
+     "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-22826"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [
+      "2.4.3-r0"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2022-22826",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2022-22826",
+     "namespace": "nvd",
+     "severity": "High",
+     "urls": [
+      "https://github.com/libexpat/libexpat/pull/539",
+      "http://www.openwall.com/lists/oss-security/2022/01/17/3",
+      "https://www.tenable.com/security/tns-2022-05",
+      "https://www.debian.org/security/2022/dsa-5073",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-484086.pdf"
+     ],
+     "description": "nextScaffoldPart in xmlparse.c in Expat (aka libexpat) before 2.4.3 has an integer overflow.",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P",
+       "metrics": {
+        "baseScore": 6.8,
+        "exploitabilityScore": 8.6,
+        "impactScore": 6.4
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+       "metrics": {
+        "baseScore": 8.8,
+        "exploitabilityScore": 2.8,
+        "impactScore": 5.9
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "apk-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "alpine",
+       "version": "3.15.0"
+      },
+      "namespace": "alpine:3.15",
+      "package": {
+       "name": "expat",
+       "version": "2.4.1-r0"
+      }
+     },
+     "found": {
+      "versionConstraint": "< 2.4.3-r0 (apk)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "expat",
+    "version": "2.4.1-r0",
+    "type": "apk",
+    "locations": [
+     {
+      "path": "/lib/apk/db/installed",
+      "layerID": "sha256:671e3248113cc5479cb7fad8a05e164e54469ddba2a1ef5ff15274408398f862"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "MIT"
+    ],
+    "cpes": [
+     "cpe:2.3:a:expat:expat:2.4.1-r0:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:alpine/expat@2.4.1-r0?arch=x86_64&upstream=expat&distro=alpine-3.15.0",
+    "upstreams": [
+     {
+      "name": "expat"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2022-22827",
+    "dataSource": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-22827",
+    "namespace": "alpine:3.15",
+    "severity": "High",
+    "urls": [
+     "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-22827"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [
+      "2.4.3-r0"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2022-22827",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2022-22827",
+     "namespace": "nvd",
+     "severity": "High",
+     "urls": [
+      "https://github.com/libexpat/libexpat/pull/539",
+      "http://www.openwall.com/lists/oss-security/2022/01/17/3",
+      "https://www.tenable.com/security/tns-2022-05",
+      "https://www.debian.org/security/2022/dsa-5073",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-484086.pdf"
+     ],
+     "description": "storeAtts in xmlparse.c in Expat (aka libexpat) before 2.4.3 has an integer overflow.",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P",
+       "metrics": {
+        "baseScore": 6.8,
+        "exploitabilityScore": 8.6,
+        "impactScore": 6.4
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+       "metrics": {
+        "baseScore": 8.8,
+        "exploitabilityScore": 2.8,
+        "impactScore": 5.9
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "apk-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "alpine",
+       "version": "3.15.0"
+      },
+      "namespace": "alpine:3.15",
+      "package": {
+       "name": "expat",
+       "version": "2.4.1-r0"
+      }
+     },
+     "found": {
+      "versionConstraint": "< 2.4.3-r0 (apk)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "expat",
+    "version": "2.4.1-r0",
+    "type": "apk",
+    "locations": [
+     {
+      "path": "/lib/apk/db/installed",
+      "layerID": "sha256:671e3248113cc5479cb7fad8a05e164e54469ddba2a1ef5ff15274408398f862"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "MIT"
+    ],
+    "cpes": [
+     "cpe:2.3:a:expat:expat:2.4.1-r0:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:alpine/expat@2.4.1-r0?arch=x86_64&upstream=expat&distro=alpine-3.15.0",
+    "upstreams": [
+     {
+      "name": "expat"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2022-23852",
+    "dataSource": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-23852",
+    "namespace": "alpine:3.15",
+    "severity": "Critical",
+    "urls": [
+     "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-23852"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [
+      "2.4.4-r0"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2022-23852",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2022-23852",
+     "namespace": "nvd",
+     "severity": "Critical",
+     "urls": [
+      "https://github.com/libexpat/libexpat/pull/550",
+      "https://www.tenable.com/security/tns-2022-05",
+      "https://www.debian.org/security/2022/dsa-5073",
+      "https://security.netapp.com/advisory/ntap-20220217-0001/",
+      "https://lists.debian.org/debian-lts-announce/2022/03/msg00007.html",
+      "https://www.oracle.com/security-alerts/cpuapr2022.html",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-484086.pdf"
+     ],
+     "description": "Expat (aka libexpat) before 2.4.4 has a signed integer overflow in XML_GetBuffer, for configurations with a nonzero XML_CONTEXT_BYTES.",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+       "metrics": {
+        "baseScore": 7.5,
+        "exploitabilityScore": 10,
+        "impactScore": 6.4
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+       "metrics": {
+        "baseScore": 9.8,
+        "exploitabilityScore": 3.9,
+        "impactScore": 5.9
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "apk-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "alpine",
+       "version": "3.15.0"
+      },
+      "namespace": "alpine:3.15",
+      "package": {
+       "name": "expat",
+       "version": "2.4.1-r0"
+      }
+     },
+     "found": {
+      "versionConstraint": "< 2.4.4-r0 (apk)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "expat",
+    "version": "2.4.1-r0",
+    "type": "apk",
+    "locations": [
+     {
+      "path": "/lib/apk/db/installed",
+      "layerID": "sha256:671e3248113cc5479cb7fad8a05e164e54469ddba2a1ef5ff15274408398f862"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "MIT"
+    ],
+    "cpes": [
+     "cpe:2.3:a:expat:expat:2.4.1-r0:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:alpine/expat@2.4.1-r0?arch=x86_64&upstream=expat&distro=alpine-3.15.0",
+    "upstreams": [
+     {
+      "name": "expat"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2022-23990",
+    "dataSource": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-23990",
+    "namespace": "alpine:3.15",
+    "severity": "Critical",
+    "urls": [
+     "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-23990"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [
+      "2.4.4-r0"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2022-23990",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2022-23990",
+     "namespace": "nvd",
+     "severity": "Critical",
+     "urls": [
+      "https://github.com/libexpat/libexpat/pull/551",
+      "https://www.tenable.com/security/tns-2022-05",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/R7FF2UH7MPXKTADYSJUAHI2Y5UHBSHUH/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/34NXVL2RZC2YZRV74ZQ3RNFB7WCEUP7D/",
+      "https://www.debian.org/security/2022/dsa-5073",
+      "https://www.oracle.com/security-alerts/cpuapr2022.html",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-484086.pdf"
+     ],
+     "description": "Expat (aka libexpat) before 2.4.4 has an integer overflow in the doProlog function.",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+       "metrics": {
+        "baseScore": 7.5,
+        "exploitabilityScore": 10,
+        "impactScore": 6.4
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+       "metrics": {
+        "baseScore": 9.8,
+        "exploitabilityScore": 3.9,
+        "impactScore": 5.9
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "apk-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "alpine",
+       "version": "3.15.0"
+      },
+      "namespace": "alpine:3.15",
+      "package": {
+       "name": "expat",
+       "version": "2.4.1-r0"
+      }
+     },
+     "found": {
+      "versionConstraint": "< 2.4.4-r0 (apk)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "expat",
+    "version": "2.4.1-r0",
+    "type": "apk",
+    "locations": [
+     {
+      "path": "/lib/apk/db/installed",
+      "layerID": "sha256:671e3248113cc5479cb7fad8a05e164e54469ddba2a1ef5ff15274408398f862"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "MIT"
+    ],
+    "cpes": [
+     "cpe:2.3:a:expat:expat:2.4.1-r0:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:alpine/expat@2.4.1-r0?arch=x86_64&upstream=expat&distro=alpine-3.15.0",
+    "upstreams": [
+     {
+      "name": "expat"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2022-25235",
+    "dataSource": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-25235",
+    "namespace": "alpine:3.15",
+    "severity": "Critical",
+    "urls": [
+     "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-25235"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [
+      "2.4.5-r0"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2022-25235",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2022-25235",
+     "namespace": "nvd",
+     "severity": "Critical",
+     "urls": [
+      "https://github.com/libexpat/libexpat/pull/562",
+      "http://www.openwall.com/lists/oss-security/2022/02/19/1",
+      "https://www.debian.org/security/2022/dsa-5085",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/3UFRBA3UQVIQKXTBUQXDWQOVWNBKLERU/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/Y27XO3JMKAOMQZVPS3B4MJGEAHCZF5OM/",
+      "https://security.netapp.com/advisory/ntap-20220303-0008/",
+      "https://lists.debian.org/debian-lts-announce/2022/03/msg00007.html",
+      "https://www.oracle.com/security-alerts/cpuapr2022.html",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-484086.pdf"
+     ],
+     "description": "xmltok_impl.c in Expat (aka libexpat) before 2.4.5 lacks certain validation of encoding, such as checks for whether a UTF-8 character is valid in a certain context.",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+       "metrics": {
+        "baseScore": 7.5,
+        "exploitabilityScore": 10,
+        "impactScore": 6.4
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+       "metrics": {
+        "baseScore": 9.8,
+        "exploitabilityScore": 3.9,
+        "impactScore": 5.9
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "apk-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "alpine",
+       "version": "3.15.0"
+      },
+      "namespace": "alpine:3.15",
+      "package": {
+       "name": "expat",
+       "version": "2.4.1-r0"
+      }
+     },
+     "found": {
+      "versionConstraint": "< 2.4.5-r0 (apk)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "expat",
+    "version": "2.4.1-r0",
+    "type": "apk",
+    "locations": [
+     {
+      "path": "/lib/apk/db/installed",
+      "layerID": "sha256:671e3248113cc5479cb7fad8a05e164e54469ddba2a1ef5ff15274408398f862"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "MIT"
+    ],
+    "cpes": [
+     "cpe:2.3:a:expat:expat:2.4.1-r0:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:alpine/expat@2.4.1-r0?arch=x86_64&upstream=expat&distro=alpine-3.15.0",
+    "upstreams": [
+     {
+      "name": "expat"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2022-25236",
+    "dataSource": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-25236",
+    "namespace": "alpine:3.15",
+    "severity": "Critical",
+    "urls": [
+     "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-25236"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [
+      "2.4.5-r0"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2022-25236",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2022-25236",
+     "namespace": "nvd",
+     "severity": "Critical",
+     "urls": [
+      "https://github.com/libexpat/libexpat/pull/561",
+      "http://www.openwall.com/lists/oss-security/2022/02/19/1",
+      "https://www.debian.org/security/2022/dsa-5085",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/3UFRBA3UQVIQKXTBUQXDWQOVWNBKLERU/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/Y27XO3JMKAOMQZVPS3B4MJGEAHCZF5OM/",
+      "https://security.netapp.com/advisory/ntap-20220303-0008/",
+      "https://lists.debian.org/debian-lts-announce/2022/03/msg00007.html",
+      "https://www.oracle.com/security-alerts/cpuapr2022.html",
+      "http://packetstormsecurity.com/files/167238/Zoom-XMPP-Stanza-Smuggling-Remote-Code-Execution.html",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-484086.pdf"
+     ],
+     "description": "xmlparse.c in Expat (aka libexpat) before 2.4.5 allows attackers to insert namespace-separator characters into namespace URIs.",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+       "metrics": {
+        "baseScore": 7.5,
+        "exploitabilityScore": 10,
+        "impactScore": 6.4
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+       "metrics": {
+        "baseScore": 9.8,
+        "exploitabilityScore": 3.9,
+        "impactScore": 5.9
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "apk-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "alpine",
+       "version": "3.15.0"
+      },
+      "namespace": "alpine:3.15",
+      "package": {
+       "name": "expat",
+       "version": "2.4.1-r0"
+      }
+     },
+     "found": {
+      "versionConstraint": "< 2.4.5-r0 (apk)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "expat",
+    "version": "2.4.1-r0",
+    "type": "apk",
+    "locations": [
+     {
+      "path": "/lib/apk/db/installed",
+      "layerID": "sha256:671e3248113cc5479cb7fad8a05e164e54469ddba2a1ef5ff15274408398f862"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "MIT"
+    ],
+    "cpes": [
+     "cpe:2.3:a:expat:expat:2.4.1-r0:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:alpine/expat@2.4.1-r0?arch=x86_64&upstream=expat&distro=alpine-3.15.0",
+    "upstreams": [
+     {
+      "name": "expat"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2022-25313",
+    "dataSource": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-25313",
+    "namespace": "alpine:3.15",
+    "severity": "Medium",
+    "urls": [
+     "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-25313"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [
+      "2.4.5-r0"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2022-25313",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2022-25313",
+     "namespace": "nvd",
+     "severity": "Medium",
+     "urls": [
+      "https://github.com/libexpat/libexpat/pull/558",
+      "http://www.openwall.com/lists/oss-security/2022/02/19/1",
+      "https://www.debian.org/security/2022/dsa-5085",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/3UFRBA3UQVIQKXTBUQXDWQOVWNBKLERU/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/Y27XO3JMKAOMQZVPS3B4MJGEAHCZF5OM/",
+      "https://security.netapp.com/advisory/ntap-20220303-0008/",
+      "https://lists.debian.org/debian-lts-announce/2022/03/msg00007.html",
+      "https://www.oracle.com/security-alerts/cpuapr2022.html",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-484086.pdf"
+     ],
+     "description": "In Expat (aka libexpat) before 2.4.5, an attacker can trigger stack exhaustion in build_model via a large nesting depth in the DTD element.",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P",
+       "metrics": {
+        "baseScore": 4.3,
+        "exploitabilityScore": 8.6,
+        "impactScore": 2.9
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+       "metrics": {
+        "baseScore": 6.5,
+        "exploitabilityScore": 2.8,
+        "impactScore": 3.6
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "apk-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "alpine",
+       "version": "3.15.0"
+      },
+      "namespace": "alpine:3.15",
+      "package": {
+       "name": "expat",
+       "version": "2.4.1-r0"
+      }
+     },
+     "found": {
+      "versionConstraint": "< 2.4.5-r0 (apk)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "expat",
+    "version": "2.4.1-r0",
+    "type": "apk",
+    "locations": [
+     {
+      "path": "/lib/apk/db/installed",
+      "layerID": "sha256:671e3248113cc5479cb7fad8a05e164e54469ddba2a1ef5ff15274408398f862"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "MIT"
+    ],
+    "cpes": [
+     "cpe:2.3:a:expat:expat:2.4.1-r0:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:alpine/expat@2.4.1-r0?arch=x86_64&upstream=expat&distro=alpine-3.15.0",
+    "upstreams": [
+     {
+      "name": "expat"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2022-25314",
+    "dataSource": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-25314",
+    "namespace": "alpine:3.15",
+    "severity": "High",
+    "urls": [
+     "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-25314"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [
+      "2.4.5-r0"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2022-25314",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2022-25314",
+     "namespace": "nvd",
+     "severity": "High",
+     "urls": [
+      "https://github.com/libexpat/libexpat/pull/560",
+      "http://www.openwall.com/lists/oss-security/2022/02/19/1",
+      "https://www.debian.org/security/2022/dsa-5085",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/3UFRBA3UQVIQKXTBUQXDWQOVWNBKLERU/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/Y27XO3JMKAOMQZVPS3B4MJGEAHCZF5OM/",
+      "https://security.netapp.com/advisory/ntap-20220303-0008/",
+      "https://www.oracle.com/security-alerts/cpuapr2022.html",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-484086.pdf"
+     ],
+     "description": "In Expat (aka libexpat) before 2.4.5, there is an integer overflow in copyString.",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+       "metrics": {
+        "baseScore": 5,
+        "exploitabilityScore": 10,
+        "impactScore": 2.9
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+       "metrics": {
+        "baseScore": 7.5,
+        "exploitabilityScore": 3.9,
+        "impactScore": 3.6
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "apk-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "alpine",
+       "version": "3.15.0"
+      },
+      "namespace": "alpine:3.15",
+      "package": {
+       "name": "expat",
+       "version": "2.4.1-r0"
+      }
+     },
+     "found": {
+      "versionConstraint": "< 2.4.5-r0 (apk)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "expat",
+    "version": "2.4.1-r0",
+    "type": "apk",
+    "locations": [
+     {
+      "path": "/lib/apk/db/installed",
+      "layerID": "sha256:671e3248113cc5479cb7fad8a05e164e54469ddba2a1ef5ff15274408398f862"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "MIT"
+    ],
+    "cpes": [
+     "cpe:2.3:a:expat:expat:2.4.1-r0:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:alpine/expat@2.4.1-r0?arch=x86_64&upstream=expat&distro=alpine-3.15.0",
+    "upstreams": [
+     {
+      "name": "expat"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2022-25315",
+    "dataSource": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-25315",
+    "namespace": "alpine:3.15",
+    "severity": "Critical",
+    "urls": [
+     "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-25315"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [
+      "2.4.5-r0"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2022-25315",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2022-25315",
+     "namespace": "nvd",
+     "severity": "Critical",
+     "urls": [
+      "https://github.com/libexpat/libexpat/pull/559",
+      "http://www.openwall.com/lists/oss-security/2022/02/19/1",
+      "https://www.debian.org/security/2022/dsa-5085",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/3UFRBA3UQVIQKXTBUQXDWQOVWNBKLERU/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/Y27XO3JMKAOMQZVPS3B4MJGEAHCZF5OM/",
+      "https://security.netapp.com/advisory/ntap-20220303-0008/",
+      "https://lists.debian.org/debian-lts-announce/2022/03/msg00007.html",
+      "https://www.oracle.com/security-alerts/cpuapr2022.html",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-484086.pdf"
+     ],
+     "description": "In Expat (aka libexpat) before 2.4.5, there is an integer overflow in storeRawNames.",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+       "metrics": {
+        "baseScore": 7.5,
+        "exploitabilityScore": 10,
+        "impactScore": 6.4
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+       "metrics": {
+        "baseScore": 9.8,
+        "exploitabilityScore": 3.9,
+        "impactScore": 5.9
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "apk-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "alpine",
+       "version": "3.15.0"
+      },
+      "namespace": "alpine:3.15",
+      "package": {
+       "name": "expat",
+       "version": "2.4.1-r0"
+      }
+     },
+     "found": {
+      "versionConstraint": "< 2.4.5-r0 (apk)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "expat",
+    "version": "2.4.1-r0",
+    "type": "apk",
+    "locations": [
+     {
+      "path": "/lib/apk/db/installed",
+      "layerID": "sha256:671e3248113cc5479cb7fad8a05e164e54469ddba2a1ef5ff15274408398f862"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "MIT"
+    ],
+    "cpes": [
+     "cpe:2.3:a:expat:expat:2.4.1-r0:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:alpine/expat@2.4.1-r0?arch=x86_64&upstream=expat&distro=alpine-3.15.0",
+    "upstreams": [
+     {
+      "name": "expat"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2022-28391",
+    "dataSource": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-28391",
+    "namespace": "alpine:3.15",
+    "severity": "Critical",
+    "urls": [
+     "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-28391"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [
+      "1.34.1-r5"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2022-28391",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2022-28391",
+     "namespace": "nvd",
+     "severity": "Critical",
+     "urls": [
+      "https://git.alpinelinux.org/aports/plain/main/busybox/0002-nslookup-sanitize-all-printed-strings-with-printable.patch",
+      "https://gitlab.alpinelinux.org/alpine/aports/-/issues/13661",
+      "https://git.alpinelinux.org/aports/plain/main/busybox/0001-libbb-sockaddr2str-ensure-only-printable-characters-.patch"
+     ],
+     "description": "BusyBox through 1.35.0 allows remote attackers to execute arbitrary code if netstat is used to print a DNS PTR record's value to a VT compatible terminal. Alternatively, the attacker could choose to change the terminal's colors.",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+       "metrics": {
+        "baseScore": 7.5,
+        "exploitabilityScore": 10,
+        "impactScore": 6.4
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+       "metrics": {
+        "baseScore": 9.8,
+        "exploitabilityScore": 3.9,
+        "impactScore": 5.9
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "apk-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "alpine",
+       "version": "3.15.0"
+      },
+      "namespace": "alpine:3.15",
+      "package": {
+       "name": "busybox",
+       "version": "1.34.1-r3"
+      }
+     },
+     "found": {
+      "versionConstraint": "< 1.34.1-r5 (apk)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "busybox",
+    "version": "1.34.1-r3",
+    "type": "apk",
+    "locations": [
+     {
+      "path": "/lib/apk/db/installed",
+      "layerID": "sha256:671e3248113cc5479cb7fad8a05e164e54469ddba2a1ef5ff15274408398f862"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "GPL-2.0-only"
+    ],
+    "cpes": [
+     "cpe:2.3:a:busybox:busybox:1.34.1-r3:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:alpine/busybox@1.34.1-r3?arch=x86_64&upstream=busybox&distro=alpine-3.15.0",
+    "upstreams": [
+     {
+      "name": "busybox"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2022-28391",
+    "dataSource": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-28391",
+    "namespace": "alpine:3.15",
+    "severity": "Critical",
+    "urls": [
+     "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-28391"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [
+      "1.34.1-r5"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2022-28391",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2022-28391",
+     "namespace": "nvd",
+     "severity": "Critical",
+     "urls": [
+      "https://git.alpinelinux.org/aports/plain/main/busybox/0002-nslookup-sanitize-all-printed-strings-with-printable.patch",
+      "https://gitlab.alpinelinux.org/alpine/aports/-/issues/13661",
+      "https://git.alpinelinux.org/aports/plain/main/busybox/0001-libbb-sockaddr2str-ensure-only-printable-characters-.patch"
+     ],
+     "description": "BusyBox through 1.35.0 allows remote attackers to execute arbitrary code if netstat is used to print a DNS PTR record's value to a VT compatible terminal. Alternatively, the attacker could choose to change the terminal's colors.",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+       "metrics": {
+        "baseScore": 7.5,
+        "exploitabilityScore": 10,
+        "impactScore": 6.4
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+       "metrics": {
+        "baseScore": 9.8,
+        "exploitabilityScore": 3.9,
+        "impactScore": 5.9
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-indirect-match",
+     "matcher": "apk-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "alpine",
+       "version": "3.15.0"
+      },
+      "namespace": "alpine:3.15",
+      "package": {
+       "name": "busybox",
+       "version": "1.34.1-r3"
+      }
+     },
+     "found": {
+      "versionConstraint": "< 1.34.1-r5 (apk)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "ssl_client",
+    "version": "1.34.1-r3",
+    "type": "apk",
+    "locations": [
+     {
+      "path": "/lib/apk/db/installed",
+      "layerID": "sha256:671e3248113cc5479cb7fad8a05e164e54469ddba2a1ef5ff15274408398f862"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "GPL-2.0-only"
+    ],
+    "cpes": [
+     "cpe:2.3:a:ssl-client:ssl-client:1.34.1-r3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:ssl-client:ssl_client:1.34.1-r3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:ssl_client:ssl-client:1.34.1-r3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:ssl_client:ssl_client:1.34.1-r3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:ssl:ssl-client:1.34.1-r3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:ssl:ssl_client:1.34.1-r3:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:alpine/ssl_client@1.34.1-r3?arch=x86_64&upstream=busybox&distro=alpine-3.15.0",
+    "upstreams": [
+     {
+      "name": "busybox"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2022-29458",
+    "dataSource": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-29458",
+    "namespace": "alpine:3.15",
+    "severity": "High",
+    "urls": [
+     "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-29458"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [
+      "6.3_p20211120-r1"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2022-29458",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2022-29458",
+     "namespace": "nvd",
+     "severity": "High",
+     "urls": [
+      "https://lists.gnu.org/archive/html/bug-ncurses/2022-04/msg00016.html",
+      "https://lists.gnu.org/archive/html/bug-ncurses/2022-04/msg00014.html"
+     ],
+     "description": "ncurses 6.3 before patch 20220416 has an out-of-bounds read and segmentation violation in convert_strings in tinfo/read_entry.c in the terminfo library.",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:N/AC:M/Au:N/C:P/I:N/A:P",
+       "metrics": {
+        "baseScore": 5.8,
+        "exploitabilityScore": 8.6,
+        "impactScore": 4.9
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:H",
+       "metrics": {
+        "baseScore": 7.1,
+        "exploitabilityScore": 1.8,
+        "impactScore": 5.2
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-indirect-match",
+     "matcher": "apk-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "alpine",
+       "version": "3.15.0"
+      },
+      "namespace": "alpine:3.15",
+      "package": {
+       "name": "ncurses",
+       "version": "6.3_p20211120-r0"
+      }
+     },
+     "found": {
+      "versionConstraint": "< 6.3_p20211120-r1 (apk)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "ncurses-libs",
+    "version": "6.3_p20211120-r0",
+    "type": "apk",
+    "locations": [
+     {
+      "path": "/lib/apk/db/installed",
+      "layerID": "sha256:671e3248113cc5479cb7fad8a05e164e54469ddba2a1ef5ff15274408398f862"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "MIT"
+    ],
+    "cpes": [
+     "cpe:2.3:a:ncurses-libs:ncurses-libs:6.3_p20211120-r0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:ncurses-libs:ncurses_libs:6.3_p20211120-r0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:ncurses_libs:ncurses-libs:6.3_p20211120-r0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:ncurses_libs:ncurses_libs:6.3_p20211120-r0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:ncurses:ncurses-libs:6.3_p20211120-r0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:ncurses:ncurses_libs:6.3_p20211120-r0:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:alpine/ncurses-libs@6.3_p20211120-r0?arch=x86_64&upstream=ncurses&distro=alpine-3.15.0",
+    "upstreams": [
+     {
+      "name": "ncurses"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2022-29458",
+    "dataSource": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-29458",
+    "namespace": "alpine:3.15",
+    "severity": "High",
+    "urls": [
+     "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-29458"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [
+      "6.3_p20211120-r1"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2022-29458",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2022-29458",
+     "namespace": "nvd",
+     "severity": "High",
+     "urls": [
+      "https://lists.gnu.org/archive/html/bug-ncurses/2022-04/msg00016.html",
+      "https://lists.gnu.org/archive/html/bug-ncurses/2022-04/msg00014.html"
+     ],
+     "description": "ncurses 6.3 before patch 20220416 has an out-of-bounds read and segmentation violation in convert_strings in tinfo/read_entry.c in the terminfo library.",
+     "cvss": [
+      {
+       "version": "2.0",
+       "vector": "AV:N/AC:M/Au:N/C:P/I:N/A:P",
+       "metrics": {
+        "baseScore": 5.8,
+        "exploitabilityScore": 8.6,
+        "impactScore": 4.9
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:H",
+       "metrics": {
+        "baseScore": 7.1,
+        "exploitabilityScore": 1.8,
+        "impactScore": 5.2
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-indirect-match",
+     "matcher": "apk-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "alpine",
+       "version": "3.15.0"
+      },
+      "namespace": "alpine:3.15",
+      "package": {
+       "name": "ncurses",
+       "version": "6.3_p20211120-r0"
+      }
+     },
+     "found": {
+      "versionConstraint": "< 6.3_p20211120-r1 (apk)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "ncurses-terminfo-base",
+    "version": "6.3_p20211120-r0",
+    "type": "apk",
+    "locations": [
+     {
+      "path": "/lib/apk/db/installed",
+      "layerID": "sha256:671e3248113cc5479cb7fad8a05e164e54469ddba2a1ef5ff15274408398f862"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "MIT"
+    ],
+    "cpes": [
+     "cpe:2.3:a:ncurses-terminfo-base:ncurses-terminfo-base:6.3_p20211120-r0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:ncurses-terminfo-base:ncurses_terminfo_base:6.3_p20211120-r0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:ncurses_terminfo_base:ncurses-terminfo-base:6.3_p20211120-r0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:ncurses_terminfo_base:ncurses_terminfo_base:6.3_p20211120-r0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:ncurses-terminfo:ncurses-terminfo-base:6.3_p20211120-r0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:ncurses-terminfo:ncurses_terminfo_base:6.3_p20211120-r0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:ncurses_terminfo:ncurses-terminfo-base:6.3_p20211120-r0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:ncurses_terminfo:ncurses_terminfo_base:6.3_p20211120-r0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:ncurses:ncurses-terminfo-base:6.3_p20211120-r0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:ncurses:ncurses_terminfo_base:6.3_p20211120-r0:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:alpine/ncurses-terminfo-base@6.3_p20211120-r0?arch=x86_64&upstream=ncurses&distro=alpine-3.15.0",
+    "upstreams": [
+     {
+      "name": "ncurses"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2022-37434",
+    "dataSource": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-37434",
+    "namespace": "alpine:3.15",
+    "severity": "Unknown",
+    "urls": [
+     "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-37434"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [
+      "1.2.12-r2"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2022-37434",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2022-37434",
+     "namespace": "nvd",
+     "severity": "Unknown",
+     "urls": [
+      "https://github.com/nodejs/node/blob/75b68c6e4db515f76df73af476eccf382bbcb00a/deps/zlib/inflate.c#L762-L764",
+      "https://github.com/ivd38/zlib_overflow",
+      "https://github.com/madler/zlib/commit/eff308af425b67093bab25f80f1ae950166bece1",
+      "https://github.com/madler/zlib/blob/21767c654d31d2dccdde4330529775c6c5fd5389/zlib.h#L1062-L1063",
+      "http://www.openwall.com/lists/oss-security/2022/08/05/2",
+      "https://github.com/curl/curl/issues/9271",
+      "http://www.openwall.com/lists/oss-security/2022/08/09/1"
+     ],
+     "description": "zlib through 1.2.12 has a heap-based buffer over-read or buffer overflow in inflate in inflate.c via a large gzip header extra field. NOTE: only applications that call inflateGetHeader are affected. Some common applications bundle the affected zlib source code but may be unable to call inflateGetHeader (e.g., see the nodejs/node reference).",
+     "cvss": []
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "apk-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "alpine",
+       "version": "3.15.0"
+      },
+      "namespace": "alpine:3.15",
+      "package": {
+       "name": "zlib",
+       "version": "1.2.11-r3"
+      }
+     },
+     "found": {
+      "versionConstraint": "< 1.2.12-r2 (apk)"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "zlib",
+    "version": "1.2.11-r3",
+    "type": "apk",
+    "locations": [
+     {
+      "path": "/lib/apk/db/installed",
+      "layerID": "sha256:671e3248113cc5479cb7fad8a05e164e54469ddba2a1ef5ff15274408398f862"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "Zlib"
+    ],
+    "cpes": [
+     "cpe:2.3:a:zlib:zlib:1.2.11-r3:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:alpine/zlib@1.2.11-r3?arch=x86_64&upstream=zlib&distro=alpine-3.15.0",
+    "upstreams": [
+     {
+      "name": "zlib"
+     }
+    ]
+   }
+  }
+ ],
+ "source": {
+  "type": "image",
+  "target": {
+   "userInput": "python:3.6-alpine",
+   "imageID": "sha256:3a9e80fa460687aa888ebe54540132662b58a3bb1a222c3809fd412d4652eb9c",
+   "manifestDigest": "sha256:bc3447f6ba006c2268ccab840236cd1e27502a1d9133381f17db8bfc603bc810",
+   "mediaType": "application/vnd.docker.distribution.manifest.v2+json",
+   "tags": [],
+   "imageSize": 40650727,
+   "layers": [
+    {
+     "mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+     "digest": "sha256:8d3ac3489996423f53d6087c81180006263b79f206d3fdec9e66f0e27ceb8759",
+     "size": 5580949
+    },
+    {
+     "mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+     "digest": "sha256:1965cfbef2abbbc503a96e5dfd4db0baf850d58849a1d897c51c63e8a8bc71f1",
+     "size": 504349
+    },
+    {
+     "mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+     "digest": "sha256:671e3248113cc5479cb7fad8a05e164e54469ddba2a1ef5ff15274408398f862",
+     "size": 26511665
+    },
+    {
+     "mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+     "digest": "sha256:efa76becf38b19133e11077c28ccbe1904e9bd8ab2bb32763d067ba02f5b3fc7",
+     "size": 0
+    },
+    {
+     "mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+     "digest": "sha256:3156423bd38f1fb1e2a56d70c87029f4b57bbe7507ec6f728d76d698af231d90",
+     "size": 8053764
+    }
+   ],
+   "manifest": "ewogICAic2NoZW1hVmVyc2lvbiI6IDIsCiAgICJtZWRpYVR5cGUiOiAiYXBwbGljYXRpb24vdm5kLmRvY2tlci5kaXN0cmlidXRpb24ubWFuaWZlc3QudjIranNvbiIsCiAgICJjb25maWciOiB7CiAgICAgICJtZWRpYVR5cGUiOiAiYXBwbGljYXRpb24vdm5kLmRvY2tlci5jb250YWluZXIuaW1hZ2UudjEranNvbiIsCiAgICAgICJzaXplIjogODA3OCwKICAgICAgImRpZ2VzdCI6ICJzaGEyNTY6M2E5ZTgwZmE0NjA2ODdhYTg4OGViZTU0NTQwMTMyNjYyYjU4YTNiYjFhMjIyYzM4MDlmZDQxMmQ0NjUyZWI5YyIKICAgfSwKICAgImxheWVycyI6IFsKICAgICAgewogICAgICAgICAibWVkaWFUeXBlIjogImFwcGxpY2F0aW9uL3ZuZC5kb2NrZXIuaW1hZ2Uucm9vdGZzLmRpZmYudGFyLmd6aXAiLAogICAgICAgICAic2l6ZSI6IDI4MTg0MTMsCiAgICAgICAgICJkaWdlc3QiOiAic2hhMjU2OjU5YmYxYzM1MDlmMzM1MTU2MjI2MTlhZjIxZWQ1NWJiZTI2ZDI0OTEzY2VkYmNhMTA2NDY4YTVmYjM3YTUwYzMiCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAgIm1lZGlhVHlwZSI6ICJhcHBsaWNhdGlvbi92bmQuZG9ja2VyLmltYWdlLnJvb3Rmcy5kaWZmLnRhci5nemlwIiwKICAgICAgICAgInNpemUiOiAyODIxNTMsCiAgICAgICAgICJkaWdlc3QiOiAic2hhMjU2Ojg3ODY4NzBmMjg3Njc2Y2NhNDljMWUxZTUwMjk0NjdjMDg3YWQyOTNiODI0ZmNkZGM0ODljYmUyODE5NzQ1YjIiCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAgIm1lZGlhVHlwZSI6ICJhcHBsaWNhdGlvbi92bmQuZG9ja2VyLmltYWdlLnJvb3Rmcy5kaWZmLnRhci5nemlwIiwKICAgICAgICAgInNpemUiOiAxMDE3NTczMCwKICAgICAgICAgImRpZ2VzdCI6ICJzaGEyNTY6YWNiMGU4MDQ4MDBlZDNjMTA2MjRkZGVhYzczYTZlYmQzZjJkNmRiYjAzOTcwZjA1NDIzM2FlMDY2Y2QwMzNiYSIKICAgICAgfSwKICAgICAgewogICAgICAgICAibWVkaWFUeXBlIjogImFwcGxpY2F0aW9uL3ZuZC5kb2NrZXIuaW1hZ2Uucm9vdGZzLmRpZmYudGFyLmd6aXAiLAogICAgICAgICAic2l6ZSI6IDIyOSwKICAgICAgICAgImRpZ2VzdCI6ICJzaGEyNTY6NTJiZWRjYjNlODUzZGQ1ZDc4MmM0NmQzODdmMmFmNDA0YWY5ZWM3NWMyYWJhM2EzMTE0ZTlmYmY5MTNjODJlZCIKICAgICAgfSwKICAgICAgewogICAgICAgICAibWVkaWFUeXBlIjogImFwcGxpY2F0aW9uL3ZuZC5kb2NrZXIuaW1hZ2Uucm9vdGZzLmRpZmYudGFyLmd6aXAiLAogICAgICAgICAic2l6ZSI6IDIyMDgxNzcsCiAgICAgICAgICJkaWdlc3QiOiAic2hhMjU2OmIwNjQ0MTVlZDNkNzVjZDliZjQ2MmM0ZWExYTI5YWViZTY3ZGZlOGZjNzZlNjcyZGM2YmQ3MmYyOWU5MTA2MWIiCiAgICAgIH0KICAgXQp9",
+   "config": "eyJhcmNoaXRlY3R1cmUiOiJhbWQ2NCIsImNvbmZpZyI6eyJIb3N0bmFtZSI6IiIsIkRvbWFpbm5hbWUiOiIiLCJVc2VyIjoiIiwiQXR0YWNoU3RkaW4iOmZhbHNlLCJBdHRhY2hTdGRvdXQiOmZhbHNlLCJBdHRhY2hTdGRlcnIiOmZhbHNlLCJUdHkiOmZhbHNlLCJPcGVuU3RkaW4iOmZhbHNlLCJTdGRpbk9uY2UiOmZhbHNlLCJFbnYiOlsiUEFUSD0vdXNyL2xvY2FsL2JpbjovdXNyL2xvY2FsL3NiaW46L3Vzci9sb2NhbC9iaW46L3Vzci9zYmluOi91c3IvYmluOi9zYmluOi9iaW4iLCJMQU5HPUMuVVRGLTgiLCJHUEdfS0VZPTBEOTZERjRENDExMEU1QzQzRkJGQjE3RjJEMzQ3RUE2QUE2NTQyMUQiLCJQWVRIT05fVkVSU0lPTj0zLjYuMTUiLCJQWVRIT05fUElQX1ZFUlNJT049MjEuMi40IiwiUFlUSE9OX1NFVFVQVE9PTFNfVkVSU0lPTj01Ny41LjAiLCJQWVRIT05fR0VUX1BJUF9VUkw9aHR0cHM6Ly9naXRodWIuY29tL3B5cGEvZ2V0LXBpcC9yYXcvM2NiODg4OGNjMjg2OTYyMGY1N2Q1ZDJkYTY0ZGEzOGY1MTYwNzhjNy9wdWJsaWMvZ2V0LXBpcC5weSIsIlBZVEhPTl9HRVRfUElQX1NIQTI1Nj1jNTE4MjUwZTkxYTcwZDdiMjBjY2ViMTUyNzIyMDlhNGRlZDJhMGMyNjNhZTU3NzZmMTI5ZTBkOWI1Njc0MzA5Il0sIkNtZCI6WyJweXRob24zIl0sIkltYWdlIjoic2hhMjU2OjE5YWNkZjM3MjMzMGE5ZTVmMjgxYTQxNDQ2YTk5NTcxNjg4Mjg2Njg0MzFkZGRmOTZiMjE2ZjQyOWI2Mjc4OWQiLCJWb2x1bWVzIjpudWxsLCJXb3JraW5nRGlyIjoiIiwiRW50cnlwb2ludCI6bnVsbCwiT25CdWlsZCI6bnVsbCwiTGFiZWxzIjpudWxsfSwiY29udGFpbmVyIjoiNzkwNDU0YmVmOWNmZWRkOTJkMjBhNGYzZTI2ZWUxYTU0ZGVlN2JkNDQzYmY3YzFhM2I0ODc1YTAxYTI1NjU3MiIsImNvbnRhaW5lcl9jb25maWciOnsiSG9zdG5hbWUiOiI3OTA0NTRiZWY5Y2YiLCJEb21haW5uYW1lIjoiIiwiVXNlciI6IiIsIkF0dGFjaFN0ZGluIjpmYWxzZSwiQXR0YWNoU3Rkb3V0IjpmYWxzZSwiQXR0YWNoU3RkZXJyIjpmYWxzZSwiVHR5IjpmYWxzZSwiT3BlblN0ZGluIjpmYWxzZSwiU3RkaW5PbmNlIjpmYWxzZSwiRW52IjpbIlBBVEg9L3Vzci9sb2NhbC9iaW46L3Vzci9sb2NhbC9zYmluOi91c3IvbG9jYWwvYmluOi91c3Ivc2JpbjovdXNyL2Jpbjovc2JpbjovYmluIiwiTEFORz1DLlVURi04IiwiR1BHX0tFWT0wRDk2REY0RDQxMTBFNUM0M0ZCRkIxN0YyRDM0N0VBNkFBNjU0MjFEIiwiUFlUSE9OX1ZFUlNJT049My42LjE1IiwiUFlUSE9OX1BJUF9WRVJTSU9OPTIxLjIuNCIsIlBZVEhPTl9TRVRVUFRPT0xTX1ZFUlNJT049NTcuNS4wIiwiUFlUSE9OX0dFVF9QSVBfVVJMPWh0dHBzOi8vZ2l0aHViLmNvbS9weXBhL2dldC1waXAvcmF3LzNjYjg4ODhjYzI4Njk2MjBmNTdkNWQyZGE2NGRhMzhmNTE2MDc4YzcvcHVibGljL2dldC1waXAucHkiLCJQWVRIT05fR0VUX1BJUF9TSEEyNTY9YzUxODI1MGU5MWE3MGQ3YjIwY2NlYjE1MjcyMjA5YTRkZWQyYTBjMjYzYWU1Nzc2ZjEyOWUwZDliNTY3NDMwOSJdLCJDbWQiOlsiL2Jpbi9zaCIsIi1jIiwiIyhub3ApICIsIkNNRCBbXCJweXRob24zXCJdIl0sIkltYWdlIjoic2hhMjU2OjE5YWNkZjM3MjMzMGE5ZTVmMjgxYTQxNDQ2YTk5NTcxNjg4Mjg2Njg0MzFkZGRmOTZiMjE2ZjQyOWI2Mjc4OWQiLCJWb2x1bWVzIjpudWxsLCJXb3JraW5nRGlyIjoiIiwiRW50cnlwb2ludCI6bnVsbCwiT25CdWlsZCI6bnVsbCwiTGFiZWxzIjp7fX0sImNyZWF0ZWQiOiIyMDIxLTExLTMwVDAzOjU2OjM2LjU0NzAyNTA3NVoiLCJkb2NrZXJfdmVyc2lvbiI6IjIwLjEwLjciLCJoaXN0b3J5IjpbeyJjcmVhdGVkIjoiMjAyMS0xMS0yNFQyMDoxOTo0MC4xOTk3MDA5NDZaIiwiY3JlYXRlZF9ieSI6Ii9iaW4vc2ggLWMgIyhub3ApIEFERCBmaWxlOjkyMzNmNmYyMjM3ZDc5NjU5YTk1MjFmN2UzOTBkZjIxN2NlYzQ5ZjFhOGFhM2ExMjE0N2JiY2ExOTU2YWNkYjkgaW4gLyAifSx7ImNyZWF0ZWQiOiIyMDIxLTExLTI0VDIwOjE5OjQwLjQ4MzM2NzU0NloiLCJjcmVhdGVkX2J5IjoiL2Jpbi9zaCAtYyAjKG5vcCkgIENNRCBbXCIvYmluL3NoXCJdIiwiZW1wdHlfbGF5ZXIiOnRydWV9LHsiY3JlYXRlZCI6IjIwMjEtMTEtMjlUMjA6NDU6MTkuODU1NzYyNjc1WiIsImNyZWF0ZWRfYnkiOiIvYmluL3NoIC1jICMobm9wKSAgRU5WIFBBVEg9L3Vzci9sb2NhbC9iaW46L3Vzci9sb2NhbC9zYmluOi91c3IvbG9jYWwvYmluOi91c3Ivc2JpbjovdXNyL2Jpbjovc2JpbjovYmluIiwiZW1wdHlfbGF5ZXIiOnRydWV9LHsiY3JlYXRlZCI6IjIwMjEtMTEtMzBUMDI6NDE6MzQuNDQzMTQ5NDhaIiwiY3JlYXRlZF9ieSI6Ii9iaW4vc2ggLWMgIyhub3ApICBFTlYgTEFORz1DLlVURi04IiwiZW1wdHlfbGF5ZXIiOnRydWV9LHsiY3JlYXRlZCI6IjIwMjEtMTEtMzBUMDM6MzI6MDIuOTkyMzc1MTg1WiIsImNyZWF0ZWRfYnkiOiIvYmluL3NoIC1jIHNldCAtZXV4OyBcdGFwayBhZGQgLS1uby1jYWNoZSBcdFx0Y2EtY2VydGlmaWNhdGVzIFx0OyJ9LHsiY3JlYXRlZCI6IjIwMjEtMTEtMzBUMDM6NDE6MTkuMjk2MjY3MjM4WiIsImNyZWF0ZWRfYnkiOiIvYmluL3NoIC1jICMobm9wKSAgRU5WIEdQR19LRVk9MEQ5NkRGNEQ0MTEwRTVDNDNGQkZCMTdGMkQzNDdFQTZBQTY1NDIxRCIsImVtcHR5X2xheWVyIjp0cnVlfSx7ImNyZWF0ZWQiOiIyMDIxLTExLTMwVDAzOjQ5OjUyLjc4NTY1NTgwMVoiLCJjcmVhdGVkX2J5IjoiL2Jpbi9zaCAtYyAjKG5vcCkgIEVOViBQWVRIT05fVkVSU0lPTj0zLjYuMTUiLCJlbXB0eV9sYXllciI6dHJ1ZX0seyJjcmVhdGVkIjoiMjAyMS0xMS0zMFQwMzo1NjoyNy4xMDIwNzgxMzJaIiwiY3JlYXRlZF9ieSI6Ii9iaW4vc2ggLWMgc2V0IC1leCBcdFx1MDAyNlx1MDAyNiBhcGsgYWRkIC0tbm8tY2FjaGUgLS12aXJ0dWFsIC5mZXRjaC1kZXBzIFx0XHRnbnVwZyBcdFx0dGFyIFx0XHR4eiBcdFx0XHUwMDI2XHUwMDI2IHdnZXQgLU8gcHl0aG9uLnRhci54eiBcImh0dHBzOi8vd3d3LnB5dGhvbi5vcmcvZnRwL3B5dGhvbi8ke1BZVEhPTl9WRVJTSU9OJSVbYS16XSp9L1B5dGhvbi0kUFlUSE9OX1ZFUlNJT04udGFyLnh6XCIgXHRcdTAwMjZcdTAwMjYgd2dldCAtTyBweXRob24udGFyLnh6LmFzYyBcImh0dHBzOi8vd3d3LnB5dGhvbi5vcmcvZnRwL3B5dGhvbi8ke1BZVEhPTl9WRVJTSU9OJSVbYS16XSp9L1B5dGhvbi0kUFlUSE9OX1ZFUlNJT04udGFyLnh6LmFzY1wiIFx0XHUwMDI2XHUwMDI2IGV4cG9ydCBHTlVQR0hPTUU9XCIkKG1rdGVtcCAtZClcIiBcdFx1MDAyNlx1MDAyNiBncGcgLS1iYXRjaCAtLWtleXNlcnZlciBoa3BzOi8va2V5cy5vcGVucGdwLm9yZyAtLXJlY3Yta2V5cyBcIiRHUEdfS0VZXCIgXHRcdTAwMjZcdTAwMjYgZ3BnIC0tYmF0Y2ggLS12ZXJpZnkgcHl0aG9uLnRhci54ei5hc2MgcHl0aG9uLnRhci54eiBcdFx1MDAyNlx1MDAyNiB7IGNvbW1hbmQgLXYgZ3BnY29uZiBcdTAwM2UgL2Rldi9udWxsIFx1MDAyNlx1MDAyNiBncGdjb25mIC0ta2lsbCBhbGwgfHwgOjsgfSBcdFx1MDAyNlx1MDAyNiBybSAtcmYgXCIkR05VUEdIT01FXCIgcHl0aG9uLnRhci54ei5hc2MgXHRcdTAwMjZcdTAwMjYgbWtkaXIgLXAgL3Vzci9zcmMvcHl0aG9uIFx0XHUwMDI2XHUwMDI2IHRhciAteEpDIC91c3Ivc3JjL3B5dGhvbiAtLXN0cmlwLWNvbXBvbmVudHM9MSAtZiBweXRob24udGFyLnh6IFx0XHUwMDI2XHUwMDI2IHJtIHB5dGhvbi50YXIueHogXHRcdFx1MDAyNlx1MDAyNiBhcGsgYWRkIC0tbm8tY2FjaGUgLS12aXJ0dWFsIC5idWlsZC1kZXBzICBcdFx0Ymx1ZXotZGV2IFx0XHRiemlwMi1kZXYgXHRcdGNvcmV1dGlscyBcdFx0ZHBrZy1kZXYgZHBrZyBcdFx0ZXhwYXQtZGV2IFx0XHRmaW5kdXRpbHMgXHRcdGdjYyBcdFx0Z2RibS1kZXYgXHRcdGxpYmMtZGV2IFx0XHRsaWJmZmktZGV2IFx0XHRsaWJuc2wtZGV2IFx0XHRsaWJ0aXJwYy1kZXYgXHRcdGxpbnV4LWhlYWRlcnMgXHRcdG1ha2UgXHRcdG5jdXJzZXMtZGV2IFx0XHRvcGVuc3NsLWRldiBcdFx0cGF4LXV0aWxzIFx0XHRyZWFkbGluZS1kZXYgXHRcdHNxbGl0ZS1kZXYgXHRcdHRjbC1kZXYgXHRcdHRrIFx0XHR0ay1kZXYgXHRcdHh6LWRldiBcdFx0emxpYi1kZXYgXHRcdTAwMjZcdTAwMjYgYXBrIGRlbCAtLW5vLW5ldHdvcmsgLmZldGNoLWRlcHMgXHRcdFx1MDAyNlx1MDAyNiBjZCAvdXNyL3NyYy9weXRob24gXHRcdTAwMjZcdTAwMjYgZ251QXJjaD1cIiQoZHBrZy1hcmNoaXRlY3R1cmUgLS1xdWVyeSBERUJfQlVJTERfR05VX1RZUEUpXCIgXHRcdTAwMjZcdTAwMjYgLi9jb25maWd1cmUgXHRcdC0tYnVpbGQ9XCIkZ251QXJjaFwiIFx0XHQtLWVuYWJsZS1sb2FkYWJsZS1zcWxpdGUtZXh0ZW5zaW9ucyBcdFx0LS1lbmFibGUtb3B0aW1pemF0aW9ucyBcdFx0LS1lbmFibGUtb3B0aW9uLWNoZWNraW5nPWZhdGFsIFx0XHQtLWVuYWJsZS1zaGFyZWQgXHRcdC0td2l0aC1zeXN0ZW0tZXhwYXQgXHRcdC0td2l0aC1zeXN0ZW0tZmZpIFx0XHQtLXdpdGhvdXQtZW5zdXJlcGlwIFx0XHUwMDI2XHUwMDI2IG1ha2UgLWogXCIkKG5wcm9jKVwiIFx0XHRFWFRSQV9DRkxBR1M9XCItRFRIUkVBRF9TVEFDS19TSVpFPTB4MTAwMDAwXCIgXHRcdExERkxBR1M9XCItV2wsLS1zdHJpcC1hbGxcIiBcdFx0UFJPRklMRV9UQVNLPSctbSB0ZXN0LnJlZ3J0ZXN0IC0tcGdvIFx0XHRcdHRlc3RfYXJyYXkgXHRcdFx0dGVzdF9iYXNlNjQgXHRcdFx0dGVzdF9iaW5hc2NpaSBcdFx0XHR0ZXN0X2JpbmhleCBcdFx0XHR0ZXN0X2Jpbm9wIFx0XHRcdHRlc3RfYnl0ZXMgXHRcdFx0dGVzdF9jX2xvY2FsZV9jb2VyY2lvbiBcdFx0XHR0ZXN0X2NsYXNzIFx0XHRcdHRlc3RfY21hdGggXHRcdFx0dGVzdF9jb2RlY3MgXHRcdFx0dGVzdF9jb21waWxlIFx0XHRcdHRlc3RfY29tcGxleCBcdFx0XHR0ZXN0X2NzdiBcdFx0XHR0ZXN0X2RlY2ltYWwgXHRcdFx0dGVzdF9kaWN0IFx0XHRcdHRlc3RfZmxvYXQgXHRcdFx0dGVzdF9mc3RyaW5nIFx0XHRcdHRlc3RfaGFzaGxpYiBcdFx0XHR0ZXN0X2lvIFx0XHRcdHRlc3RfaXRlciBcdFx0XHR0ZXN0X2pzb24gXHRcdFx0dGVzdF9sb25nIFx0XHRcdHRlc3RfbWF0aCBcdFx0XHR0ZXN0X21lbW9yeXZpZXcgXHRcdFx0dGVzdF9waWNrbGUgXHRcdFx0dGVzdF9yZSBcdFx0XHR0ZXN0X3NldCBcdFx0XHR0ZXN0X3NsaWNlIFx0XHRcdHRlc3Rfc3RydWN0IFx0XHRcdHRlc3RfdGhyZWFkaW5nIFx0XHRcdHRlc3RfdGltZSBcdFx0XHR0ZXN0X3RyYWNlYmFjayBcdFx0XHR0ZXN0X3VuaWNvZGUgXHRcdCcgXHRcdTAwMjZcdTAwMjYgbWFrZSBpbnN0YWxsIFx0XHUwMDI2XHUwMDI2IHJtIC1yZiAvdXNyL3NyYy9weXRob24gXHRcdFx1MDAyNlx1MDAyNiBmaW5kIC91c3IvbG9jYWwgLWRlcHRoIFx0XHRcXCggXHRcdFx0XFwoIC10eXBlIGQgLWEgXFwoIC1uYW1lIHRlc3QgLW8gLW5hbWUgdGVzdHMgLW8gLW5hbWUgaWRsZV90ZXN0IFxcKSBcXCkgXHRcdFx0LW8gXFwoIC10eXBlIGYgLWEgXFwoIC1uYW1lICcqLnB5YycgLW8gLW5hbWUgJyoucHlvJyAtbyAtbmFtZSAnKi5hJyBcXCkgXFwpIFx0XHRcdC1vIFxcKCAtdHlwZSBmIC1hIC1uYW1lICd3aW5pbnN0LSouZXhlJyBcXCkgXHRcdFxcKSAtZXhlYyBybSAtcmYgJ3t9JyArIFx0XHRcdTAwMjZcdTAwMjYgZmluZCAvdXNyL2xvY2FsIC10eXBlIGYgLWV4ZWN1dGFibGUgLW5vdCBcXCggLW5hbWUgJyp0a2ludGVyKicgXFwpIC1leGVjIHNjYW5lbGYgLS1uZWVkZWQgLS1ub2Jhbm5lciAtLWZvcm1hdCAnJW4jcCcgJ3t9JyAnOycgXHRcdHwgdHIgJywnICdcXG4nIFx0XHR8IHNvcnQgLXUgXHRcdHwgYXdrICdzeXN0ZW0oXCJbIC1lIC91c3IvbG9jYWwvbGliL1wiICQxIFwiIF1cIikgPT0gMCB7IG5leHQgfSB7IHByaW50IFwic286XCIgJDEgfScgXHRcdHwgeGFyZ3MgLXJ0IGFwayBhZGQgLS1uby1jYWNoZSAtLXZpcnR1YWwgLnB5dGhvbi1ydW5kZXBzIFx0XHUwMDI2XHUwMDI2IGFwayBkZWwgLS1uby1uZXR3b3JrIC5idWlsZC1kZXBzIFx0XHRcdTAwMjZcdTAwMjYgcHl0aG9uMyAtLXZlcnNpb24ifSx7ImNyZWF0ZWQiOiIyMDIxLTExLTMwVDAzOjU2OjI4LjA1NjMyNTYyNloiLCJjcmVhdGVkX2J5IjoiL2Jpbi9zaCAtYyBjZCAvdXNyL2xvY2FsL2JpbiBcdFx1MDAyNlx1MDAyNiBsbiAtcyBpZGxlMyBpZGxlIFx0XHUwMDI2XHUwMDI2IGxuIC1zIHB5ZG9jMyBweWRvYyBcdFx1MDAyNlx1MDAyNiBsbiAtcyBweXRob24zIHB5dGhvbiBcdFx1MDAyNlx1MDAyNiBsbiAtcyBweXRob24zLWNvbmZpZyBweXRob24tY29uZmlnIn0seyJjcmVhdGVkIjoiMjAyMS0xMS0zMFQwMzo1NjoyOC4yNzYwOTI1MjhaIiwiY3JlYXRlZF9ieSI6Ii9iaW4vc2ggLWMgIyhub3ApICBFTlYgUFlUSE9OX1BJUF9WRVJTSU9OPTIxLjIuNCIsImVtcHR5X2xheWVyIjp0cnVlfSx7ImNyZWF0ZWQiOiIyMDIxLTExLTMwVDAzOjU2OjI4LjQ2OTgyOTY5MloiLCJjcmVhdGVkX2J5IjoiL2Jpbi9zaCAtYyAjKG5vcCkgIEVOViBQWVRIT05fU0VUVVBUT09MU19WRVJTSU9OPTU3LjUuMCIsImVtcHR5X2xheWVyIjp0cnVlfSx7ImNyZWF0ZWQiOiIyMDIxLTExLTMwVDAzOjU2OjI4LjY2OTI5NjczNFoiLCJjcmVhdGVkX2J5IjoiL2Jpbi9zaCAtYyAjKG5vcCkgIEVOViBQWVRIT05fR0VUX1BJUF9VUkw9aHR0cHM6Ly9naXRodWIuY29tL3B5cGEvZ2V0LXBpcC9yYXcvM2NiODg4OGNjMjg2OTYyMGY1N2Q1ZDJkYTY0ZGEzOGY1MTYwNzhjNy9wdWJsaWMvZ2V0LXBpcC5weSIsImVtcHR5X2xheWVyIjp0cnVlfSx7ImNyZWF0ZWQiOiIyMDIxLTExLTMwVDAzOjU2OjI4Ljg5OTMzMzg3MloiLCJjcmVhdGVkX2J5IjoiL2Jpbi9zaCAtYyAjKG5vcCkgIEVOViBQWVRIT05fR0VUX1BJUF9TSEEyNTY9YzUxODI1MGU5MWE3MGQ3YjIwY2NlYjE1MjcyMjA5YTRkZWQyYTBjMjYzYWU1Nzc2ZjEyOWUwZDliNTY3NDMwOSIsImVtcHR5X2xheWVyIjp0cnVlfSx7ImNyZWF0ZWQiOiIyMDIxLTExLTMwVDAzOjU2OjM2LjI2MDY2NzExM1oiLCJjcmVhdGVkX2J5IjoiL2Jpbi9zaCAtYyBzZXQgLWV4OyBcdFx0d2dldCAtTyBnZXQtcGlwLnB5IFwiJFBZVEhPTl9HRVRfUElQX1VSTFwiOyBcdGVjaG8gXCIkUFlUSE9OX0dFVF9QSVBfU0hBMjU2ICpnZXQtcGlwLnB5XCIgfCBzaGEyNTZzdW0gLWMgLTsgXHRcdHB5dGhvbiBnZXQtcGlwLnB5IFx0XHQtLWRpc2FibGUtcGlwLXZlcnNpb24tY2hlY2sgXHRcdC0tbm8tY2FjaGUtZGlyIFx0XHRcInBpcD09JFBZVEhPTl9QSVBfVkVSU0lPTlwiIFx0XHRcInNldHVwdG9vbHM9PSRQWVRIT05fU0VUVVBUT09MU19WRVJTSU9OXCIgXHQ7IFx0cGlwIC0tdmVyc2lvbjsgXHRcdGZpbmQgL3Vzci9sb2NhbCAtZGVwdGggXHRcdFxcKCBcdFx0XHRcXCggLXR5cGUgZCAtYSBcXCggLW5hbWUgdGVzdCAtbyAtbmFtZSB0ZXN0cyAtbyAtbmFtZSBpZGxlX3Rlc3QgXFwpIFxcKSBcdFx0XHQtbyBcdFx0XHRcXCggLXR5cGUgZiAtYSBcXCggLW5hbWUgJyoucHljJyAtbyAtbmFtZSAnKi5weW8nIFxcKSBcXCkgXHRcdFxcKSAtZXhlYyBybSAtcmYgJ3t9JyArOyBcdHJtIC1mIGdldC1waXAucHkifSx7ImNyZWF0ZWQiOiIyMDIxLTExLTMwVDAzOjU2OjM2LjU0NzAyNTA3NVoiLCJjcmVhdGVkX2J5IjoiL2Jpbi9zaCAtYyAjKG5vcCkgIENNRCBbXCJweXRob24zXCJdIiwiZW1wdHlfbGF5ZXIiOnRydWV9XSwib3MiOiJsaW51eCIsInJvb3RmcyI6eyJ0eXBlIjoibGF5ZXJzIiwiZGlmZl9pZHMiOlsic2hhMjU2OjhkM2FjMzQ4OTk5NjQyM2Y1M2Q2MDg3YzgxMTgwMDA2MjYzYjc5ZjIwNmQzZmRlYzllNjZmMGUyN2NlYjg3NTkiLCJzaGEyNTY6MTk2NWNmYmVmMmFiYmJjNTAzYTk2ZTVkZmQ0ZGIwYmFmODUwZDU4ODQ5YTFkODk3YzUxYzYzZThhOGJjNzFmMSIsInNoYTI1Njo2NzFlMzI0ODExM2NjNTQ3OWNiN2ZhZDhhMDVlMTY0ZTU0NDY5ZGRiYTJhMWVmNWZmMTUyNzQ0MDgzOThmODYyIiwic2hhMjU2OmVmYTc2YmVjZjM4YjE5MTMzZTExMDc3YzI4Y2NiZTE5MDRlOWJkOGFiMmJiMzI3NjNkMDY3YmEwMmY1YjNmYzciLCJzaGEyNTY6MzE1NjQyM2JkMzhmMWZiMWUyYTU2ZDcwYzg3MDI5ZjRiNTdiYmU3NTA3ZWM2ZjcyOGQ3NmQ2OThhZjIzMWQ5MCJdfX0=",
+   "repoDigests": [
+    "index.docker.io/library/python@sha256:579978dec4602646fe1262f02b96371779bfb0294e92c91392707fa999c0c989"
+   ],
+   "architecture": "",
+   "os": ""
+  }
+ },
+ "distro": {
+  "name": "alpine",
+  "version": "3.15.0",
+  "idLike": []
+ },
+ "descriptor": {
+  "name": "grype",
+  "version": "0.36.0",
+  "configuration": {
+   "configPath": "",
+   "output": "json",
+   "file": "example_grype_scan.json",
+   "distro": "",
+   "add-cpes-if-none": false,
+   "output-template-file": "",
+   "quiet": false,
+   "check-for-app-update": true,
+   "only-fixed": false,
+   "platform": "",
+   "search": {
+    "scope": "Squashed",
+    "unindexed-archives": false,
+    "indexed-archives": true
+   },
+   "ignore": null,
+   "exclude": [],
+   "db": {
+    "cache-dir": "/home/brian/.cache/grype/db",
+    "update-url": "https://toolbox-data.anchore.io/grype/databases/listing.json",
+    "ca-cert": "",
+    "auto-update": true,
+    "validate-by-hash-on-start": false
+   },
+   "externalSources": {
+    "enable": false,
+    "maven": {
+     "searchUpstreamBySha1": true,
+     "baseUrl": "https://search.maven.org/solrsearch/select"
+    }
+   },
+   "dev": {
+    "profile-cpu": false,
+    "profile-mem": false
+   },
+   "fail-on-severity": "",
+   "registry": {
+    "insecure-skip-tls-verify": false,
+    "insecure-use-http": false,
+    "auth": []
+   },
+   "log": {
+    "structured": false,
+    "level": "",
+    "file": ""
+   },
+   "attestation": {
+    "public-key": "",
+    "skip-verification": false
+   }
+  },
+  "db": {
+   "built": "2022-08-10T08:15:47Z",
+   "schemaVersion": 3,
+   "location": "/home/brian/.cache/grype/db/3",
+   "checksum": "sha256:9467ef14e38affd685cc21e4ea7cb7780569be1de4b9af5d841f0f7ad329dc98",
+   "error": null
+  }
+ }
+}
