@@ -86,14 +86,31 @@ The image we use to scan for Vulnerabilities is also on ghcr.io. This scan image
 <p align="center">The Build Process</p>
 
 ### Architecture
+At the beginning of the project, we discussed different architectures on how to send the results of the scans realized via GitHub Actions to a backend for later visualization:
+
+The first approach was based on a push architecture, while the second approach was based on a pull architecture. In a push architecture, based on triggers such as a software update, content is transmitted to the backend, which can use, for example, a database or a GitHub repository for storage. In a pull architecture, content is downloaded from the backend itself based on a timed trigger, for example.
+
+The push architecture has the advantage that if the source and target are a GitHub repository, no additional infrastructure needs to be provided. Regardless of whether a GitHub repository or a database is used as the target, the updates are live because they can use the changes in the source code or an update to the repository, respectively, as triggers. The drawback, however, is that each source must authenticate itself to the target and different keys should be used for this purpose. Since the source code can be public, it cannot contain authentication data, but GitHub offers the possibility of GitHub secrets, which is a way to use values within the GitHub Actions configured in a separate place. However, since these should be different and a large number of repositories should be usable, this would require a separate tool that manages the authentication data for all source repositories.
+
+With the pull architecture, the advantage is that authentication is only necessary between exactly one source point and one target point, therefore the source can store the authentication data of the target, so credentials only have to be stored in one place. However, since the naive approach does not use notifications, it can only use temporal triggers for its updates, which means that changes in the source code and thus possibly also in the results of the scan are not read live, but only with a certain delay into the backend.
+
+To keep the advantages of the two basic architectures and to eliminate their disadvantages, we decided to use an architecture that combines both principles, we call it "Notify and Pull" architecture. Here, when an update is made to the GitHub repository, a notification is sent to our backend, which then authenticates itself to GitHub and downloads the results of a scan. Through this architecture, our updates are live and we only need to authenticate to one place.
+The basic Push and Pull architecture models offer different ways of visualization depending on whether they are completely without additional infrastructure. For our considerations, we had compared GitHub Pages, Django, and Elasticsearch against each other.
+- GitHub Pages retains the advantage that no dedicated infrastructure is required, but limits the options for data analysis and user management.
+- Django, on the other hand, requires significantly more programming effort, but also allows you to implement exactly what you want.
+- In contrast to Django, Elastic search has the advantage that good visualizations can be created more quickly, but in contrast to Django it is, among other things, quite resource hungry.
+
+Basically, all visualization options are valid, but since we had clear ideas about the layout of our website and the visualization and also wanted to keep the resource consumption as low as possible, we decided to use Django.
+
 <p align="center">
     <img src="./docs/architecture.png" width="550px">
 </p>
 <p align="center">The Architecture</p>
 
-The architecture consists of a container-based approach with Docker because containers are lightweight and require less resources than VMs. Containers are easy to deploy and can be deployed on any environment where Docker runs. Django web framework is used for the project because it is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. Nginx is used as proxy and to deliver the statics, but this is not relevant for the concept behind it, therefore not in the graphic. A personal access token for GitHub is stored in Django. The account behind it has access to the runs of the actions of several repositories. Each repo performs image scanning as well as the generation of an SBOM.
+The implementation of the architecture consists of a container-based approach using Docker, as containers are lightweight and require fewer resources than VMs. Containers are easy to deploy and can be deployed on any environment where Docker runs. Nginx is used as proxy and to deliver the statics, but this is not relevant for the concept behind it, therefore not in the graphic. A personal access token for GitHub is stored in Django. The account behind it has access to the runs of the actions of several repositories. Each repository performs vulnerability scanning of images as well as the generation of an SBOM. After the repos have been scanned, they send a notification to Django, which leads to the subsequent loading, saving, and processing of the artifacts that result from a scan.
 
-To keep the scanning with its databases as well as the creation of the SBOMs always up to date, the image used for this (along with the database behind it) is rebuilt daily. After the repos have been scanned, they send a notification to Django, which leads to the subsequent loading, saving, and processing of the artifacts that result from a scan.
+In order to keep the databases for the vulnerability scans and the creation of the SBOMs always up to date, the image used for this (along with the database behind it) is rebuilt daily.
+
 
 ## Installation
 1. Download and install Docker for your system as described here [How to install Docker](https://docs.docker.com/get-docker/)
