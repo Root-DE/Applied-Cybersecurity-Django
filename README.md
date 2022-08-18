@@ -124,7 +124,7 @@ In order to keep the databases for the vulnerability scans and the creation of t
 2. Create a copy of the [template.env](./template.env) file, rename it to `.env`, and fill it with your own values
 3. Adapt the [nginx configuration file](./nginx/conf.d/nginx_django.conf) to your needs or remove the configuration file
 4. Run `docker-compose up -d` to start the application. This will start nginx, the Django application, the database and Adminer where you can see the current state of the database. If you do not want to use Adminer, you can remove the Adminer container from the docker-compose.yml file.
-5. Open your browser and go to https://your-domain/ to see the dashboard.
+5. Open your browser and go to https://your-domain/ (or http://your-domain:8000 / http://localhost:8000) to see the dashboard.
 6. Set up the GitHub actions for each repository to trigger the scan by copying the [scan.yml](./.github/workflows/scan.yml) to the *.github/workflows/* directory of the respective repository. 
 
 ## User Interface Functionalities
