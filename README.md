@@ -29,8 +29,6 @@ Syft is an open-source tool for generating a Software Bill of Material (SBOM for
 
 A very important feature of Syft is that not only entire project folders, but also container images can be scanned. Furthermore, the tool supports 18 different ecosystems, such as Alpine, Rust, Go, Java or Python. A sample output of Syft (applied to the image [python:3.6-alpine](https://hub.docker.com/layers/python/library/python/3.6-alpine/images/sha256-ada5fee6b97267270f36b8744b5a16dd058206fdf5776bec3bf58e5a83d65049?context=explore)) can be viewed [here](/docs/example_syft_scan.json). Of particular interest is the list of artifacts found, as these are subsequently used to identify vulnerabilities. Information such as the name of the artifact, the exact version and the unique identifiers like the Common Platform Enumeration (CPE) or the Package URL (PURL) are therefore particularly important. Other more informative data, are barely considered by us at the moment, because the focus should be on the vulnerabilities first. Information such as the description of the artifact, the licenses or even the metadata are therefore neglected in the current version. However, if the focus of the project is later expanded to include the software used in the organization, such information can add further value for the company. 
 
-+ mention available formats
-
 ### Grype
 <img align="right" height="150" src="https://user-images.githubusercontent.com/5199289/136855393-d0a9eef9-ccf1-4e2b-9d7c-7aad16a567e5.png">
 Once Syft generated a detailed SBOM, the next step is to scan all found artifacts for vulnerabilities. For this we use a tool called Grype, which is also developed by Anchore and therefore works together with Syft's SBOM without any problems.
