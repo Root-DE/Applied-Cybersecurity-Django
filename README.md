@@ -122,6 +122,7 @@ In order to keep the databases for the vulnerability scans and the creation of t
 1. Download and install Docker for your system as described here [How to install Docker](https://docs.docker.com/get-docker/)
 2. Download this repository by running `git clone https://github.com/Root-DE/Applied-Cybersecurity-Django`
 2. Create a copy of the [template.env](./template.env) file, rename it to `.env`, and fill it with your own values
+4. Add the company logo to the [images folder](./src/applied_cybersec/vuln_frontend/static/images) folder with the name `logo.png` and the favicon to the [icons folder](./src/applied_cybersec/vuln_frontend/static/images/icons) folder with the name `favicon.ico`
 3. Adapt the [nginx configuration file](./nginx/conf.d/nginx_django.conf) to your needs or remove the configuration file
 4. Run `docker-compose up -d` to start the application. This will start nginx, the Django application, the database and Adminer where you can see the current state of the database. If you do not want to use Adminer, you can remove the Adminer container from the docker-compose.yml file.
 5. Open your browser and go to https://your-domain/ (or http://your-domain:8000 / http://localhost:8000) to see the dashboard.
