@@ -5,3 +5,5 @@ nginx/certs/privkey.pem
 .env
 src/applied_cybersec/vuln_backend/migrations/
 example_scans/predicate_example.json
+src/applied_cybersec/vuln_frontend/static/images/icons/favicon.ico
+src/applied_cybersec/vuln_frontend/static/images/logo.png
