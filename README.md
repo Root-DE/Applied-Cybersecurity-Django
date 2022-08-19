@@ -75,6 +75,9 @@ This project generates a signed provenance for scanned container images. The att
 
 An example as well as the structure of the provenance artifact can be found [here](https://slsa.dev/provenance/v0.2).
 
+#### How is SLSA implemented by this project?
+In the repo [Example Image](https://github.com/Root-DE/Example-Image) is an example of a SLSA scan via a GitHub pipeline. On the tag v0.1.19 you can see how the provenance is created, signed, written to the transparency logs and verified in the [actions](https://github.com/Root-DE/Example-Image/runs/7467154335?check_suite_focus=true). The tag v0.1.19 is based on a [modified SLSA logic](https://github.com/jobroe10/slsa-github-generator), because at that time the official SLSA implementation was faulty, but in the meantime this has been corrected, so that with the tag v0.1.21 it was possible to switch to this.
+
 ### Pipeline
 <p align="center">
     <img src="./docs/pipeline.png" width="550px">
@@ -82,7 +85,7 @@ An example as well as the structure of the provenance artifact can be found [her
 <p align="center">The Pipeline</p>
 The pipeline (see above) runs whenever there are changes to the repository through a push when a release is created and daily at 9am UTC. The daily scan is necessary because the container can use software that was not known to be vulnerable during the last scan but is now.
 
-In the first step, the pipeline builds the Docker Image. As can be seen below, meta information about the build process, such as the architecture of the GitHub runner, is generated in addition to the build image, and the digest of the image. From the metainformation and the digest, the provenance is now generated. Afterwards it is signed keyless via cosign (see [here](https://github.com/sigstore/cosign/blob/main/KEYLESS.md)). As part of the process, the signature is written to both the Transparency Logs and, along with the provenance, the GitHub Container Registry (ghcr.io). The Image is then also pushed to the Container Registry.
+In the first step, the pipeline builds the Docker Image. As can be seen below, meta information about the build process, such as the architecture of the GitHub runner, is generated in addition to the build image, and the digest of the image. From the metainformation and the digest, the SLSA provenance is now generated. Afterwards it is signed keyless via cosign (see [here](https://github.com/sigstore/cosign/blob/main/KEYLESS.md)). As part of the process, the signature is written to both the Transparency Logs and, along with the provenance, the GitHub Container Registry (ghcr.io). The Image is then also pushed to the Container Registry.
 
 The image we use to scan for Vulnerabilities is also on ghcr.io. This scan image now takes the previously built image as input and generates the SBOM and a list of vulnerabilities, which are then transferred to the backend via the notify and pull approach as described in the section [Architecture](#architecture).
 
